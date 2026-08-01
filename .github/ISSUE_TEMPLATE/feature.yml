@@ -1,0 +1,65 @@
+name: "Feature or improvement"
+description: "Propose a bounded user outcome"
+title: "[Feature] "
+labels:
+  - "type:feature"
+  - "needs:triage"
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include credentials, private media, or undisclosed vulnerabilities."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: "What is missing, incorrect, undecided, or unverified?"
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Change or decision
+      description: "State the bounded outcome and before/after behavior."
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - "area:ui-ux"
+        - "area:i18n-a11y"
+        - "area:project-data"
+        - "area:import-export"
+        - "area:jobs-runtime"
+        - "area:ai-models"
+        - "area:translation"
+        - "area:qc-review"
+        - "area:performance"
+        - "area:security"
+        - "area:distribution"
+        - "area:teams"
+        - "area:documentation"
+        - "area:media"
+        - "area:playback"
+        - "area:audio"
+        - "area:timeline"
+        - "area:subtitle"
+        - "area:visual-text"
+        - "area:encoding"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and risks
+      description: "Link exact issues, stable IDs, security, compatibility, rights, recovery, and migration impacts."
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance
+      description: "List observable or testable completion checks."
+      placeholder: "- [ ] Observable check"
+    validations:
+      required: true
+

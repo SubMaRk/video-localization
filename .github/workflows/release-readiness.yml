@@ -1,0 +1,25 @@
+name: Release readiness
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  blocked-until-approved:
+    runs-on: windows-latest
+    steps:
+      - name: Enforce publication gate
+        shell: pwsh
+        env:
+          PUBLICATION_APPROVED: ${{ vars.PUBLICATION_APPROVED }}
+        run: |
+          if ($env:PUBLICATION_APPROVED -ne 'true') {
+            throw 'Publication remains blocked by governance. This workflow does not publish artifacts.'
+          }
+      - uses: actions/checkout@v4
+      - name: Record draft status
+        shell: pwsh
+        run: Write-Host 'Release build implementation is pending the frozen toolchain and package profile.'
+

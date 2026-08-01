@@ -1,0 +1,25 @@
+name: Repository metadata guard
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject tracked planning files and invalid JSON
+        shell: pwsh
+        run: |
+          $planned = @(git ls-files | Where-Object { $_ -match '(^|/)Plan/' })
+          if ($planned.Count -gt 0) {
+            Write-Error "Plan files must remain local and untracked: $($planned -join ', ')"
+          }
+          Get-ChildItem -Recurse -File -Filter *.json | ForEach-Object {
+            Get-Content -LiteralPath $_.FullName -Raw | ConvertFrom-Json | Out-Null
+          }
+

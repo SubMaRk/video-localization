@@ -1,0 +1,13 @@
+changelog:
+  categories:
+    - title: "New Features"
+      labels: ["changelog:new"]
+    - title: "Bug Fixes"
+      labels: ["changelog:fix"]
+    - title: "Improvements"
+      labels: ["changelog:improvement"]
+    - title: "Removed"
+      labels: ["changelog:removed"]
+  exclude:
+    labels: ["changelog:none"]
+

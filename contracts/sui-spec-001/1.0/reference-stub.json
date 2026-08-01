@@ -1,0 +1,22 @@
+{
+  "stub_id": "VID-REFERENCE-STUB-001",
+  "stub_revision": "1.0.0-review.4",
+  "classification": "synthetic",
+  "synthetic_only": true,
+  "independently_loadable": true,
+  "product_role": "video",
+  "fixture_product_namespace": "fixture.product.video",
+  "base_contract": "SUI-SPEC-001@1.0-review.4",
+  "base_binding": "SUI-BIND-REFJSON-001@1.0.0-review.4",
+  "adapter_catalog_ref": "adapters.json",
+  "shared_schema_bundle_ref": "../../../../_shared/contracts/sui-spec-001/SUI-SCHEMA-001.bundle.json",
+  "projection_registry_expansion": {
+    "registry_ref": "../../../../_shared/contracts/sui-spec-001/registries/SUI-REG-006-product-projections.json",
+    "product_key": "video",
+    "token_prefix": "fixture.product.video.projection.",
+    "expression": "fixture.product.<role>.projection.<registry-token>"
+  },
+  "forbidden_product_dependencies": ["manga", "document"],
+  "cross_product_imports": [],
+  "fixture_refs": ["SUI-FIX-BND-002", "SUI-FIX-BND-007"]
+}

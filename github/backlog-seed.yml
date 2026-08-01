@@ -1,0 +1,9 @@
+repository: "video-localization"
+active_focus: "Video-first delivery"
+detailed_issue_milestones:
+  - "Planning and Specification Freeze"
+  - "v0.1.0-alpha - Subtitle Slice"
+  - "v0.2.0-alpha - Manual Editor Slice"
+future_policy: "One epic per later capability group until dependencies and release profile are ready."
+calendar_policy: "No release dates before two completed milestones establish measured throughput."
+

@@ -1,0 +1,82 @@
+repository: "video-localization"
+authority: "Repository milestones are the version authority; version labels are prohibited."
+backlog_depth:
+  detailed_now:
+    - "Planning and Specification Freeze"
+    - "v0.1.0-alpha - Subtitle Slice"
+    - "v0.2.0-alpha - Manual Editor Slice"
+  expand_next_when: "Expand v0.3.0-beta - Usable Subtitle Preview after v0.1 exits."
+milestones:
+  - title: "Planning and Specification Freeze"
+    state: "planned"
+    detailed_backlog: true
+    due_date: null
+  - title: "v0.1.0-alpha - Subtitle Slice"
+    state: "planned"
+    detailed_backlog: true
+    due_date: null
+  - title: "v0.2.0-alpha - Manual Editor Slice"
+    state: "planned"
+    detailed_backlog: true
+    due_date: null
+  - title: "v0.3.0-beta - Usable Subtitle Preview"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v0.4.0-beta - Production Completion"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.0.0-rc - Subtitle Candidate"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.0.0 - Windows Subtitle Production"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.1.0 - Local Speech Assistance"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.2.0 - Translation Assistance"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.3.0 - Teams LAN"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.4.0 - Visual Text Analysis"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.5.0 - Visual Text Replacement"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.6.0 - Context Intelligence"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.7.0 - Recoverable Batch"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.8.0 - Workflow Designer"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.9.0 - Plugin SDK"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.10.0 - Capability Pack Platform"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+  - title: "v1.11.0 - Self-Hosted Teams"
+    state: "planned"
+    detailed_backlog: false
+    due_date: null
+
