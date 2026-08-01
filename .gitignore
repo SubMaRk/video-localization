@@ -19,6 +19,8 @@ temp/
 tmp/
 logs/
 *.log
+__pycache__/
+*.py[cod]
 *.db-shm
 *.db-wal
 artifacts/
@@ -35,4 +37,3 @@ downloads/
 *.7z
 *.tar
 *.gz
-
