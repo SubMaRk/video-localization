@@ -1,6 +1,10 @@
-Video Localization
+﻿Video Localization
 
-Status: Local repository preparation only.
-Public source publication is blocked by pending source-license and contribution/trademark governance decisions.
-Third-party components and assets require exact provenance, rights, notices, and redistribution approval before inclusion.
+Copyright owner: Yutthaphon Inchaiya (SubMaRk).
+License: Localization Suite Source-Available License 1.0.
 
+The Software may be used to create commercial Output, but the Software, source code, access, hosting, support, and managed operation may not be sold or monetized. Modified builds and forks must use different names and branding while retaining the license, copyright, attribution, and modification notices.
+
+Only releases published through official SubMaRk channels are official. No trademark license is granted. External code contributions are not accepted; Issues are accepted for bug reports and feature requests.
+
+Third-party components and assets retain their own licenses and require exact provenance, rights, notices, and redistribution approval.

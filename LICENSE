@@ -1,6 +1,67 @@
-Copyright (c) 2026 SubMaRk. All rights reserved.
+﻿Localization Suite Source-Available License 1.0
 
-No license is granted to copy, modify, distribute, sublicense, sell, host, or create derivative works from this repository.
+Copyright (c) 2026 Yutthaphon Inchaiya (SubMaRk). All rights reserved.
 
-This local preparation repository is not approved for public source publication. Replace this notice only after SUI-DEC-001 is Accepted and the exact legally reviewed source-available license is approved.
+This license applies to the source code, binaries, documentation, and other materials distributed with this repository (the "Software"). It is a source-available license and is not an open-source license.
 
+1. Permission
+
+Subject to this license, you may:
+
+- use the Software for personal, educational, research, internal business, and production work;
+- use the Software to create, own, license, and sell videos, translations, audio, documents, images, subtitles, and other output ("Output");
+- inspect, copy, and modify the Software; and
+- redistribute unmodified or modified copies of the Software without charge.
+
+The copyright owner claims no ownership of Output solely because it was created with the Software. Output remains subject to the rights of its creator and any applicable third-party rights.
+
+2. Redistribution Conditions
+
+Every redistribution must:
+
+- be provided without any fee or other consideration;
+- include this license, all copyright notices, and attribution to Yutthaphon Inchaiya and SubMaRk;
+- remain under this exact license without additional or conflicting terms; and
+- clearly identify modifications and their author.
+
+A modified version or fork must use a different product name and branding, remove official logos and marks, and state prominently that it is unofficial. It must not imply sponsorship, endorsement, or affiliation with the copyright owner or SubMaRk.
+
+3. Prohibited Uses
+
+You may not:
+
+- sell, rent, sublicense for a fee, or otherwise monetize the Software or its source code;
+- charge for downloading, installing, configuring, supporting, maintaining, training on, or accessing the Software;
+- provide the Software to third parties as SaaS, hosted software, a managed service, a paid network host, or a substantially similar service;
+- incorporate the Software or its source code into a product, platform, or service that is sold, licensed for a fee, or monetized; or
+- remove or obscure this license, copyright notices, attribution, or modification notices.
+
+You may charge for creative or localization services when the deliverable is Output and the charge is not for access to, distribution of, hosting of, or support for the Software.
+
+The copyright owner reserves the exclusive right to operate or authorize official hosted coordination, website mediation, Network Host, and related services for the Software.
+
+4. Trademarks and Official Status
+
+No trademark license is granted. The names "SubMaRk", "Localization Suite", product names, logos, and related marks may be used only for truthful, noncommercial reference to an unmodified official distribution. Commercial trademark use requires prior written permission.
+
+Only distributions and releases published by the copyright owner through official SubMaRk channels are official.
+
+5. Third-Party Materials
+
+This license does not grant rights to third-party code, models, fonts, media, trademarks, or other materials. Their separate terms continue to apply.
+
+6. Termination
+
+Your rights terminate automatically if you violate this license. They are reinstated if you fully cure the violation within 30 days after discovering it or receiving notice, unless the copyright owner has previously terminated your rights for a violation of the same kind.
+
+7. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+8. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT OWNER AND CONTRIBUTORS WILL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+
+9. Additional Permission
+
+Only the copyright owner may grant an exception or additional permission, and any such permission must be in writing. No later license version applies unless the copyright owner expressly adopts it.
