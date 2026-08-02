@@ -1,0 +1,109 @@
+{
+  "implementation_id": "VID-IMPL-P00-002A",
+  "issued_at": "2026-08-02T10:32:00+07:00",
+  "toolchain": {
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "sha2": "0.11.0"
+  },
+  "commands": [
+    {
+      "command": "cargo generate-lockfile",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "environment": {
+        "CARGO_HOME": "C:\\Users\\SubMaRk\\AppData\\Local\\Temp\\vid-p00-002a-cargo-home",
+        "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse",
+        "CARGO_HTTP_TIMEOUT": "300",
+        "CARGO_HTTP_LOW_SPEED_LIMIT": "1"
+      },
+      "raw_output": {
+        "stdout": "    Updating crates.io index\r\n     Locking 10 packages to latest compatible versions\r\n",
+        "stderr": "",
+        "notes": [
+          "Assignment-scoped cache and bounded HTTP settings applied."
+        ]
+      }
+    },
+    {
+      "command": "cargo test --locked",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "environment": {
+        "CARGO_HOME": "C:\\Users\\SubMaRk\\AppData\\Local\\Temp\\vid-p00-002a-cargo-home",
+        "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse",
+        "CARGO_HTTP_TIMEOUT": "300",
+        "CARGO_HTTP_LOW_SPEED_LIMIT": "1"
+      },
+      "raw_output": {
+        "stdout": "\r\nrunning 1 test\r\ntest fingerprint::tests::fingerprint_loop_enforces_ceiling_before_completion ... ok\r\n\r\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\r\n\r\n\r\nrunning 0 tests\r\n\r\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\r\n\r\n\r\nrunning 8 tests\r\ntest source_ceiling_check_is_unit_testable_without_full_file ... ok\r\ntest missing_directory_traversal_ads_and_network_paths_fail_distinctly ... ok\r\ntest known_empty_fixture_has_expected_sha_and_length ... ok\r\ntest known_content_fixture_has_expected_sha_and_length ... ok\r\ntest equal_content_can_bind_distinct_caller_asset_ids_without_hash_semantics_change ... ok\r\ntest equal_bytes_generate_same_identity_without_collapsing_path ... ok\r\ntest hashing_is_chunked_for_multi_chunk_file ... ok\r\ntest mutation_detected_during_hashing_is_rejected ... ok\r\n\r\ntest result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s\r\n\r\n\r\nrunning 0 tests\r\n\r\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\r\n\r\n\r\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\r\n\r\n   Compiling videolocalization-worker v0.1.0 (Z:\\Media Localization Studio\\Video Localization\\workers\\VideoLocalization.Worker)\r\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.29s\r\n     Running unittests src\\lib.rs (target\\debug\\deps\\videolocalization_worker-6a42cd785915d945.exe)\r\n     Running unittests src\\main.rs (target\\debug\\deps\\videolocalization_worker-a0d64311ac0b8b31.exe)\r\n     Running tests\\preflight_fingerprint.rs (target\\debug\\deps\\preflight_fingerprint-8da142fde53028bc.exe)\r\n   Doc-tests videolocalization_worker",
+        "stderr": ""
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "preflight_empty_path",
+      "name": "Empty/whitespace path rejected as InvalidPath",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_extended_unc",
+      "name": "Reject extended UNC path",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_extended_device_global_root",
+      "name": "Reject extended device/global-root path",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_extended_verbatim_unknown",
+      "name": "Reject unknown verbatim namespace",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_extended_local_valid",
+      "name": "Allow canonical extended local-drive form in classification",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_missing",
+      "name": "Reject missing path",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_directory",
+      "name": "Reject directory path",
+      "status": "passed"
+    },
+    {
+      "id": "preflight_traversal",
+      "name": "Reject parent traversal",
+      "status": "passed"
+    },
+    {
+      "id": "mutation_guard",
+      "name": "Reject or deny share-unsafe mutation during hash attempt",
+      "status": "passed"
+    },
+    {
+      "id": "caller_binding",
+      "name": "Allow equal-content observations to bind to distinct caller asset IDs",
+      "status": "passed"
+    },
+    {
+      "id": "size_ceiling_loop",
+      "name": "Enforce source ceiling from streaming byte totals",
+      "status": "passed"
+    }
+  ],
+  "scope_limitations": [
+    "No FFmpeg/ffprobe",
+    "No codec selection",
+    "No media probing",
+    "No network access in product behavior"
+  ],
+  "violations": []
+}

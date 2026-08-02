@@ -1,0 +1,266 @@
+{
+  "issued_at": "2026-08-02T09:50:47.1762472+07:00",
+  "repository": "Video Localization",
+  "checks": [
+    {
+      "id": "FILE_global.json",
+      "name": "Required path exists: global.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_rust-toolchain.toml",
+      "name": "Required path exists: rust-toolchain.toml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_Directory.Build.props",
+      "name": "Required path exists: Directory.Build.props",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_Directory.Packages.props",
+      "name": "Required path exists: Directory.Packages.props",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_nuget.config",
+      "name": "Required path exists: nuget.config",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_VideoLocalization.sln",
+      "name": "Required path exists: VideoLocalization.sln",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_src_VideoLocalization.App_VideoLocalization.App.csproj",
+      "name": "Required path exists: src\\\\VideoLocalization.App\\\\VideoLocalization.App.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_src_VideoLocalization.Core_VideoLocalization.Core.csproj",
+      "name": "Required path exists: src\\\\VideoLocalization.Core\\\\VideoLocalization.Core.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_src_VideoLocalization.Shared_VideoLocalization.Shared.csproj",
+      "name": "Required path exists: src\\\\VideoLocalization.Shared\\\\VideoLocalization.Shared.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_workers_VideoLocalization.Worker_Cargo.toml",
+      "name": "Required path exists: workers\\\\VideoLocalization.Worker\\\\Cargo.toml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_workers_VideoLocalization.Worker_src_main.rs",
+      "name": "Required path exists: workers\\\\VideoLocalization.Worker\\\\src\\\\main.rs",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_contracts_video_core.proto",
+      "name": "Required path exists: contracts\\\\video_core.proto",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_contracts_build_buf.gen.yaml",
+      "name": "Required path exists: contracts\\\\build\\\\buf.gen.yaml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_contracts_build_proto-bundle.gen.json",
+      "name": "Required path exists: contracts\\\\build\\\\proto-bundle.gen.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_contracts_out_GeneratedProtos_",
+      "name": "Required path exists: contracts\\\\out\\\\GeneratedProtos\\\\",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_contracts_out_GeneratedBindings_",
+      "name": "Required path exists: contracts\\\\out\\\\GeneratedBindings\\\\",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_testing_implementation_VID-IMPL-P00-001_fixture-loader.json",
+      "name": "Required path exists: testing\\\\implementation\\\\VID-IMPL-P00-001\\\\fixture-loader.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_testing_implementation_VID-IMPL-P00-001_README.md",
+      "name": "Required path exists: testing\\\\implementation\\\\VID-IMPL-P00-001\\\\README.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_eng_README.md",
+      "name": "Required path exists: eng\\\\README.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_eng_build.ps1",
+      "name": "Required path exists: eng\\\\build.ps1",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_eng_test.ps1",
+      "name": "Required path exists: eng\\\\test.ps1",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_eng_print-versions.ps1",
+      "name": "Required path exists: eng\\\\print-versions.ps1",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_eng_verify-toolchain.ps1",
+      "name": "Required path exists: eng\\\\verify-toolchain.ps1",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_.github_workflows_vid-impl-p00-001-scaffold.yml",
+      "name": "Required path exists: .github\\\\workflows\\\\vid-impl-p00-001-scaffold.yml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_.github_ISSUE_TEMPLATE_implementation-scaffold.yml",
+      "name": "Required path exists: .github\\\\ISSUE_TEMPLATE\\\\implementation-scaffold.yml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FILE_.github_PULL_REQUEST_TEMPLATE_vid-impl-p00-001.md",
+      "name": "Required path exists: .github\\\\PULL_REQUEST_TEMPLATE\\\\vid-impl-p00-001.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "DOTNET_VERSION",
+      "name": "dotnet version resolved",
+      "passed": true,
+      "details": "dotnet --version=10.0.302"
+    },
+    {
+      "id": "SDK_PIN_MATCH",
+      "name": "global.json SDK pin exactly matches installed .NET SDK",
+      "passed": true,
+      "details": "global.json=10.0.302, dotnet=10.0.302"
+    },
+    {
+      "id": "RUSTC_VERSION",
+      "name": "rustc version resolved",
+      "passed": true,
+      "details": "rustc=rustc 1.97.1 (8bab26f4f 2026-07-14)"
+    },
+    {
+      "id": "CARGO_VERSION",
+      "name": "cargo version resolved",
+      "passed": true,
+      "details": "cargo=cargo 1.97.1 (c980f4866 2026-06-30)"
+    },
+    {
+      "id": "PROTOC_VERSION",
+      "name": "protoc version resolved",
+      "passed": true,
+      "details": "protoc=libprotoc 35.1"
+    },
+    {
+      "id": "BUF_VERSION",
+      "name": "buf version resolved",
+      "passed": true,
+      "details": "buf=1.72.0"
+    },
+    {
+      "id": "SQLITE_VERSION",
+      "name": "sqlite3 version resolved",
+      "passed": true,
+      "details": "sqlite3=3.53.4 2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc (64-bit)"
+    },
+    {
+      "id": "BUF_GEN_CANONICAL",
+      "name": "Single canonical buf.gen.yaml",
+      "passed": true,
+      "details": "count=1"
+    },
+    {
+      "id": "PACKAGE_PIN_Microsoft_WindowsAppSDK",
+      "name": "Exact package pin: Microsoft.WindowsAppSDK",
+      "passed": true,
+      "details": "expected=2.3.1"
+    },
+    {
+      "id": "PACKAGE_PIN_Microsoft_Data_Sqlite",
+      "name": "Exact package pin: Microsoft.Data.Sqlite",
+      "passed": true,
+      "details": "expected=10.0.10"
+    },
+    {
+      "id": "PACKAGE_PIN_Google_Protobuf",
+      "name": "Exact package pin: Google.Protobuf",
+      "passed": true,
+      "details": "expected=3.35.1"
+    },
+    {
+      "id": "PACKAGE_PIN_Grpc_Tools",
+      "name": "Exact package pin: Grpc.Tools",
+      "passed": true,
+      "details": "expected=2.83.0"
+    },
+    {
+      "id": "PROTOC_PIN",
+      "name": "Exact protoc pin recorded",
+      "passed": true,
+      "details": "recorded=35.1"
+    },
+    {
+      "id": "BUF_PIN",
+      "name": "Exact buf pin recorded",
+      "passed": true,
+      "details": "recorded=1.72.0"
+    },
+    {
+      "id": "NO_PLACEHOLDER_STUB_TEXT",
+      "name": "No placeholder stub text in scaffold files",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "summary": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0
+  },
+  "environment": {
+    "dotnet": "10.0.302",
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+    "protoc": "libprotoc 35.1",
+    "buf": "1.72.0",
+    "sqlite3": "3.53.4 2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc (64-bit)"
+  },
+  "bufGenFiles": "contracts\\build\\buf.gen.yaml"
+}

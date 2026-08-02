@@ -1,0 +1,17 @@
+{
+  "profile": "VID-SPEC-015@1.0",
+  "targets": [
+    {
+      "name": "fixtures",
+      "path": "testing/conformance/vid-spec-015/fixtures"
+    },
+    {
+      "name": "profiles",
+      "path": "testing/conformance/vid-spec-015/profiles/foundation-budgets.json"
+    }
+  ],
+  "notes": [
+    "Scaffold only: no fixture execution is introduced in VID-IMPL-P00-001.",
+    "No fixture mutation occurs in this issue."
+  ]
+}
