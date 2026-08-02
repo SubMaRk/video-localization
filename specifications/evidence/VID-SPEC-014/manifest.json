@@ -1,0 +1,76 @@
+{
+  "evidence_id": "VID-SPEC-014-EVID",
+  "status": "frozen",
+  "approved_candidate": {
+    "specification_id": "VID-SPEC-014",
+    "revision": "1.0-review.1",
+    "sha256": "02C66740679E8502A4ED4EA31513C8C315C80B3EDF3F9AE4B213FAFB39732528"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-014",
+    "revision": "1.0",
+    "path": "Video Localization/specifications/VID-SPEC-014-design-and-localization.md",
+    "sha256": "88FCEC2B74BF442385F9C7A13EC0DE1786733C182740A6E392E5902335209978"
+  },
+  "dependencies": [
+    {
+      "id": "SUI-SPEC-007",
+      "revision": "1.0",
+      "status": "Frozen"
+    },
+    {
+      "id": "VID-DEC-004",
+      "revision": "1.0",
+      "status": "Accepted",
+      "sha256": "5F2CF528B85682AB6CACEAE1C27B0F17A3D83DE1BDA97AECB4AF5B57F1820646"
+    }
+  ],
+  "reference_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-014/VID-EVID-014-reference-result.json",
+    "sha256": "90CE4B9F74482B5A2339D85355D07A022EE5281402E2E7475ADF9D79089BDCF6",
+    "checks": "16/16",
+    "contrast": "20/20",
+    "status": "Pass"
+  },
+  "assets": {
+    "tokens": {
+      "path": "Video Localization/design/tokens/vid.tokens.json",
+      "sha256": "9188E22D5FFA60E60881E224C82267995BAB33F98B0A917334B6A8235C39C9E3"
+    },
+    "components": {
+      "path": "Video Localization/design/component-matrix.json",
+      "sha256": "1F87B507F943D15CC4C6C846151187ED84EF6252C71F50E6B602239C2C3337C5"
+    },
+    "english": {
+      "path": "Video Localization/localization/en.json",
+      "sha256": "EDF60C2A7CC1E4486BAB52BCD5A2D06C952D0935237EB8F7682A4C8A07C275B1"
+    },
+    "thai": {
+      "path": "Video Localization/localization/th.json",
+      "sha256": "AC305DFD5062CE0E3E3EE7BA65EF9B1C97A7EEEDB57B8546CB3164103F34F389"
+    },
+    "terminology": {
+      "path": "Video Localization/localization/terminology.en-th.json",
+      "sha256": "C407A0E5032CC5D78AA3E74F482C9B279DB2B1569AF667F9B3E7416C4BE5A5E4"
+    },
+    "fixtures": {
+      "path": "Video Localization/testing/conformance/vid-spec-014/fixtures/design-localization-cases.json",
+      "sha256": "E2F97538F56DCE5B3AD1EEDCD7F6966D0C8A751A51CD98B75ACD0B0138F397CB"
+    }
+  },
+  "review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-014/VID-SPEC-014-consolidated-review.md",
+    "sha256": "77E37BD742469B3BD5C8789E4031E9E5535DCC973C8129318DEAD50FC62884E2",
+    "approvals": "6/6",
+    "independent_review": false
+  },
+  "limitations": [
+    "no-native-control-evidence",
+    "no-rendered-screenshot-evidence",
+    "no-font-payload-frozen",
+    "no-native-ime-evidence",
+    "no-assistive-technology-runtime-evidence",
+    "no-ui-performance-evidence"
+  ],
+  "authority": "OWNER-AUTH-V2"
+}

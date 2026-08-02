@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-PARAMETER",
+  "schema_version": "1.0.0-p00",
+  "title": "Probe adapter invocation parameter schema",
+  "description": "Exact and bounded ffprobe parameter envelope for fail-closed prelaunch.",
+  "type": "object",
+  "required": ["argv", "input_path", "allowlist", "limits"],
+  "properties": {
+    "argv": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"},
+      "contains": {
+        "const": "-of"
+      }
+    },
+    "input_path": {"type": "string"},
+    "allowlist": {
+      "type": "object",
+      "required": ["protocols", "formats"],
+      "properties": {
+        "protocols": {
+          "type": "array",
+          "items": {"type": "string"},
+          "enum": [
+            ["file"]
+          ]
+        },
+        "formats": {
+          "type": "array",
+          "items": {"type": "string"},
+          "enum": [
+            ["matroska"]
+          ]
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["preflight_envelope_bytes", "stream_limit", "wall_seconds", "cpu_seconds"],
+      "properties": {
+        "preflight_envelope_bytes": {"type": "integer", "minimum": 1},
+        "stream_limit": {"type": "integer", "minimum": 1},
+        "wall_seconds": {"type": "integer", "minimum": 1},
+        "cpu_seconds": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "additionalProperties": false
+}

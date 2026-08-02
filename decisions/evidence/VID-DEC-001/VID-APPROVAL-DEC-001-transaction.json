@@ -1,0 +1,97 @@
+{
+  "transaction_id": "VID-APPROVAL-DEC-001",
+  "transaction_revision": "0.1.0",
+  "status": "Executed",
+  "candidate": {
+    "decision_id": "VID-DEC-001",
+    "revision": "0.1",
+    "sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C"
+  },
+  "spike": {
+    "evidence_id": "VID-DEC-001-SPIKE",
+    "path": "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json",
+    "sha256": "5476BA6107D677148E784AFC6CE9F93BFF193799183A62C07CBF260ECF096BC7",
+    "status": "Pass"
+  },
+  "decisions": [
+    {
+      "role": "Product Lead: Video",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    },
+    {
+      "role": "Domain Architect: Video",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    },
+    {
+      "role": "Suite Architect",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    },
+    {
+      "role": "Security Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    },
+    {
+      "role": "QA and Compatibility Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    },
+    {
+      "role": "Release Engineering Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C",
+      "timestamp": "2026-08-02T01:27:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+        "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json"
+      ]
+    }
+  ],
+  "summary": {
+    "required": 6,
+    "approved": 6,
+    "pending": 0
+  },
+  "automatic_approval_allowed": false,
+  "independent_review": false
+}

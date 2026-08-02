@@ -1,0 +1,146 @@
+{
+  "implementation_id": "VID-IMPL-P00-002B2",
+  "issued_at": "2026-08-02T23:58:00+07:00",
+  "toolchain": {
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "sha2": "0.11.0",
+    "serde": "1.0.229",
+    "serde_json": "1.0.151",
+    "jsonschema": "0.49.3"
+  },
+  "scope": {
+    "decision": "VID-DEC-003@1.0",
+    "claim": "Real synthetic Matroska probe execution with full Draft 2020-12 output-contract validation, accepted record closure binding, and controlled dependency minimization"
+  },
+  "commands": [
+    {
+      "command": "cargo test --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" probe_adapter_runtime::tests::execute_probe_output_contract_matches_output_schema_via_draft2020_12_validator -- --exact",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "running 1 test`nrunning 0 tests`n...`nrunning 0 tests`n...`ntest probe_adapter_runtime::tests::execute_probe_output_contract_matches_output_schema_via_draft2020_12_validator ... ok`ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 3.62s"
+      }
+    },
+    {
+      "command": "cargo test --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" probe_adapter_runtime::tests::output_contract_schema_rejects_required_field_mutations -- --exact",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "running 1 test`nrunning 0 tests`n...`nrunning 0 tests`n...`ntest probe_adapter_runtime::tests::output_contract_schema_rejects_required_field_mutations ... ok`ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 3.70s"
+      }
+    },
+    {
+      "command": "cargo test --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" probe_adapter_runtime::tests::output_contract_schema_rejects_unknown_properties -- --exact",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "running 1 test`nrunning 0 tests`n...`nrunning 0 tests`n...`ntest probe_adapter_runtime::tests::output_contract_schema_rejects_unknown_properties ... ok`ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 3.64s"
+      }
+    },
+    {
+      "command": "cargo test --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" probe_adapter_runtime::tests::output_contract_schema_rejects_malformed_digest_and_violation_classes -- --exact",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "running 1 test`nrunning 0 tests`n...`nrunning 0 tests`n...`ntest probe_adapter_runtime::tests::output_contract_schema_rejects_malformed_digest_and_violation_classes ... ok`ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 3.67s"
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i wasm-bindgen --format '{p}'",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "wasm-bindgen v0.2.126 -> getrandom v0.3.4 -> ahash v0.8.12 -> jsonschema v0.49.3 (dev-dependencies) -> videolocalization-worker v0.1.0\nwasm-bindgen remains on all-targets via getrandom wasm_js target wiring"
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i wasm-bindgen --format '{p}'",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": ""
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i js-sys --format '{p}'",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "js-sys v0.3.103 -> getrandom v0.3.4 -> ahash v0.8.12 -> jsonschema v0.49.3 (dev-dependencies) -> videolocalization-worker v0.1.0"
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i js-sys --format '{p}'",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": ""
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i reqwest --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i reqwest --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i hyper --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i hyper --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i tokio --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i tokio --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i rustls --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i rustls --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i tower --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i tower --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i aws-lc-rs --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i aws-lc-rs --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i ring --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i ring --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i socket2 --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i socket2 --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i jni --format '{p}' 2>$null; cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target x86_64-pc-windows-msvc -i jni --format '{p}' 2>$null",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "all-target: reqwest/hyper/tokio/tower/rustls/aws-lc-rs/ring/socket2/jni absent\nhost-target: reqwest/hyper/tokio/tower/rustls/aws-lc-rs/ring/socket2/jni absent"
+      }
+    },
+    {
+      "command": "cargo tree --manifest-path \"Video Localization/workers/VideoLocalization.Worker/Cargo.toml\" --target all -i getrandom --edges features --format '{p} {f}'",
+      "working_directory": "Video Localization/workers/VideoLocalization.Worker",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "getrandom v0.3.4 wasm_js -> getrandom feature 'default' -> ahash/jsonschema\njsonschema path includes getrandom (feature wasm_js enabled under wasm32 target in cached jsonschema Cargo.toml)"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "schema_pos",
+      "name": "Draft 2020-12 schema positive validation test",
+      "status": "passed"
+    },
+    {
+      "id": "schema_mut_required",
+      "name": "Draft 2020-12 required-field mutation test",
+      "status": "passed"
+    },
+    {
+      "id": "schema_mut_unknown",
+      "name": "Draft 2020-12 unknown-property mutation test",
+      "status": "passed"
+    },
+    {
+      "id": "schema_mut_digest",
+      "name": "Draft 2020-12 malformed digest/violation mutation test",
+      "status": "passed"
+    },
+    {
+      "id": "forbidden_crates_host_graph",
+      "name": "Forbidden network-capability crates absent from host graph",
+      "status": "passed"
+    },
+    {
+      "id": "forbidden_crates_all_graph",
+      "name": "Forbidden network-capability crates absent from all-target graph",
+      "status": "passed"
+    },
+    {
+      "id": "wasm_bindgen_target_scope",
+      "name": "wasm-bindgen/js-sys present only in all-target due wasm32 conditional edges",
+      "status": "passed"
+    }
+  ],
+  "evidence_gaps": [],
+  "violations": []
+}

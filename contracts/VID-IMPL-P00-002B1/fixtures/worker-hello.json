@@ -1,0 +1,45 @@
+{
+  "operation_id": "submark.video-localization.media.probe",
+  "operation_version": "1.0.0-p00",
+  "implementation_id": "VID-IMPL-P00-002B1",
+  "implementation_profile_id": "VID-PROBE-P00-001",
+  "executable_path": "C:\\ProgramData\\chocolatey\\lib\\ffmpeg-full\\tools\\ffmpeg\\bin\\ffprobe.exe",
+  "executable_sha256": "9DF3B0B5275E830961DF6D94E1F7A71121A7ABD5FF708E9FEC8A0B6084A55015",
+  "component_version": "8.1.2-full_build-www.gyan.dev",
+  "transport": "local-staged-file",
+  "platform": "Windows",
+  "architecture": "x64",
+  "worker_instance_id": "worker-vid-impl-002b1-v1",
+  "control_protocol_min": "1.0.0",
+  "control_protocol_max": "1.0.0",
+  "limits": {
+    "control_envelope_bytes": 1048576,
+    "wall_time_seconds": 60,
+    "child_cpu_seconds": 60,
+    "resident_memory_bytes": 1073741824,
+    "stream_count": 256
+  },
+  "supported": [
+    "cancellation",
+    "deadline"
+  ],
+  "unsupported": [
+    "progress",
+    "checkpoint",
+    "pause-resume",
+    "partial-success",
+    "degraded-output",
+    "acceleration",
+    "auto-fallback",
+    "network"
+  ],
+  "schema_reference_ids": [
+    "VID-IMPL-P00-002B1-INPUT",
+    "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+    "VID-IMPL-P00-002B1-PARAMETER",
+    "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+    "VID-IMPL-P00-002B1-RESOURCE",
+    "VID-IMPL-P00-002B1-POLICY",
+    "VID-IMPL-P00-002B1-OUTPUT-CONTRACT"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-POLICY",
+  "schema_version": "1.0.0-p00",
+  "title": "Probe adapter policy schema",
+  "type": "object",
+  "required": ["policy_id", "isolation", "containment", "capability_class"],
+  "properties": {
+    "policy_id": {"type": "string"},
+    "isolation": {
+      "type": "object",
+      "required": ["network", "watchdog", "job_object", "transport"],
+      "properties": {
+        "network": {"type": "string", "enum": ["denied", "required"]},
+        "watchdog": {"type": "string", "enum": ["required"]},
+        "job_object": {"type": "string", "enum": ["required"]},
+        "transport": {"type": "string", "enum": ["local-staged-file"]}
+      }
+    },
+    "containment": {
+      "type": "object",
+      "required": ["proof_required"],
+      "properties": {
+        "proof_required": {"type": "boolean"},
+        "allowed_providers": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "capability_class": {"type": "string", "enum": ["probe"]}
+  },
+  "additionalProperties": false
+}

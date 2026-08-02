@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "VID-DEC-002",
+  "candidate_revision": "0.1",
+  "candidate_sha256": "AA5455A1FA2260551D9D63CDE9BA82DB621F1DA9FA4BE887833F4DC0656F14F3",
+  "authority": "OWNER-AUTH-V0#primary",
+  "review_type": "owner-authorized-consolidated-self-review",
+  "independent_review": false,
+  "decision": "Accepted",
+  "decided_at": "2026-08-01T23:41:00+07:00",
+  "conditions": [
+    "Verify distribution-channel package name availability before release identity is frozen.",
+    "Record production publisher custody and derived Package Family Name/AUMID from signed evidence.",
+    "Prove production, development, test, and modified-build isolation before release."
+  ]
+}

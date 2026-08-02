@@ -1,0 +1,97 @@
+{
+  "record_digest_profile_id": "VID-IMPL-P00-002B1-RECORD-DIGEST-PROFILE",
+  "record_digest_profile_version": "1.0.0-p00",
+  "status": "candidate_for_review",
+  "authority": "OWNER-AUTH-V2",
+  "purpose": "Bind exact-byte resource-profile and control-protocol records for VID-IMPL-P00-002B1 output digest lineage without changing the seven-schema schema-bundle.",
+  "serialization": {
+    "encoding": "UTF-8",
+    "bom": false,
+    "line_endings": "LF",
+    "indentation_spaces": 2,
+    "trailing_whitespace": false,
+    "final_newline": "exactly-one-LF",
+    "hash_coverage": "complete-file-bytes",
+    "hash_algorithm": "sha-256",
+    "hex_encoding": "lowercase-ASCII",
+    "rfc_canonical_json": false,
+    "cache_key_cbor_profile": false
+  },
+  "profile_document": {
+    "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/record-digest-profile.md",
+    "sha256": "6d311681bf65c9d854e0ddbed279b01e945e1f0be4767c3f20500cdc48affa1b"
+  },
+  "records": [
+    {
+      "role": "resource-profile",
+      "record_id": "VID-PROBE-P00-001",
+      "record_version": "1.0.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/resource-profile.json",
+      "schema_id": "VID-IMPL-P00-002B1-RESOURCE",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+      "sha256": "9daf34a362fb007c286ef0cd327984cb3c476a6b6ad853f5fae0d1f32754724b"
+    },
+    {
+      "role": "control-protocol",
+      "record_id": "SUI-SPEC-003",
+      "record_version": "1.0",
+      "control_protocol_version": "1.0.0",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/control-protocol.json",
+      "sha256": "2539250e640517eccc9dccf5feebce6cf9ec89acc26cef9ee08edc9d914d9f02"
+    }
+  ],
+  "authorities": [
+    {
+      "id": "SUI-SPEC-003",
+      "revision": "1.0",
+      "path": "_shared/specifications/SUI-SPEC-003-job-worker-artifact-protocol.md",
+      "sha256": "b5e0106bf0117587b0507fc3bbf5837b77e35fb18a6dea12c0cf9d8dd14548b7"
+    },
+    {
+      "id": "VID-DEC-003",
+      "revision": "1.0",
+      "path": "Video Localization/decisions/VID-DEC-003-initial-support-profiles.md",
+      "sha256": "0c6a9056083bfc741b49de908f74597d9bd8546b69eb75ae8c342b6ea06e2851"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-SCHEMA-BUNDLE",
+      "revision": "1.0.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schema-bundle.json",
+      "sha256": "f78bf8a7af8616b913d03539eb66ace6bf670f80c685e791521e395396f3397f"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-RESOURCE-SCHEMA",
+      "revision": "1.0.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+      "sha256": "ca4d1972499b8c5c8462e780c2e4b60e5c35d74f00cd3f87c02148f1696e1552"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-OPERATION-DESCRIPTOR",
+      "revision": "1.0.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/operation-descriptor.json",
+      "sha256": "9a43b4febc2861de127fb331adc371460e72b9783707bfbe1d12f24284257093"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-WORKER-HELLO",
+      "revision": "1.0.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/worker-hello.json",
+      "sha256": "1ff2809f813c6f16407b11f4fc35335b2c185c6a01b90a94c3f04f0fc985fa5a"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-WORKER-CONTRACT",
+      "revision": "1.0.0-p00",
+      "path": "Video Localization/workers/VideoLocalization.Worker/src/probe_adapter_contract.rs",
+      "sha256": "c1633520a516d5b21566b4941c5f01d4f30db0bee78cd1e7a48c5eb6d632b35c"
+    }
+  ],
+  "scope_exclusions": [
+    "does-not-modify-the-seven-schema-schema-bundle",
+    "not-RFC-canonical-JSON",
+    "not-sui.cache-key.cbor-sha256.v1",
+    "candidate-is-not-owner-acceptance"
+  ],
+  "hashing": {
+    "manifest_self_hash": "excluded-to-avoid-self-reference",
+    "candidate_hashes_are_recorded_in": ".agents/checkpoints/VID-IMPL-P00-002B1-record-freeze-candidate.md"
+  }
+}

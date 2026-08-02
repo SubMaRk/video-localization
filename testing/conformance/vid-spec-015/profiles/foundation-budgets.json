@@ -1,0 +1,22 @@
+{
+  "budget_id":"VID-BUDGET-015","revision":"1.0.0-review.1","profile":"WIN11-X64-BASE",
+  "method":{"warm_iterations":30,"warmups":5,"cold_start_iterations":10,"latency_statistic":"p95"},
+  "budgets":[
+    {"id":"VID-PERF-001","metric":"cold application start to interactive shell","workload":"VID-WL-PROJECT-SMALL","threshold":3,"unit":"seconds","statistic":"p95"},
+    {"id":"VID-PERF-002","metric":"create and durably save project","workload":"VID-WL-PROJECT-SMALL","threshold":1,"unit":"seconds","statistic":"p95"},
+    {"id":"VID-PERF-003","metric":"open foundation project","workload":"VID-WL-PROJECT-FOUNDATION","threshold":3,"unit":"seconds","statistic":"p95"},
+    {"id":"VID-PERF-004","metric":"committed interactive command acknowledgement","workload":"VID-WL-PROJECT-FOUNDATION","threshold":100,"unit":"milliseconds","statistic":"p95"},
+    {"id":"VID-PERF-005","metric":"replay 10000 events","workload":"VID-WL-RECOVERY","threshold":2,"unit":"seconds","statistic":"p95"},
+    {"id":"VID-PERF-006","metric":"theme or language switch with state preserved","workload":"VID-WL-LOCALE","threshold":500,"unit":"milliseconds","statistic":"p95"},
+    {"id":"VID-PERF-007","metric":"local control IPC round trip","workload":"bounded 1 KiB command","threshold":50,"unit":"milliseconds","statistic":"p95"},
+    {"id":"VID-PERF-008","metric":"idle UI presentation frame","workload":"VID-WL-PROJECT-FOUNDATION","threshold":16.7,"unit":"milliseconds","statistic":"p95"},
+    {"id":"VID-PERF-009","metric":"UI presentation frame under one background worker","workload":"VID-WL-WAVEFORM","threshold":33.3,"unit":"milliseconds","statistic":"p95"},
+    {"id":"VID-PERF-010","metric":"cooperative cancellation observed","workload":"VID-WL-WAVEFORM","threshold":2,"unit":"seconds","statistic":"max"},
+    {"id":"VID-PERF-011","metric":"forced worker termination and reconciliation","workload":"VID-WL-WAVEFORM","threshold":5,"unit":"seconds","statistic":"max"},
+    {"id":"VID-PERF-012","metric":"idle resident memory","workload":"interactive shell","threshold":768,"unit":"MiB","statistic":"p95"},
+    {"id":"VID-PERF-013","metric":"foundation peak resident memory","workload":"VID-WL-PROJECT-FOUNDATION plus one worker","threshold":4096,"unit":"MiB","statistic":"max"},
+    {"id":"VID-PERF-014","metric":"startup recovery reconciliation","workload":"VID-WL-RECOVERY","threshold":10,"unit":"seconds","statistic":"p95"},
+    {"id":"VID-PERF-015","metric":"acknowledged commands lost after force close","workload":"VID-WL-RECOVERY","threshold":1,"unit":"commands","statistic":"max"}
+  ],
+  "storage":{"recovery_reserve_gib":10,"default_rebuildable_cache_quota_gib":20,"temporary_ceiling":"declared operation estimate plus 10 percent within VID-SPEC-004 hard ceiling"}
+}

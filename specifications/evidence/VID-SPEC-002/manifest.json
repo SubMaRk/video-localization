@@ -1,0 +1,64 @@
+{
+  "evidence_id": "VID-EVID-002",
+  "evidence_revision": "1.0.0-review.1",
+  "status": "frozen",
+  "approved_candidate": {
+    "specification_id": "VID-SPEC-002",
+    "revision": "1.0-review.1",
+    "sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-002",
+    "revision": "1.0",
+    "status": "Frozen",
+    "path": "Video Localization/specifications/VID-SPEC-002-domain-schema.md",
+    "sha256": "96EE1ACFB7BC4A3702DD71BDEC541A37DBD72A9DA53E51E3A03B3AE6F47E8FE8"
+  },
+  "dependencies": [
+    {
+      "id": "SUI-SPEC-001",
+      "revision": "1.0",
+      "status": "Frozen"
+    },
+    {
+      "id": "VID-SPEC-001",
+      "revision": "1.0",
+      "status": "Frozen"
+    }
+  ],
+  "reference_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json",
+    "sha256": "7444ACD86A832C8E9C6A73F3D83FB3232E653356B83372932BF9045D37A948F3",
+    "status": "Pass",
+    "checks": "15/15"
+  },
+  "fixture_manifest": {
+    "path": "Video Localization/testing/conformance/vid-spec-002/fixtures/domain-schema-cases.json",
+    "sha256": "45F9E0572F09D5769448B5D91C1353186F1D94B16EF50507728E1CA3F06761F9",
+    "families": 8,
+    "cases": 32
+  },
+  "approval_transaction": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-002/VID-APPROVAL-002-transaction.json",
+    "sha256": "AE1F760ADA3CDEAEC915208073ED71AE2FEBAA7F9EC15113F622A4C314A6A91D",
+    "status": "Executed",
+    "approved": "5/5"
+  },
+  "review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+    "sha256": "89FE512FF7DD3B37E6DFB40602847C3358B94241F58793B92677E0CB88B6E407",
+    "independent_review": false
+  },
+  "freeze_transaction": {
+    "status": "Executed",
+    "executed_at": "2026-08-02T01:45:00+07:00"
+  },
+  "limitations": [
+    "no-native-database",
+    "no-media-library",
+    "no-timebase-math",
+    "no-hostile-ingest-runtime",
+    "no-crash-migration-run",
+    "no-product-adapter-run"
+  ]
+}

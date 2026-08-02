@@ -1,0 +1,30 @@
+name: VID-IMPL-P00-001 Scaffold
+
+on:
+  pull_request:
+    paths:
+      - "Video Localization/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scaffold-validation:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: "Video Localization"
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture exact toolchain versions
+        run: pwsh ./eng/print-versions.ps1
+      - name: Verify exact toolchain pins
+        run: pwsh ./eng/verify-toolchain.ps1
+      - name: Build scaffold check
+        run: |
+          pwsh ./eng/build.ps1
+      - name: Test scaffold check
+        run: |
+          pwsh ./eng/test.ps1

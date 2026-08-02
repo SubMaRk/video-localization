@@ -1,0 +1,85 @@
+{
+  "implementation_id": "VID-IMPL-P00-001",
+  "issue": {
+    "id": 45,
+    "title": "Repository and pinned toolchain scaffold",
+    "milestone": "v0.1.0-alpha"
+  },
+  "authority": {
+    "decision": "VID-DEC-001@1.0",
+    "phase": "Phase 00"
+  },
+  "artifact_directory": "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-001",
+  "allowed_scope": [
+    "repository structure",
+    "toolchain and dependency docs",
+    "project skeleton",
+    "test harness",
+    "CI templates"
+  ],
+  "evidence_files": [
+    "toolchain-versions.json",
+    "toolchain-verification-report.json",
+    "scaffold-build-report.json",
+    "scaffold-test-report.json"
+  ],
+  "changed_files": [
+    ".github/ISSUE_TEMPLATE/implementation-scaffold.yml",
+    ".github/PULL_REQUEST_TEMPLATE/vid-impl-p00-001.md",
+    ".github/workflows/vid-impl-p00-001-scaffold.yml",
+    "Directory.Build.props",
+    "Directory.Packages.props",
+    "VideoLocalization.sln",
+    "contracts/build/buf.gen.yaml",
+    "contracts/build/proto-bundle.gen.json",
+    "contracts/out/GeneratedBindings/.gitkeep",
+    "contracts/out/GeneratedProtos/.gitkeep",
+    "contracts/video_core.proto",
+    "eng/README.md",
+    "eng/build.ps1",
+    "eng/print-versions.ps1",
+    "eng/test.ps1",
+    "eng/verify-toolchain.ps1",
+    "global.json",
+    "nuget.config",
+    "rust-toolchain.toml",
+    "src/VideoLocalization.App/VideoLocalization.App.csproj",
+    "src/VideoLocalization.Core/VideoLocalization.Core.csproj",
+    "src/VideoLocalization.Shared/VideoLocalization.Shared.csproj",
+    "testing/implementation/VID-IMPL-P00-001/README.md",
+    "testing/implementation/VID-IMPL-P00-001/fixture-loader.json",
+    "workers/VideoLocalization.Worker/Cargo.lock",
+    "workers/VideoLocalization.Worker/Cargo.toml",
+    "workers/VideoLocalization.Worker/src/main.rs"
+  ],
+  "created_at": "2026-08-02T09:40:00+07:00",
+  "updated_at": "2026-08-02T09:55:00+07:00",
+  "assumptions": [
+    "Only repository scaffolding assets are produced for VID-IMPL-P00-001; no product/business logic is implemented.",
+    "Build and verification commands target the local Video Localization directory using PowerShell scripts in eng/.",
+    "Required VID-SPEC-015 conformance fixture directories and profile files are pre-existing and treated as read-only references.",
+    "Only one canonical buf.gen.yaml is required at contracts/build/buf.gen.yaml."
+  ],
+  "validation_commands": [
+    {
+      "command": "pwsh ./eng/print-versions.ps1",
+      "cwd": "Video Localization",
+      "result": "exit_code=0; report=toolchain-versions.json"
+    },
+    {
+      "command": "pwsh ./eng/verify-toolchain.ps1",
+      "cwd": "Video Localization",
+      "result": "exit_code=0; report=toolchain-verification-report.json"
+    },
+    {
+      "command": "pwsh ./eng/build.ps1",
+      "cwd": "Video Localization",
+      "result": "exit_code=0; report=scaffold-build-report.json"
+    },
+    {
+      "command": "pwsh ./eng/test.ps1",
+      "cwd": "Video Localization",
+      "result": "exit_code=0; report=scaffold-test-report.json"
+    }
+  ]
+}

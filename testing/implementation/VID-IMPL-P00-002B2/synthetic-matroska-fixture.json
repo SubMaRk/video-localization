@@ -1,0 +1,128 @@
+{
+  "implementation_id": "VID-IMPL-P00-002B2",
+  "decision": "VID-DEC-003@1.0",
+  "collected_at": "2026-08-02T13:06:19+07:00",
+  "scope": "Local synthetic Matroska fixture for fail-closed live probe evidence",
+  "rights": "local-only; no media binary is checked in",
+  "fixture": {
+    "path": "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.mkv",
+    "size_bytes": 218044,
+    "sha256": "53a4c836ee5e20a470416069d3dfe43d898ff1ed5dceabe417bbf302b1f79782"
+  },
+  "generator": {
+    "binary": "C:\\ProgramData\\chocolatey\\lib\\ffmpeg-full\\tools\\ffmpeg\\bin\\ffmpeg.exe",
+    "command": [
+      "-y",
+      "-loglevel",
+      "error",
+      "-f",
+      "lavfi",
+      "-i",
+      "testsrc=size=64x64:rate=24:d=1",
+      "-c:v",
+      "ffv1",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=440:duration=1",
+      "-i",
+      "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.srt",
+      "-c:v",
+      "ffv1",
+      "-map",
+      "0:v",
+      "-map",
+      "1:a",
+      "-map",
+      "2:s:0",
+      "-c:a",
+      "pcm_s16le",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
+      "-c:s",
+      "subrip",
+      "-shortest",
+      "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.mkv"
+    ]
+  },
+  "subtitle": {
+    "path": "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.srt",
+    "content": "1\n00:00:00,000 --> 00:00:01,000\nSynthetic subtitle for containment proof\n"
+  },
+  "ffprobe": {
+    "binary": "C:\\ProgramData\\chocolatey\\lib\\ffmpeg-full\\tools\\ffmpeg\\bin\\ffprobe.exe",
+    "probe_command": [
+      "-v",
+      "error",
+      "-hide_banner",
+      "-protocol_whitelist",
+      "file",
+      "-format_whitelist",
+      "matroska",
+      "-show_format",
+      "-show_streams",
+      "-show_chapters",
+      "-of",
+      "json",
+      "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.mkv"
+    ],
+    "leased_staged_input": {
+      "path": "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-impl-002b2-synthetic\\fixture.mkv",
+      "scope": "staged-local-input"
+    },
+    "verified_profile": {
+      "format_name_raw": "matroska,webm",
+      "format_name_unpromoted": true,
+      "matroska_qualified_only": true,
+      "webm_supported_by_profile": false,
+      "duration": "1.000000",
+      "nb_streams": 3,
+      "stream_codec_types": [
+        "video",
+        "audio",
+        "subtitle"
+      ],
+      "stream_codec_names": [
+        "ffv1",
+        "pcm_s16le",
+        "subrip"
+      ]
+    },
+    "executable_identity": {
+      "version_line": "ffprobe version 8.1.2-full_build-www.gyan.dev",
+      "configuration_prefix": "configuration:"
+    },
+    "executable_hash_expected": "9df3b0b5275e830961df6d94e1f7a71121a7abd5ff708e9fec8a0b6084a55015"
+  },
+  "requirements": {
+    "stream_ceiling": 256,
+    "output_envelope_bytes": 1048576,
+    "watchdog_seconds": 60,
+    "network_denial_rules": [
+      "in",
+      "out"
+    ],
+    "job_object_required": true,
+    "fixed_probe_argv_prefix": [
+      "-v",
+      "error",
+      "-hide_banner",
+      "-protocol_whitelist",
+      "file",
+      "-format_whitelist",
+      "matroska",
+      "-show_format",
+      "-show_streams",
+      "-show_chapters",
+      "-of",
+      "json"
+    ],
+    "evidence_files": [
+      "synthetic-matroska-fixture.json",
+      "manifest.json",
+      "test-report.json"
+    ]
+  }
+}

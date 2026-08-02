@@ -1,0 +1,33 @@
+{
+  "evidence_id": "VID-DEC-002-EVID",
+  "status": "accepted",
+  "approved_candidate": {
+    "decision_id": "VID-DEC-002",
+    "revision": "0.1",
+    "sha256": "AA5455A1FA2260551D9D63CDE9BA82DB621F1DA9FA4BE887833F4DC0656F14F3"
+  },
+  "accepted_artifact": {
+    "decision_id": "VID-DEC-002",
+    "revision": "1.0",
+    "path": "Video Localization/decisions/VID-DEC-002-project-package-name.md",
+    "sha256": "DF93E05E56B56D0A44AED4D51B6E10928532F592E2398909DDD4690D4D01649D"
+  },
+  "review": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-002/VID-DEC-002-consolidated-review.md",
+    "sha256": "C3BB511B50201DB2F12F5DA81EAC850EA07A17ADE312377D8C0172EC9BE8C23F",
+    "checks": "10/10",
+    "independent_review": false
+  },
+  "approval_transaction": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-002/VID-APPROVAL-002-transaction.json",
+    "sha256": "C963250F998717847B3846E5582901AD1461CAF832C6E4A8B7A95451DAE16DB5",
+    "status": "Accepted",
+    "conditions": 3
+  },
+  "release_gates": [
+    "package-name availability",
+    "production publisher custody and derived PFN/AUMID",
+    "channel and modified-build isolation"
+  ],
+  "authority": "OWNER-AUTH-V0"
+}

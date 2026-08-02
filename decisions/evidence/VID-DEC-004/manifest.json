@@ -1,0 +1,31 @@
+{
+  "evidence_id": "VID-DEC-004-EVID",
+  "status": "accepted",
+  "accepted_artifact": {
+    "decision_id": "VID-DEC-004",
+    "revision": "1.0",
+    "path": "Video Localization/decisions/VID-DEC-004-visual-direction.md",
+    "sha256": "5F2CF528B85682AB6CACEAE1C27B0F17A3D83DE1BDA97AECB4AF5B57F1820646"
+  },
+  "review": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-004/VID-DEC-004-consolidated-review.md",
+    "sha256": "7773B976B5780ACE082833F293CEF8B54DA78EC7BDCE15711831E88DE829FBE9",
+    "direction_studies": 3,
+    "selected": "Cinematic Ledger",
+    "independent_review": false
+  },
+  "approvals": {
+    "approved": "5/5",
+    "authority": [
+      "OWNER-AUTH-V0",
+      "Owner Resolution Bundle V1"
+    ]
+  },
+  "implementation_evidence": {
+    "claimed": false,
+    "owned_by": [
+      "VID-SPEC-014",
+      "SUI-SPEC-012@Exit:S1"
+    ]
+  }
+}

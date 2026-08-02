@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-INPUT",
+  "schema_version": "1.0.0-p00",
+  "title": "Probe adapter canonical input envelope",
+  "description": "Product-neutral source and identity envelope used by VID-IMPL-P00-002B1 prelaunch admission.",
+  "type": "object",
+  "required": [
+    "operation_id",
+    "operation_version",
+    "implementation_profile_id",
+    "transport",
+    "staged_lease",
+    "requested_capabilities"
+  ],
+  "properties": {
+    "operation_id": {"type": "string"},
+    "operation_version": {"type": "string"},
+    "implementation_profile_id": {"type": "string"},
+    "input_schema_ref": {"type": "string"},
+    "transport": {"type": "string", "enum": ["local-staged-file"]},
+    "requested_capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "staged_lease": {
+      "type": "object",
+      "required": [
+        "lease_id",
+        "lease_epoch",
+        "minimum_acceptable_lease_epoch",
+        "immutable",
+        "source_sha256",
+        "source_length",
+        "staged_copy_identity",
+        "staged_copy_sha256",
+        "staged_copy_length",
+        "observed_staged_copy_identity",
+        "observed_staged_copy_sha256",
+        "observed_staged_copy_length",
+        "access_scope",
+        "expires_at",
+        "manifest_digest",
+        "logical_source_ref",
+        "observed_fence_token",
+        "expected_fence_token"
+      ],
+      "properties": {
+        "lease_id": {"type": "string"},
+        "lease_epoch": {"type": "integer", "minimum": 0},
+        "minimum_acceptable_lease_epoch": {"type": "integer", "minimum": 0},
+        "immutable": {"type": "boolean"},
+        "source_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "source_length": {"type": "integer", "minimum": 0},
+        "staged_copy_identity": {"type": "string", "minLength": 1},
+        "staged_copy_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "staged_copy_length": {"type": "integer", "minimum": 0},
+        "observed_staged_copy_identity": {"type": "string", "minLength": 1},
+        "observed_staged_copy_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "observed_staged_copy_length": {"type": "integer", "minimum": 0},
+        "access_scope": {"type": "string", "minLength": 1},
+        "expires_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+\\-]\\d{2}:\\d{2})$"
+        },
+        "manifest_digest": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "logical_source_ref": {"type": "string", "minLength": 1},
+        "observed_fence_token": {"type": "string", "minLength": 1},
+        "expected_fence_token": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "launch_policy": {
+      "type": "object",
+      "required": ["use_shell", "use_path_lookup", "user_supplied_options"],
+      "properties": {
+        "use_shell": {"type": "boolean"},
+        "use_path_lookup": {"type": "boolean"},
+        "user_supplied_options": {"type": "boolean"}
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "evidence_id": "VID-DEC-001-EVID",
+  "status": "accepted",
+  "approved_candidate": {
+    "decision_id": "VID-DEC-001",
+    "revision": "0.1",
+    "sha256": "86CBBB35595A1E67DE9D626D146093F97140200C74C5B9982A78289FBDC3236C"
+  },
+  "accepted_artifact": {
+    "decision_id": "VID-DEC-001",
+    "revision": "1.0",
+    "path": "Video Localization/decisions/VID-DEC-001-implementation-stack.md",
+    "sha256": "6CF55D64FF8BF4F4B4A773F075A73D767F1C831DD137C1D546BC562DA7AD5037"
+  },
+  "architecture_spike": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-architecture-spike.json",
+    "sha256": "5476BA6107D677148E784AFC6CE9F93BFF193799183A62C07CBF260ECF096BC7",
+    "status": "Pass"
+  },
+  "review": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-001/VID-DEC-001-consolidated-review.md",
+    "sha256": "2BC1DFF7ABE89BC18F9057D056DABDE86BB258DA561D7455FFFC4F4D51360AB4",
+    "checks": "11/11",
+    "independent_review": false
+  },
+  "approval_transaction": {
+    "path": "Video Localization/decisions/evidence/VID-DEC-001/VID-APPROVAL-DEC-001-transaction.json",
+    "sha256": "CB2CDF2FC2A1259BF9F9A1BDBB2613FB6F87C90009F072D44C8DD7B213FBDA49",
+    "status": "Executed",
+    "approved": "6/6"
+  },
+  "limitations": [
+    "WinUI-shell",
+    "production-framing-and-authentication",
+    "native-media-behavior",
+    "crash-recovery",
+    "MSIX-packaging"
+  ],
+  "accepted_at": "2026-08-02T01:27:00+07:00"
+}

@@ -1,0 +1,81 @@
+{
+  "artifact_id": "VID-IMPL-P00-002B1",
+  "artifact_version": "1.0.0-p00",
+  "operation_id": "submark.video-localization.media.probe",
+  "operation_version": "1.0.0-p00",
+  "implementation_profile_id": "VID-PROBE-P00-001",
+  "implementation_id": "VID-IMPL-P00-002B1",
+  "fixture_records": [
+    {
+      "role": "operation-descriptor",
+      "path": "contracts/VID-IMPL-P00-002B1/fixtures/operation-descriptor.json",
+      "sha256": "9a43b4febc2861de127fb331adc371460e72b9783707bfbe1d12f24284257093"
+    },
+    {
+      "role": "worker-hello",
+      "path": "contracts/VID-IMPL-P00-002B1/fixtures/worker-hello.json",
+      "sha256": "1ff2809f813c6f16407b11f4fc35335b2c185c6a01b90a94c3f04f0fc985fa5a"
+    },
+    {
+      "role": "disposition-mapping",
+      "path": "contracts/VID-IMPL-P00-002B1/fixtures/disposition-mapping.json",
+      "sha256": "5c2b33cb9211090b31f9b3a180e61f6b0347731bdd289328a33c826d048ea031"
+    },
+    {
+      "role": "publication-fixture",
+      "path": "contracts/VID-IMPL-P00-002B1/fixtures/publication-fixture.json",
+      "sha256": "bced833f8c87a304173c7989bcfa7cb679f8f52999f7b5fcce09773584034498"
+    }
+  ],
+  "schema_records": [
+    {
+      "schema_id": "VID-IMPL-P00-002B1-INPUT",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-INPUT.schema.json",
+      "sha256": "4b0a7aac94986fd5834bdd605a16a8a95a4076427d826e79ccc9d19e494b8860"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION.schema.json",
+      "sha256": "6f781dd53b204514b0e85dc7f15fe1b5d438a3e83ff6785bff43c23db0e28737"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-PARAMETER",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-PARAMETER.schema.json",
+      "sha256": "be8ace6f05b4077e5ed97369e92f8509ce880149f6ca0fb6d438bd498210f76b"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-STRUCTURED-ERROR.schema.json",
+      "sha256": "3851a664dadfa6f9579da7fcbb86b862eeaee7d7595cac58b73420bce4d4ea3f"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-RESOURCE",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+      "sha256": "ca4d1972499b8c5c8462e780c2e4b60e5c35d74f00cd3f87c02148f1696e1552"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-POLICY",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-POLICY.schema.json",
+      "sha256": "f886d63c5a4e4f1e6969df4380aaaec03a8f3f74725d69aba1598926809e0aa0"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-002B1-OUTPUT-CONTRACT",
+      "schema_version": "1.0.0-p00",
+      "path": "contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-OUTPUT-CONTRACT.schema.json",
+      "sha256": "2d46c6e6f6f1974923f4b553fc5089ed849f9fe376285e7f4a44fcf11dbf7548"
+    }
+  ],
+  "assumptions": [
+    "No real child process launch is implemented in this assignment.",
+    "No network paths, ffprobe execution, codec selection, or executable distribution are part of this slice.",
+    "Observed schema hashes are canonical UTF-8 file hashes in lowercase hexadecimal."
+  ],
+  "created_at": "2026-08-02T11:05:24+07:00",
+  "last_updated_at": "2026-08-02T11:05:24+07:00"
+}

@@ -1,0 +1,31 @@
+{
+  "implementation_id": "VID-IMPL-P00-002A",
+  "issue": {
+    "id": 29,
+    "title": "Local-file preflight and deterministic content fingerprint",
+    "milestone": "v0.1.0-alpha"
+  },
+  "authority": {
+    "decision": "OWNER-AUTH-V2",
+    "phase": "Phase 00"
+  },
+  "artifact_directory": "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-002A",
+  "allowed_scope": [
+    "local-file preflight",
+    "file fingerprinting",
+    "mutation detection",
+    "machine tests"
+  ],
+  "evidence_files": [
+    "test-report.json",
+    "manifest.json"
+  ],
+  "artifacts": [
+    "Video Localization/workers/VideoLocalization.Worker/Cargo.lock",
+    "Video Localization/workers/VideoLocalization.Worker/src/preflight.rs",
+    "Video Localization/workers/VideoLocalization.Worker/src/fingerprint.rs",
+    "Video Localization/workers/VideoLocalization.Worker/src/lib.rs",
+    "Video Localization/workers/VideoLocalization.Worker/tests/preflight_fingerprint.rs"
+  ],
+  "created_at": "2026-08-02T10:32:00+07:00"
+}

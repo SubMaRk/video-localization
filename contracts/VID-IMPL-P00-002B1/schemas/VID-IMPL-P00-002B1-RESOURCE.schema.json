@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-RESOURCE",
+  "schema_version": "1.0.0-p00",
+  "title": "Probe adapter resource profile schema",
+  "type": "object",
+  "required": ["resource_id", "limits", "transport", "caps"],
+  "properties": {
+    "resource_id": {"type": "string"},
+    "limits": {
+      "type": "object",
+      "required": ["control_envelope_bytes", "stream_limit", "wall_time_seconds", "cpu_time_seconds", "resident_memory_bytes"],
+      "properties": {
+        "control_envelope_bytes": {"type": "integer", "minimum": 1},
+        "stream_limit": {"type": "integer", "minimum": 1},
+        "wall_time_seconds": {"type": "integer", "minimum": 1},
+        "cpu_time_seconds": {"type": "integer", "minimum": 1},
+        "resident_memory_bytes": {"type": "integer", "minimum": 1}
+      }
+    },
+    "transport": {"type": "string"},
+    "caps": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

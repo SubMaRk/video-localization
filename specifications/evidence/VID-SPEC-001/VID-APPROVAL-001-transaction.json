@@ -1,0 +1,164 @@
+{
+  "transaction_id": "VID-APPROVAL-001",
+  "transaction_revision": "0.1.0-draft.1",
+  "status": "Executed",
+  "candidate": {
+    "specification_id": "VID-SPEC-001",
+    "revision": "0.1-draft.1",
+    "status": "Drafting",
+    "path": "Video Localization/specifications/VID-SPEC-001-foundation-prd.md",
+    "sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC"
+  },
+  "machine_evidence": {
+    "evidence_id": "VID-EVID-001",
+    "revision": "0.1.0-draft.1",
+    "status": "Pass",
+    "path": "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json",
+    "sha256": "E678F97244E88C60E12CF08C1D4D97845F90360E9659661B00521D2ABDC10670"
+  },
+  "decisions": [
+    {
+      "role": "Product Lead: Video",
+      "kind": "owner-attestation",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Domain Architect: Video",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Shared Platform Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Security Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "UX and Design Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Internationalization Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Accessibility Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "QA and Compatibility Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    },
+    {
+      "role": "Release Engineering Lead",
+      "kind": "required-review",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC",
+      "timestamp": "2026-08-02T00:18:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json"
+      ],
+      "comments": "Exact-candidate consolidated review approved under the owner override; this is not an independent-review claim."
+    }
+  ],
+  "summary": {
+    "required": 9,
+    "approved": 9,
+    "rejected": 0,
+    "pending": 0
+  },
+  "execution_preconditions": [
+    "Every decision is Approved by an identified approver with an authority assignment.",
+    "Every decision binds the exact candidate SHA-256.",
+    "Every blocking review finding is resolved or has an authorized bounded exception.",
+    "The machine evidence still passes for the unchanged candidate.",
+    "The final freeze update is atomic across the specification, register, evidence manifest, project memory, and GitHub traceability state."
+  ],
+  "automatic_approval_allowed": false,
+  "authorized_agent_decision_counts_as_approval": true,
+  "unassigned_agent_recommendation_counts_as_approval": false,
+  "dependency_acceptance_counts_as_candidate_approval": false
+}

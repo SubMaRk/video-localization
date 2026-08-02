@@ -1,0 +1,155 @@
+{
+  "issued_at": "2026-08-02T09:50:47.5996628+07:00",
+  "repository": "Video Localization",
+  "checks": [
+    {
+      "id": "HAS_VID-SPEC-015-fixture-folder",
+      "name": "VID-SPEC-015-fixture-folder exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "HAS_VID-SPEC-015-budget-profile",
+      "name": "VID-SPEC-015-budget-profile exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "HAS_fixture-loader-manifest",
+      "name": "fixture-loader-manifest exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FIXTURE_LOADER_JSON",
+      "name": "fixture-loader.json is valid JSON",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "FIXTURE_LOADER_SOURCE",
+      "name": "fixture-loader points to VID-SPEC-015 artifacts",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_eng\\README.md",
+      "name": "No TODO/TBD/FIXME in eng\\README.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_Directory.Packages.props",
+      "name": "No TODO/TBD/FIXME in Directory.Packages.props",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_workers\\VideoLocalization.Worker\\Cargo.toml",
+      "name": "No TODO/TBD/FIXME in workers\\VideoLocalization.Worker\\Cargo.toml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_workers\\VideoLocalization.Worker\\src\\main.rs",
+      "name": "No TODO/TBD/FIXME in workers\\VideoLocalization.Worker\\src\\main.rs",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_contracts\\video_core.proto",
+      "name": "No TODO/TBD/FIXME in contracts\\video_core.proto",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_contracts\\build\\buf.gen.yaml",
+      "name": "No TODO/TBD/FIXME in contracts\\build\\buf.gen.yaml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_contracts\\build\\proto-bundle.gen.json",
+      "name": "No TODO/TBD/FIXME in contracts\\build\\proto-bundle.gen.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_.github\\workflows\\vid-impl-p00-001-scaffold.yml",
+      "name": "No TODO/TBD/FIXME in .github\\workflows\\vid-impl-p00-001-scaffold.yml",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_src\\VideoLocalization.App\\VideoLocalization.App.csproj",
+      "name": "No TODO/TBD/FIXME in src\\VideoLocalization.App\\VideoLocalization.App.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_src\\VideoLocalization.Core\\VideoLocalization.Core.csproj",
+      "name": "No TODO/TBD/FIXME in src\\VideoLocalization.Core\\VideoLocalization.Core.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDERS_src\\VideoLocalization.Shared\\VideoLocalization.Shared.csproj",
+      "name": "No TODO/TBD/FIXME in src\\VideoLocalization.Shared\\VideoLocalization.Shared.csproj",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_PLACEHOLDER_STRINGS",
+      "name": "Scaffold files contain no forbidden placeholder markers",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "BUFGEN_SINGLE_CANONICAL",
+      "name": "Exactly one buf.gen.yaml exists at canonical build path",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "BUFGEN_CANONICAL_EXISTS",
+      "name": "contracts/build/buf.gen.yaml exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "CARGO_LOCK_EXISTS",
+      "name": "Rust dependency lock exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "PACKAGE_BINDING_Microsoft_WindowsAppSDK",
+      "name": "Microsoft.WindowsAppSDK is bound to its project",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "PACKAGE_BINDING_Microsoft_Data_Sqlite",
+      "name": "Microsoft.Data.Sqlite is bound to its project",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "PACKAGE_BINDING_Google_Protobuf",
+      "name": "Google.Protobuf is bound to its project",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "id": "NO_MEDIA_LOGIC_IN_SCOPE",
+      "name": "No product media logic text appears in scaffold scope",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "evidence_id": "VID-SPEC-015-EVID",
+  "status": "frozen-entry-contract",
+  "approved_candidate": {
+    "specification_id": "VID-SPEC-015",
+    "revision": "1.0-review.1",
+    "sha256": "30B1A3E6520832CD72DF70B68B0A47CA177513A0682766E8655C8A001A696D6B"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-015",
+    "revision": "1.0",
+    "path": "Video Localization/specifications/VID-SPEC-015-foundation-verification.md",
+    "sha256": "DBB269C28175800542E38635B327FC638738EBFBB712303DFE187C289292FACD"
+  },
+  "dependencies": [
+    "VID-SPEC-001@1.0 Frozen",
+    "VID-SPEC-002@1.0 Frozen",
+    "VID-SPEC-003@1.0 Frozen",
+    "VID-SPEC-004@1.0 Frozen",
+    "VID-SPEC-014@1.0 Frozen"
+  ],
+  "entry_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-015/VID-EVID-015-entry-result.json",
+    "sha256": "CA0E7ED94FE3737948193756F38095C403915299D05B73D9D5894086CFAF4600",
+    "checks": "19/19",
+    "status": "Pass",
+    "classification": "entry-contract-conformance-only"
+  },
+  "assets": {
+    "environment": {
+      "path": "Video Localization/testing/conformance/vid-spec-015/profiles/environment-matrix.json",
+      "sha256": "B01BFAA3F507A16FE2861B59221DD1CC591F052D1D7A53222C59C39EC0417AEB"
+    },
+    "budgets": {
+      "path": "Video Localization/testing/conformance/vid-spec-015/profiles/foundation-budgets.json",
+      "sha256": "FB22ABB062A49C47E13B3F43C08B61061866F28422C20E72146FB289E6AEDC41"
+    },
+    "corpus": {
+      "path": "Video Localization/testing/conformance/vid-spec-015/fixtures/foundation-corpus.json",
+      "sha256": "1BD2ADF64FE0EED3033A8F72C4127E3A207596064B668298C650B492E3BB91EE"
+    },
+    "faults": {
+      "path": "Video Localization/testing/conformance/vid-spec-015/fixtures/fault-matrix.json",
+      "sha256": "D6B7C0E5F51815C2965EB540368D6116075F3B104C6651A2F704CFA6EB6590BD"
+    }
+  },
+  "review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-015/VID-SPEC-015-entry-consolidated-review.md",
+    "sha256": "6FE647ECEE0C29BC5C14D51A3F9E04E5C3C6120C10364F0830E4D3AA4B49C50B",
+    "approvals": "7/7",
+    "independent_review": false
+  },
+  "exit_status": "Pending implementation evidence",
+  "limitations": [
+    "planned-generators-are-not-materialized-fixtures",
+    "no-runtime-performance-evidence",
+    "no-runtime-recovery-evidence",
+    "no-runtime-interoperability-evidence",
+    "no-release-support-claim"
+  ],
+  "authority": "OWNER-AUTH-V2"
+}

@@ -1,0 +1,10 @@
+{
+  "matrix_id":"VID-ENV-015","revision":"1.0.0-review.1","qualification_date":"2026-08-02",
+  "profiles":[
+    {"id":"WIN11-X64-BASE","required":"entry-and-exit","os":"Windows 11","versions":["24H2","25H2"],"serviced_build_required":true,"architecture":"x64","physical_cores":4,"logical_cores":8,"ram_gib":16,"display":"1920x1080","filesystem":"NTFS-local","free_disk_gib":100,"gpu":"integrated-or-software-capable","network_required":false},
+    {"id":"WIN11-X64-REF","required":"reference","os":"Windows 11","versions":["25H2"],"serviced_build_required":true,"architecture":"x64","physical_cores":8,"ram_gib":32,"display":"2560x1440","filesystem":"NTFS-local-NVMe","gpu":"Direct3D-12-capable","network_required":false},
+    {"id":"WIN11-X64-LOW","required":"safe-failure-only","os":"Windows 11","versions":["24H2","25H2"],"serviced_build_required":true,"architecture":"x64","logical_cores":4,"ram_gib":8,"display":"1366x768","filesystem":"NTFS-local","free_disk_gib":20,"network_required":false}
+  ],
+  "axes":{"locales":["en","th"],"themes":["System","Light","Dark","High Contrast"],"densities":["Compact","Comfortable"],"scale_percent":[100,150,200],"package_modes":["internal-unpackaged","developer-signed-MSIX-later-evidence"]},
+  "non_qualifying":["Windows Insider or preview build","ARM64","macOS","Linux","active project database on network or removable volume","remote-desktop support claim","virtualized-GPU support claim"]
+}

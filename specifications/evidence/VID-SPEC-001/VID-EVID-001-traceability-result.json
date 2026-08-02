@@ -1,0 +1,90 @@
+{
+  "evidence_id": "VID-EVID-001",
+  "evidence_revision": "0.1.0-draft.1",
+  "status": "Pass",
+  "candidate": {
+    "specification_id": "VID-SPEC-001",
+    "revision": "0.1-draft.1",
+    "status": "Drafting",
+    "path": "Video Localization/specifications/VID-SPEC-001-foundation-prd.md",
+    "sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC"
+  },
+  "summary": {
+    "checks": 13,
+    "passed": 13,
+    "failed": 0,
+    "phase_00_requirements": 20,
+    "phase_01_requirements": 15,
+    "acceptance_gates": 7,
+    "downstream_references": 15,
+    "local_links": 9
+  },
+  "checks": [
+    {
+      "id": "structure.one-h1",
+      "status": "Pass",
+      "evidence": "Found 1 H1 heading(s); expected 1."
+    },
+    {
+      "id": "metadata.status",
+      "status": "Pass",
+      "evidence": "Expected Drafting metadata status."
+    },
+    {
+      "id": "metadata.revision",
+      "status": "Pass",
+      "evidence": "Expected revision 0.1-draft.1."
+    },
+    {
+      "id": "requirements.count",
+      "status": "Pass",
+      "evidence": "Found 35 requirement rows; expected 35."
+    },
+    {
+      "id": "requirements.unique",
+      "status": "Pass",
+      "evidence": "Found 35 unique IDs from 35 rows."
+    },
+    {
+      "id": "requirements.sequence",
+      "status": "Pass",
+      "evidence": "Missing: ; unexpected: ."
+    },
+    {
+      "id": "requirements.registered-references",
+      "status": "Pass",
+      "evidence": "Unregistered downstream references: ."
+    },
+    {
+      "id": "scope.no-later-phase-reference",
+      "status": "Pass",
+      "evidence": "Later-phase references in Phase 00/01 requirement mappings: ."
+    },
+    {
+      "id": "gates.complete",
+      "status": "Pass",
+      "evidence": "Found 7 gates; missing: ."
+    },
+    {
+      "id": "register.status",
+      "status": "Pass",
+      "evidence": "VID-SPEC-001 register row must be Drafting for this candidate."
+    },
+    {
+      "id": "dependency.sui-dec-008",
+      "status": "Pass",
+      "evidence": "SUI-DEC-008 must be Accepted revision 1.0."
+    },
+    {
+      "id": "references.local-links",
+      "status": "Pass",
+      "evidence": "Missing local links: ."
+    },
+    {
+      "id": "traceability.github-issue",
+      "status": "Pass",
+      "evidence": "Expected GitHub work item SubMaRk/video-localization#19."
+    }
+  ],
+  "approval_boundary": "A machine Pass proves structural traceability only. It does not approve, freeze, implement, or verify VID-SPEC-001."
+}

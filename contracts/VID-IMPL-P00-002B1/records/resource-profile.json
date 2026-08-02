@@ -1,0 +1,15 @@
+{
+  "resource_id": "VID-PROBE-P00-001",
+  "limits": {
+    "control_envelope_bytes": 1048576,
+    "stream_limit": 256,
+    "wall_time_seconds": 60,
+    "cpu_time_seconds": 60,
+    "resident_memory_bytes": 1073741824
+  },
+  "transport": "local-staged-file",
+  "caps": [
+    "cancellation",
+    "deadline"
+  ]
+}

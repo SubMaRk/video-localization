@@ -1,0 +1,19 @@
+name: "Implementation scaffold"
+description: "Track repository scaffold and toolchain readiness work"
+title: "[Implementation] VID-IMPL-P00-001 scaffold"
+labels:
+  - "area:infrastructure"
+  - "scope:phase00"
+body:
+  - type: textarea
+    id: status
+    attributes:
+      label: Implementation issue status
+      description: "Update completed scope and evidence artifact path."
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Version and environment assumptions
+      description: "List toolchain pins, runtime assumptions, and gating dependencies."
