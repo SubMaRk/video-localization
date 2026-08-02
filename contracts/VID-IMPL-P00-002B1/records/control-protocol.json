@@ -1,0 +1,78 @@
+{
+  "protocol_specification_id": "SUI-SPEC-003",
+  "protocol_specification_revision": "1.0",
+  "control_protocol_version": "1.0.0",
+  "operation": {
+    "operation_id": "submark.video-localization.media.probe",
+    "operation_version": "1.0.0-p00",
+    "implementation_id": "VID-IMPL-P00-002B1",
+    "implementation_profile_id": "VID-PROBE-P00-001",
+    "schema_reference_ids": [
+      "VID-IMPL-P00-002B1-INPUT",
+      "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+      "VID-IMPL-P00-002B1-PARAMETER",
+      "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+      "VID-IMPL-P00-002B1-RESOURCE",
+      "VID-IMPL-P00-002B1-POLICY",
+      "VID-IMPL-P00-002B1-OUTPUT-CONTRACT"
+    ],
+    "supported_capabilities": [
+      "cancellation",
+      "deadline"
+    ],
+    "unsupported_capabilities": [
+      "progress",
+      "checkpoint",
+      "pause-resume",
+      "partial-success",
+      "degraded-output",
+      "acceleration",
+      "auto-fallback",
+      "network"
+    ],
+    "transport": "local-staged-file",
+    "control_protocol_min": "1.0.0",
+    "control_protocol_max": "1.0.0"
+  },
+  "worker": {
+    "platform": "Windows",
+    "architecture": "x64",
+    "executable_path": "C:\\ProgramData\\chocolatey\\lib\\ffmpeg-full\\tools\\ffmpeg\\bin\\ffprobe.exe",
+    "executable_sha256": "9df3b0b5275e830961df6d94e1f7a71121a7abd5ff708e9fec8a0b6084a55015",
+    "component_version": "8.1.2-full_build-www.gyan.dev",
+    "limits": {
+      "control_envelope_bytes": 1048576,
+      "wall_time_seconds": 60,
+      "child_cpu_seconds": 60,
+      "resident_memory_bytes": 1073741824,
+      "stream_count": 256
+    },
+    "supported": [
+      "cancellation",
+      "deadline"
+    ],
+    "unsupported": [
+      "progress",
+      "checkpoint",
+      "pause-resume",
+      "partial-success",
+      "degraded-output",
+      "acceleration",
+      "auto-fallback",
+      "network"
+    ],
+    "schema_reference_ids": [
+      "VID-IMPL-P00-002B1-INPUT",
+      "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+      "VID-IMPL-P00-002B1-PARAMETER",
+      "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+      "VID-IMPL-P00-002B1-RESOURCE",
+      "VID-IMPL-P00-002B1-POLICY",
+      "VID-IMPL-P00-002B1-OUTPUT-CONTRACT"
+    ]
+  },
+  "transport": {
+    "kind": "local-staged-file",
+    "network_capability": "unsupported"
+  }
+}

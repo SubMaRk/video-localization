@@ -1,0 +1,228 @@
+{
+  "implementation_id": "VID-IMPL-P00-002B2",
+  "issue": {
+    "id": 29,
+    "title": "Contained Real Synthetic Probe",
+    "milestone": "v0.1.0-alpha"
+  },
+  "authority": {
+    "decision": "OWNER-AUTH-V2",
+    "phase": "Phase 00"
+  },
+  "artifact_directory": "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-002B2",
+  "allowed_scope": [
+    "real synthetic Matroska evidence",
+    "live containment and executable identity checks",
+    "bounded output/JSON parse failure handling",
+    "negative-path witness coverage",
+    "acceptance closure binding for 002B1 record profile/protocol/profile manifest/decision"
+  ],
+  "evidence_files": [
+    "manifest.json",
+    "test-report.json"
+  ],
+  "fixture_records": [
+    {
+      "role": "record-digest-profile",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/record-digest-profile.md",
+      "sha256": "6d311681bf65c9d854e0ddbed279b01e945e1f0be4767c3f20500cdc48affa1b"
+    },
+    {
+      "role": "resource-profile",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/resource-profile.json",
+      "sha256": "9daf34a362fb007c286ef0cd327984cb3c476a6b6ad853f5fae0d1f32754724b"
+    },
+    {
+      "role": "control-protocol",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/control-protocol.json",
+      "sha256": "2539250e640517eccc9dccf5feebce6cf9ec89acc26cef9ee08edc9d914d9f02"
+    },
+    {
+      "role": "record-manifest",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/manifest.json",
+      "sha256": "d19acc0cabfd1903e7077267ac1af1a4368c823da2cb64f8a5c5f413ffab2cdf"
+    },
+    {
+      "role": "primary-record-freeze",
+      "path": ".agents/reviews/VID-IMPL-P00-002B1-record-freeze/primary-acceptance.md",
+      "sha256": "b0d74764967a967f2f6843e4ff7baa9fa5b304f0c2cbaf8de2669a6783a94990"
+    },
+    {
+      "role": "synthetic-matroska",
+      "path": "Video Localization/testing/implementation/VID-IMPL-P00-002B2/synthetic-matroska-fixture.json",
+      "sha256": "5fafdc3e429b5f24216ba878cb49b12cb778d8b9ad82acd28ea4b73ead3b4849"
+    }
+  ],
+  "schema_bundle_records": [
+    {
+      "role": "schema-bundle",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schema-bundle.json",
+      "sha256": "f78bf8a7af8616b913d03539eb66ace6bf670f80c685e791521e395396f3397f"
+    },
+    {
+      "role": "schema-input",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-INPUT.schema.json",
+      "sha256": "4b0a7aac94986fd5834bdd605a16a8a95a4076427d826e79ccc9d19e494b8860"
+    },
+    {
+      "role": "schema-normalized-observation",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION.schema.json",
+      "sha256": "6f781dd53b204514b0e85dc7f15fe1b5d438a3e83ff6785bff43c23db0e28737"
+    },
+    {
+      "role": "schema-parameter",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-PARAMETER.schema.json",
+      "sha256": "be8ace6f05b4077e5ed97369e92f8509ce880149f6ca0fb6d438bd498210f76b"
+    },
+    {
+      "role": "schema-structured-error",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-STRUCTURED-ERROR.schema.json",
+      "sha256": "3851a664dadfa6f9579da7fcbb86b862eeaee7d7595cac58b73420bce4d4ea3f"
+    },
+    {
+      "role": "schema-resource",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+      "sha256": "ca4d1972499b8c5c8462e780c2e4b60e5c35d74f00cd3f87c02148f1696e1552"
+    },
+    {
+      "role": "schema-policy",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-POLICY.schema.json",
+      "sha256": "f886d63c5a4e4f1e6969df4380aaaec03a8f3f74725d69aba1598926809e0aa0"
+    },
+    {
+      "role": "schema-output-contract",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-OUTPUT-CONTRACT.schema.json",
+      "sha256": "2d46c6e6f6f1974923f4b553fc5089ed849f9fe376285e7f4a44fcf11dbf7548"
+    }
+  ],
+  "artifact_records": [
+    {
+      "path": "Video Localization/workers/VideoLocalization.Worker/src/probe_adapter_contract.rs",
+      "sha256": "c1633520a516d5b21566b4941c5f01d4f30db0bee78cd1e7a48c5eb6d632b35c"
+    },
+    {
+      "path": "Video Localization/workers/VideoLocalization.Worker/src/probe_adapter_runtime.rs",
+      "sha256": "09dacd6192f1bd1fd5953b4e50c2184c318261d1af47872a728cedb75b0a4580"
+    },
+    {
+      "path": "Video Localization/workers/VideoLocalization.Worker/src/lib.rs",
+      "sha256": "063bc9f67d3ba3149028f46860bdadfa4a95813309ca1fb7b4839a52c1e45429"
+    },
+    {
+      "path": "Video Localization/workers/VideoLocalization.Worker/Cargo.toml",
+      "sha256": "eddafbb1809c18af341b5034b9636357844261f52d4f3a90975e2a05cdd817bc"
+    },
+    {
+      "path": "Video Localization/workers/VideoLocalization.Worker/Cargo.lock",
+      "sha256": "0155fd3c16ca38ad45e4529d306edc709f6dd508ca486b08af9f0f64e2c2ea18"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/record-digest-profile.md",
+      "sha256": "6d311681bf65c9d854e0ddbed279b01e945e1f0be4767c3f20500cdc48affa1b"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/resource-profile.json",
+      "sha256": "9daf34a362fb007c286ef0cd327984cb3c476a6b6ad853f5fae0d1f32754724b"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/control-protocol.json",
+      "sha256": "2539250e640517eccc9dccf5feebce6cf9ec89acc26cef9ee08edc9d914d9f02"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/manifest.json",
+      "sha256": "d19acc0cabfd1903e7077267ac1af1a4368c823da2cb64f8a5c5f413ffab2cdf"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schema-bundle.json",
+      "sha256": "f78bf8a7af8616b913d03539eb66ace6bf670f80c685e791521e395396f3397f"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-INPUT.schema.json",
+      "sha256": "4b0a7aac94986fd5834bdd605a16a8a95a4076427d826e79ccc9d19e494b8860"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION.schema.json",
+      "sha256": "6f781dd53b204514b0e85dc7f15fe1b5d438a3e83ff6785bff43c23db0e28737"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-PARAMETER.schema.json",
+      "sha256": "be8ace6f05b4077e5ed97369e92f8509ce880149f6ca0fb6d438bd498210f76b"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-STRUCTURED-ERROR.schema.json",
+      "sha256": "3851a664dadfa6f9579da7fcbb86b862eeaee7d7595cac58b73420bce4d4ea3f"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+      "sha256": "ca4d1972499b8c5c8462e780c2e4b60e5c35d74f00cd3f87c02148f1696e1552"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-POLICY.schema.json",
+      "sha256": "f886d63c5a4e4f1e6969df4380aaaec03a8f3f74725d69aba1598926809e0aa0"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-OUTPUT-CONTRACT.schema.json",
+      "sha256": "2d46c6e6f6f1974923f4b553fc5089ed849f9fe376285e7f4a44fcf11dbf7548"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/operation-descriptor.json",
+      "sha256": "9a43b4febc2861de127fb331adc371460e72b9783707bfbe1d12f24284257093"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/worker-hello.json",
+      "sha256": "1ff2809f813c6f16407b11f4fc35335b2c185c6a01b90a94c3f04f0fc985fa5a"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/disposition-mapping.json",
+      "sha256": "5c2b33cb9211090b31f9b3a180e61f6b0347731bdd289328a33c826d048ea031"
+    },
+    {
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/publication-fixture.json",
+      "sha256": "bced833f8c87a304173c7989bcfa7cb679f8f52999f7b5fcce09773584034498"
+    },
+    {
+      "path": "Video Localization/testing/implementation/VID-IMPL-P00-002B1/prelaunch-fixtures.json",
+      "sha256": "48d4a3c12b4120044c3af40260dbea226a16c2628f756f00d23e09d0425f411b"
+    },
+    {
+      "path": "Video Localization/testing/implementation/VID-IMPL-P00-002B2/README.md",
+      "sha256": "efcd72f9439b1ded5c0ea9d9b083996cf60e79c24ac9937316f90631580d53f4"
+    },
+    {
+      "path": "Video Localization/testing/implementation/VID-IMPL-P00-002B2/synthetic-matroska-fixture.json",
+      "sha256": "5fafdc3e429b5f24216ba878cb49b12cb778d8b9ad82acd28ea4b73ead3b4849"
+    },
+    {
+      "path": ".agents/reviews/VID-IMPL-P00-002B1-record-freeze/primary-acceptance.md",
+      "sha256": "b0d74764967a967f2f6843e4ff7baa9fa5b304f0c2cbaf8de2669a6783a94990"
+    }
+  ],
+  "artifacts": [
+    "Video Localization/workers/VideoLocalization.Worker/src/probe_adapter_contract.rs",
+    "Video Localization/workers/VideoLocalization.Worker/src/probe_adapter_runtime.rs",
+    "Video Localization/workers/VideoLocalization.Worker/src/lib.rs",
+    "Video Localization/workers/VideoLocalization.Worker/Cargo.toml",
+    "Video Localization/workers/VideoLocalization.Worker/Cargo.lock",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/records/record-digest-profile.md",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/records/resource-profile.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/records/control-protocol.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/records/manifest.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schema-bundle.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-INPUT.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-PARAMETER.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-STRUCTURED-ERROR.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-RESOURCE.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-POLICY.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/schemas/VID-IMPL-P00-002B1-OUTPUT-CONTRACT.schema.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/operation-descriptor.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/worker-hello.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/disposition-mapping.json",
+    "Video Localization/contracts/VID-IMPL-P00-002B1/fixtures/publication-fixture.json",
+    "Video Localization/testing/implementation/VID-IMPL-P00-002B1/prelaunch-fixtures.json",
+    "Video Localization/testing/implementation/VID-IMPL-P00-002B2/README.md",
+    "Video Localization/testing/implementation/VID-IMPL-P00-002B2/synthetic-matroska-fixture.json",
+    ".agents/reviews/VID-IMPL-P00-002B1-record-freeze/primary-acceptance.md"
+  ],
+  "created_at": "2026-08-02T23:42:00+07:00"
+}
