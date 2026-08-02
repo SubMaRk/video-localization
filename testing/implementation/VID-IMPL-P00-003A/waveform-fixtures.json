@@ -198,8 +198,190 @@
       },
       "reason": "mismatched-length"
     }
+  ],
+  "representation_timeline_downmix_cases": [
+    {
+      "case_id": "representation-timeline-downmix-positive-001",
+      "kind": "positive",
+      "descriptor": {
+        "representation": {
+          "time": "sample",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)",
+          "downmix": "matrix-stereo-downmix-v1",
+          "channel": "stereo-major",
+          "peak": "waveform-peak-v1",
+          "resampling": "resample-none"
+        }
+      }
+    },
+    {
+      "case_id": "representation-timeline-downmix-negative-length-mismatch",
+      "kind": "negative",
+      "descriptor": {
+        "length": 2048,
+        "descriptor_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    }
+  ],
+  "hostile_metadata_cases": [
+    {
+      "case_id": "hostile-metadata-non-hex-integrity",
+      "kind": "negative",
+      "descriptor": {
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "not-a-digest"
+        }
+      }
+    },
+    {
+      "case_id": "hostile-metadata-algorithm-mismatch",
+      "kind": "negative",
+      "descriptor": {
+        "integrity": {
+          "algorithm": "md5",
+          "value": "000000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    }
+  ],
+  "interruption_cases": [
+    {
+      "case_id": "interruption-cancelled",
+      "kind": "cancelled"
+    },
+    {
+      "case_id": "interruption-crash",
+      "kind": "crash"
+    },
+    {
+      "case_id": "interruption-deadline",
+      "kind": "deadline"
+    },
+    {
+      "case_id": "interruption-partial-write",
+      "kind": "partial-write"
+    }
+  ],
+  "publication_journal_cases": [
+    {
+      "case_id": "publication-journal-valid",
+      "kind": "valid"
+    },
+    {
+      "case_id": "publication-journal-unrecorded",
+      "kind": "unrecorded"
+    },
+    {
+      "case_id": "publication-journal-fabricated",
+      "kind": "fabricated"
+    },
+    {
+      "case_id": "publication-journal-mismatched",
+      "kind": "mismatched"
+    },
+    {
+      "case_id": "publication-journal-revoked",
+      "kind": "revoked"
+    }
+  ],
+  "stale_epoch_fence_lease_cases": [
+    {
+      "case_id": "stale-publication-valid",
+      "kind": "valid",
+      "expect_error": false
+    },
+    {
+      "case_id": "stale-publication-stale-epoch",
+      "kind": "stale-epoch",
+      "expect_error": true
+    },
+    {
+      "case_id": "stale-publication-fence-mismatch",
+      "kind": "fence-mismatch",
+      "expect_error": true
+    },
+    {
+      "case_id": "stale-publication-lease-mismatch",
+      "kind": "lease-mismatch",
+      "expect_error": true
+    },
+    {
+      "case_id": "stale-publication-attempt-mismatch",
+      "kind": "attempt-mismatch",
+      "expect_error": true
+    }
+  ],
+  "opaque_handle_substitution_cases": [
+    {
+      "case_id": "opaque-handle-positive-safe-identity",
+      "kind": "positive",
+      "descriptor": {
+        "handle_identity": "handle-vid-waveform-opaque-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001"
+      }
+    },
+    {
+      "case_id": "opaque-handle-path-traversal-dotdot",
+      "kind": "negative",
+      "descriptor": {
+        "handle_identity": "../opaque/escape/../../volume",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001"
+      }
+    },
+    {
+      "case_id": "opaque-handle-windows-backslash",
+      "kind": "negative",
+      "descriptor": {
+        "handle_identity": "volume\\wave\\handle",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001"
+      }
+    },
+    {
+      "case_id": "opaque-handle-drive-colon",
+      "kind": "negative",
+      "descriptor": {
+        "handle_identity": "C:opaque-volume-waveform-001",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001"
+      }
+    },
+    {
+      "case_id": "opaque-handle-uri-file-scheme",
+      "kind": "negative",
+      "descriptor": {
+        "handle_identity": "file://waveform/handle",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001"
+      }
+    }
+  ],
+  "cache_integrity_cases": [
+    {
+      "case_id": "cache-corruption-mismatched-staged-hash",
+      "kind": "cache-corrupt-hash"
+    },
+    {
+      "case_id": "cache-deletion-zero-length-staged-copy",
+      "kind": "cache-deleted"
+    },
+    {
+      "case_id": "cache-deletion-requires-non-authority",
+      "kind": "cache-non-authority"
+    }
+  ],
+  "publication_atomicity_cases": [
+    {
+      "case_id": "publication-atomicity-duplicate-attempt",
+      "kind": "duplicate"
+    },
+    {
+      "case_id": "publication-atomicity-cross-volume-attempt-id",
+      "kind": "cross-volume"
+    }
   ]
 }
-
-
-

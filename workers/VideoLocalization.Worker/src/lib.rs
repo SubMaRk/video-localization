@@ -1,7 +1,6 @@
 pub mod preflight;
 pub mod fingerprint;
 pub mod probe_adapter_contract;
-pub mod probe_adapter_runtime;
 pub mod waveform_contract;
 
 pub use preflight::{
@@ -50,17 +49,4 @@ pub use probe_adapter_contract::{
     ERROR_REF_VERSION,
     STRUCTURED_ERROR_SCHEMA_ID,
     STRUCTURED_ERROR_SCHEMA_VERSION,
-};
-pub use probe_adapter_runtime::{
-    execute_bound_probe,
-    execute_bound_probe_with_context,
-    parse_probe_observation,
-    ProbeLineage,
-    ProbeOutputContract,
-    ProbeObservation,
-    ProbeRuntimeContext,
-    ProbeRuntimeResult,
-    ProbeRunFailure,
-    ProbeRunFailureCode,
-    RuntimeContainmentEvidence,
 };

@@ -19,6 +19,10 @@
       "status": "passed",
       "notes": "Bulk descriptor linkage validates payload length/hash, descriptor preimage/hash, and deterministic descriptor-hash vector enforcement."
     },
+    "line-ending-policy": {
+      "status": "passed",
+      "notes": "VID-IMPL-P00-003A manifest-bound text artifacts are UTF-8, BOM-free, CR-free, and end with exactly one LF."
+    },
     "state-mapping-completeness": {
       "status": "passed",
       "notes": "VID-WAVEFORM disposition coverage remains complete, with TimedOut constrained to deadline-expired state and Succeeded requiring an authoritative commit journal identity."
@@ -44,6 +48,7 @@
       "working_directory": "Video Localization",
       "status": "passed",
       "exit_code": 0,
+      "test_count": 23,
       "environment": {
         "CARGO_HOME": "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-p00-003a-cargo-home",
         "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse",
@@ -51,7 +56,7 @@
         "CARGO_HTTP_LOW_SPEED_LIMIT": "1"
       },
       "raw_output": {
-        "stdout": "running 14 tests\ntest retry_profile_enforces_attempt_ceiling_and_cumulative_limits ... ok\ntest bulk_descriptor_positive_and_zero_length_boundary ... ok\ntest state_mapping_matrix_covers_all_codes_and_recovery_boundaries ... ok\ntest cache_key_preimage_is_stable_with_sorted_cbor_key_bytes ... ok\ntest terminal_reconciliation_map_requires_authoritative_deadline_and_receipt ... ok\ntest manifest_missing_or_mismatched_bindings_fail_closed ... ok\ntest fixture_cache_key_positive_and_negative_cases_are_executed ... ok\ntest schema_bundle_hashes_and_required_schema_ids_are_exact ... ok\ntest fixture_bulk_descriptor_positive_and_negative_cases_are_executed ... ok\ntest publication_lifecycle_validates_atomic_commit_and_lineage_controls ... ok\ntest manifest_and_schema_bundle_are_authoritative_and_fail_closed ... ok\ntest worker_hello_rejects_unauthorized_executable_identity ... ok\ntest operation_and_worker_hello_profile_bindings_are_exact ... ok\ntest schema_mutation_matrix_rejects_required_and_unknown_fields ... ok\n\ntest result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s",
+        "stdout": "running 23 tests\ntest bulk_descriptor_positive_and_zero_length_boundary ... ok\ntest cache_key_preimage_is_stable_with_sorted_cbor_key_bytes ... ok\ntest fixture_hostile_metadata_vectors_and_mutations_fail_closed ... ok\ntest fixture_opaque_handle_substitution_and_path_escape_vectors_are_rejected ... ok\ntest retry_profile_enforces_attempt_ceiling_and_cumulative_limits ... ok\ntest fixture_cache_corruption_and_deletion_rejects_without_publication_authority ... ok\ntest fixture_representation_timeline_downmix_vectors_are_bound_and_mutated ... ok\ntest fixture_cache_key_positive_and_negative_cases_are_executed ... ok\ntest fixture_interruption_and_partial_write_vectors_are_executed ... ok\ntest fixture_bulk_descriptor_positive_and_negative_cases_are_executed ... ok\ntest manifest_missing_or_mismatched_bindings_fail_closed ... ok\ntest manifest_bound_text_artifacts_are_utf8_and_exactly_one_final_lf ... ok\ntest terminal_reconciliation_map_requires_authoritative_deadline_and_receipt ... ok\ntest fixture_stale_epoch_fence_lease_cases_fail_closed ... ok\ntest fixture_publication_journal_failures_are_differentiated ... ok\ntest fixture_publication_atomicity_and_cross_volume_reuse_are_rejected ... ok\ntest publication_lifecycle_validates_atomic_commit_and_lineage_controls ... ok\ntest schema_bundle_hashes_and_required_schema_ids_are_exact ... ok\ntest manifest_and_schema_bundle_are_authoritative_and_fail_closed ... ok\ntest worker_hello_rejects_unauthorized_executable_identity ... ok\ntest operation_and_worker_hello_profile_bindings_are_exact ... ok\ntest schema_mutation_matrix_rejects_required_and_unknown_fields ... ok\ntest result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s",
         "stderr": ""
       }
     },
@@ -70,6 +75,11 @@
     {
       "id": "manifest_hashes_match",
       "name": "Manifest hash records match each bound schema and fixture file",
+      "status": "passed"
+    },
+    {
+      "id": "manifest_text_line_endings",
+      "name": "Manifest-bound text artifacts are UTF-8, BOM-free, CR-free, and end with exactly one LF",
       "status": "passed"
     },
     {
@@ -110,6 +120,11 @@
     {
       "id": "publication_lifecycle_checks",
       "name": "Atomic publication lifecycle checks validate lease/fence/epoch lineage and deterministic commit-receipt transition controls",
+      "status": "passed"
+    },
+    {
+      "id": "schema_bundle_digests",
+      "name": "Schema-bundle fixture and schema digest closure checks are pass-closed",
       "status": "passed"
     },
     {

@@ -443,6 +443,7 @@ pub fn validate_publication_lifecycle(
     payload: &[u8],
     expected_whole_object_hash: &str,
  ) -> Result<WaveformPublicationCommitReceipt, String> {
+    validate_opaque_handle_identity(&attempt.descriptor.handle_identity, "publication descriptor")?;
     if attempt.lease.cache_authority {
         return Err("cache authority cannot satisfy publication lineage".to_string());
     }
@@ -488,6 +489,15 @@ pub fn validate_publication_lifecycle(
                 &descriptor_digest,
                 &actual_whole_object_hash,
             );
+            let mut journal = publication_commit_journal()
+                .lock()
+                .unwrap_or_else(|error| error.into_inner());
+            if journal.contains_key(&journal_identity) {
+                return Err("publication lineage already committed".to_string());
+            }
+            if journal.values().any(|entry| entry.attempt_id == attempt.attempt_id) {
+                return Err("publication attempt reuse is not allowed".to_string());
+            }
             let entry = PublicationCommitJournalEntry {
                 operation_id: OPERATION_ID.to_string(),
                 operation_version: OPERATION_VERSION.to_string(),
@@ -507,12 +517,7 @@ pub fn validate_publication_lifecycle(
                 whole_object_hash: actual_whole_object_hash.clone(),
                 journal_identity: journal_identity.clone(),
             };
-            {
-                let mut journal = publication_commit_journal()
-                    .lock()
-                    .unwrap_or_else(|error| error.into_inner());
-                journal.insert(journal_identity.clone(), entry);
-            }
+            journal.insert(journal_identity.clone(), entry);
 
             let receipt = WaveformPublicationCommitReceipt {
                 journal_identity,
@@ -1036,7 +1041,17 @@ pub fn bulk_descriptor_digest(descriptor: &WaveformBulkDescriptor) -> Result<Str
     Ok(digest_to_hex(hasher.finalize().as_slice()))
 }
 
+#[doc(hidden)]
+pub fn bulk_descriptor_digest_unchecked(descriptor: &WaveformBulkDescriptor) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(BULK_DESCRIPTOR_PREFIX);
+    hasher.update(write_bulk_descriptor_bytes(descriptor, false));
+    digest_to_hex(hasher.finalize().as_slice())
+}
+
 fn validate_bulk_descriptor_minimal(descriptor: &WaveformBulkDescriptor) -> Result<(), String> {
+    validate_opaque_handle_identity(&descriptor.handle_identity, "descriptor")?;
+
     if descriptor.version != BULK_DESCRIPTOR_PROFILE {
         return Err("bulk descriptor version invalid".to_string());
     }
@@ -1077,6 +1092,50 @@ fn validate_bulk_descriptor_minimal(descriptor: &WaveformBulkDescriptor) -> Resu
             return Err("descriptor identity fields must be explicit".to_string());
         }
     }
+    Ok(())
+}
+
+fn validate_opaque_handle_identity(identity: &str, context: &str) -> Result<(), String> {
+    if identity.trim().is_empty() {
+        return Err(format!("{} handle identity must be non-empty", context));
+    }
+
+    if !identity.chars().all(|character| {
+        character.is_ascii_alphanumeric()
+            || character == '-'
+            || character == '_'
+            || character == '.'
+    }) {
+        return Err(format!(
+            "{context} handle identity must be an opaque, non-path token"
+        ));
+    }
+
+    if identity.chars().any(|character| character.is_whitespace() || character.is_control()) {
+        return Err(format!(
+            "{context} handle identity must not contain whitespace or control characters"
+        ));
+    }
+
+    if identity.contains("..") {
+        return Err(format!(
+            "{context} handle identity must not include traversal segments"
+        ));
+    }
+
+    if identity.contains("://") || identity.starts_with("file:") {
+        return Err(format!("{context} handle identity must not use URI schemes"));
+    }
+
+    let mut chars = identity.chars();
+    if chars.next().is_some() {
+        let mut chars = identity.bytes();
+        let first = chars.next().unwrap_or_default();
+        if first.is_ascii_alphabetic() && chars.next() == Some(b':') {
+            return Err(format!("{context} handle identity must not use drive path syntax"));
+        }
+    }
+
     Ok(())
 }
 

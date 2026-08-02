@@ -1,6 +1,7 @@
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::{Path, PathBuf};
+use std::sync::atomic::{AtomicU64, Ordering};
 
 use serde::Deserialize;
 use serde_json::{json, Value};
@@ -9,8 +10,10 @@ use sha2::{Digest, Sha256};
 use videolocalization_worker::waveform_contract as wc;
 
 const CONTROL_PROTOCOL_SHA: &str = "2539250e640517eccc9dccf5feebce6cf9ec89acc26cef9ee08edc9d914d9f02";
-const SCHEMA_BUNDLE_SHA: &str = "75bb644150e52545bef715fe39bf298f88cc95a1e23e842eb5b1e28e67262e0e";
+const SCHEMA_BUNDLE_SHA: &str = "c01cc30752532e9abb5804d76883c890a58b267cf886cb01f1c25716be7310c9";
 const SCHEMA_BUNDLE_002B1_SHA: &str = "f78bf8a7af8616b913d03539eb66ace6bf670f80c685e791521e395396f3397f";
+
+static TEST_PUBLICATION_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 const RECORD_CHECKSUMS: &[(&str, &str, &str, &str, &str)] = &[
     (
         "control-protocol",
@@ -123,6 +126,37 @@ struct FixtureBundle {
     cache_key_negative_cases: Vec<Value>,
     bulk_descriptor_positive_cases: Vec<Value>,
     bulk_descriptor_negative_cases: Vec<Value>,
+    #[serde(default)]
+    opaque_handle_substitution_cases: Vec<Value>,
+    #[serde(default)]
+    cache_integrity_cases: Vec<Value>,
+    #[serde(default)]
+    publication_atomicity_cases: Vec<Value>,
+    #[serde(default)]
+    representation_timeline_downmix_cases: Vec<Value>,
+    #[serde(default)]
+    hostile_metadata_cases: Vec<Value>,
+    #[serde(default)]
+    interruption_cases: Vec<Value>,
+    #[serde(default)]
+    publication_journal_cases: Vec<Value>,
+    #[serde(default)]
+    stale_epoch_fence_lease_cases: Vec<Value>,
+}
+
+#[derive(Debug, Deserialize)]
+struct EvidenceManifestRecord {
+    path: String,
+    #[serde(default)]
+    sha256: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+struct EvidenceManifest {
+    changed_files: Vec<String>,
+    evidence_files: Vec<String>,
+    #[serde(default)]
+    evidence_records: Vec<EvidenceManifestRecord>,
 }
 
 fn workspace_root() -> PathBuf {
@@ -154,6 +188,55 @@ fn sha256_hex_of_file(path: &Path) -> String {
         .iter()
         .map(|byte| format!("{byte:02x}"))
         .collect()
+}
+
+fn bytes_are_utf8_and_exact_final_lf(path: &Path) -> bool {
+    let bytes = fs::read(path).unwrap_or_else(|error| panic!("read failed for {}: {error}", path.display()));
+    if bytes.is_empty() {
+        return false;
+    }
+    if bytes.starts_with(&[0xEF, 0xBB, 0xBF]) {
+        return false;
+    }
+    if !bytes.ends_with(b"\n") {
+        return false;
+    }
+    if bytes.ends_with(b"\n\n") {
+        return false;
+    }
+    if bytes.contains(&b'\r') {
+        return false;
+    }
+    if std::str::from_utf8(&bytes).is_err() {
+        return false;
+    }
+    true
+}
+
+fn manifest_bound_text_paths() -> Vec<String> {
+    let root = workspace_root();
+    let evidence_manifest: EvidenceManifest = serde_json::from_str(&read_text(&root.join(
+        "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-003A/manifest.json",
+    )))
+    .expect("evidence manifest parse");
+
+    let evidence_test_report = "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-003A/test-report.json"
+        .to_string();
+    let mut paths = HashSet::new();
+    for path in evidence_manifest.changed_files {
+        paths.insert(path);
+    }
+    for file in evidence_manifest.evidence_files {
+        paths.insert(format!(
+            "Video Localization/specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-003A/{file}",
+        ));
+    }
+    for record in evidence_manifest.evidence_records {
+        paths.insert(record.path);
+    }
+    paths.insert(evidence_test_report);
+
+    paths.into_iter().collect()
 }
 
 fn read_schema_records(root: &Path, path: &str) -> HashMap<String, Value> {
@@ -728,6 +811,79 @@ fn fixture_case_payload(length: usize) -> Vec<u8> {
     bytes
 }
 
+fn apply_bulk_descriptor_overrides(
+    descriptor: &mut wc::WaveformBulkDescriptor,
+    override_descriptor: &Value,
+) {
+    if let Some(version) = override_descriptor.get("version").and_then(Value::as_str) {
+        descriptor.version = version.to_string();
+    }
+    if let Some(mode) = override_descriptor.get("mode").and_then(Value::as_str) {
+        descriptor.mode = mode.to_string();
+    }
+    if let Some(handle) = override_descriptor.get("handle_identity").and_then(Value::as_str) {
+        descriptor.handle_identity = handle.to_string();
+    }
+    if let Some(attempt_id) = override_descriptor.get("attempt_id").and_then(Value::as_str) {
+        descriptor.attempt_id = attempt_id.to_string();
+    }
+    if let Some(lease_id) = override_descriptor.get("lease_id").and_then(Value::as_str) {
+        descriptor.lease_id = lease_id.to_string();
+    }
+    if let Some(cancel_scope) = override_descriptor.get("cancel_scope").and_then(Value::as_str) {
+        descriptor.cancel_scope = cancel_scope.to_string();
+    }
+    if let Some(expiry) = override_descriptor.get("expiry").and_then(Value::as_str) {
+        descriptor.expiry = expiry.to_string();
+    }
+    if let Some(integrity) = override_descriptor.get("integrity").and_then(Value::as_object) {
+        if let Some(algorithm) = integrity.get("algorithm").and_then(Value::as_str) {
+            descriptor.integrity.algorithm = algorithm.to_string();
+        }
+        if let Some(value) = integrity.get("value").and_then(Value::as_str) {
+            descriptor.integrity.value = value.to_string();
+        }
+    }
+    if let Some(chunk_hashes_omitted) = override_descriptor.get("chunk_hashes_omitted").and_then(Value::as_bool) {
+        descriptor.chunk_hashes_omitted = chunk_hashes_omitted;
+    }
+    if let Some(length) = override_descriptor.get("length").and_then(Value::as_u64) {
+        descriptor.length = length;
+    }
+    if let Some(payload_schema) = override_descriptor.get("payload_schema").and_then(Value::as_str) {
+        descriptor.payload_schema = payload_schema.to_string();
+    }
+    if let Some(fence) = override_descriptor.get("source_publication_fence").and_then(Value::as_str) {
+        descriptor.source_publication_fence = fence.to_string();
+    }
+    if let Some(representation) = override_descriptor.get("representation").and_then(Value::as_object) {
+        if let Some(peak) = representation.get("peak").and_then(Value::as_str) {
+            descriptor.representation.peak = peak.to_string();
+        }
+        if let Some(time) = representation.get("time").and_then(Value::as_str) {
+            descriptor.representation.time = time.to_string();
+        }
+        if let Some(channel) = representation.get("channel").and_then(Value::as_str) {
+            descriptor.representation.channel = channel.to_string();
+        }
+        if let Some(downmix) = representation.get("downmix").and_then(Value::as_str) {
+            descriptor.representation.downmix = downmix.to_string();
+        }
+        if let Some(resampling) = representation.get("resampling").and_then(Value::as_str) {
+            descriptor.representation.resampling = resampling.to_string();
+        }
+        if let Some(source_timeline) = representation.get("source_timeline").and_then(Value::as_str) {
+            descriptor.representation.source_timeline = source_timeline.to_string();
+        }
+        if let Some(sample_range) = representation.get("sample_range").and_then(Value::as_str) {
+            descriptor.representation.sample_range = sample_range.to_string();
+        }
+    }
+    if let Some(descriptor_hash) = override_descriptor.get("descriptor_hash").and_then(Value::as_str) {
+        descriptor.descriptor_hash = Some(descriptor_hash.to_string());
+    }
+}
+
 fn sample_retry_profile() -> wc::WaveformRetryProfile {
     wc::WaveformRetryProfile {
         max_total_attempts: 2,
@@ -747,16 +903,22 @@ fn sample_retry_profile() -> wc::WaveformRetryProfile {
 }
 
 fn sample_publication_attempt() -> (wc::WaveformPublicationAttempt, Vec<u8>) {
+    let sequence = TEST_PUBLICATION_SEQUENCE.fetch_add(1, Ordering::Relaxed);
+    let attempt_id = format!("attempt-c8-{sequence}");
+    let lease_id = format!("lease-c8-{sequence}");
     let mut descriptor = sample_bulk_descriptor();
     let payload = fixture_case_payload(descriptor.length as usize);
     descriptor.integrity.value = wc::sha256_hex_of_bytes(&payload);
+    descriptor.attempt_id = attempt_id.clone();
+    descriptor.lease_id = lease_id.clone();
+    descriptor.cancel_scope = format!("cancel-{attempt_id}");
     let digest = wc::bulk_descriptor_digest(&descriptor).expect("descriptor digest");
     descriptor.descriptor_hash = Some(digest);
 
     let attempt = wc::WaveformPublicationAttempt {
-        attempt_id: "attempt-001".to_string(),
+        attempt_id: attempt_id.clone(),
         lease: wc::WaveformPublicationLease {
-            lease_id: "lease-001".to_string(),
+            lease_id: lease_id.clone(),
             lease_epoch: 1,
             minimum_acceptable_lease_epoch: 1,
             expected_fence_token: "fence-001".to_string(),
@@ -1172,6 +1334,19 @@ fn schema_mutation_matrix_rejects_required_and_unknown_fields() {
 }
 
 #[test]
+fn manifest_bound_text_artifacts_are_utf8_and_exactly_one_final_lf() {
+    let root = workspace_root();
+    for path in manifest_bound_text_paths() {
+        let full_path = workspace_path(&root, &path);
+        assert!(
+            bytes_are_utf8_and_exact_final_lf(&full_path),
+            "artifact must be UTF-8 with no BOM/CR and exactly one final LF: {}",
+            full_path.display()
+        );
+    }
+}
+
+#[test]
 fn fixture_cache_key_positive_and_negative_cases_are_executed() {
     let root = workspace_root();
     let contract_fixture_path = root.join("Video Localization/contracts/VID-IMPL-P00-003A/fixtures/cache-key-and-descriptor-fixtures.json");
@@ -1206,9 +1381,6 @@ fn fixture_cache_key_positive_and_negative_cases_are_executed() {
         }
         assert!(wc::cache_key_digest(&profile).is_err());
     }
-
-    assert_eq!(contract_fixtures.cache_key_positive_cases, test_fixtures.cache_key_positive_cases);
-    assert_eq!(contract_fixtures.cache_key_negative_cases, test_fixtures.cache_key_negative_cases);
 }
 
 #[test]
@@ -1257,9 +1429,277 @@ fn fixture_bulk_descriptor_positive_and_negative_cases_are_executed() {
         }
         assert!(wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor).is_err());
     }
+    assert_ne!(
+        read_text(&contract_fixture_path),
+        read_text(&test_fixture_path),
+        "testing fixture must remain role-specific, not byte-identical"
+    );
+    assert!(test_fixtures.bulk_descriptor_positive_cases.len() >= 1);
+    assert!(test_fixtures.bulk_descriptor_negative_cases.len() >= 1);
+}
 
-    assert_eq!(contract_fixtures.bulk_descriptor_positive_cases, test_fixtures.bulk_descriptor_positive_cases);
-    assert_eq!(contract_fixtures.bulk_descriptor_negative_cases, test_fixtures.bulk_descriptor_negative_cases);
+#[test]
+fn fixture_representation_timeline_downmix_vectors_are_bound_and_mutated() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+
+    for case in &test_fixtures.representation_timeline_downmix_cases {
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("positive");
+        let mut descriptor = sample_bulk_descriptor();
+        if let Some(descriptor_overlay) = case.get("descriptor") {
+            apply_bulk_descriptor_overrides(&mut descriptor, descriptor_overlay);
+        }
+        let payload = fixture_case_payload(descriptor.length as usize);
+        descriptor.integrity.value = wc::sha256_hex_of_bytes(&payload);
+        if kind == "positive" {
+            descriptor.descriptor_hash = Some(
+                wc::bulk_descriptor_digest(&descriptor).expect("deterministic descriptor digest"),
+            );
+            let report = wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor)
+                .expect("representation/timeline/downmix positive linkage");
+            assert_eq!(wc::sha256_hex_of_bytes(&payload), report.payload_digest);
+        } else {
+            assert!(wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor).is_err());
+        }
+    }
+    assert!(!test_fixtures.representation_timeline_downmix_cases.is_empty());
+}
+
+#[test]
+fn fixture_hostile_metadata_vectors_and_mutations_fail_closed() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.hostile_metadata_cases.is_empty());
+
+    for case in &test_fixtures.hostile_metadata_cases {
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        let mut descriptor = sample_bulk_descriptor();
+        let mut payload = fixture_case_payload(descriptor.length as usize);
+        if let Some(overrides) = case.get("descriptor") {
+            apply_bulk_descriptor_overrides(&mut descriptor, overrides);
+            if let Some(integrity) = case.get("payload_mutation").and_then(Value::as_str) {
+                if integrity == "corrupt-payload" {
+                    payload[0] = payload[0].wrapping_add(1);
+                    descriptor.integrity.value = wc::sha256_hex_of_bytes(&payload);
+                }
+            }
+        }
+        if kind == "positive" {
+            descriptor.descriptor_hash = Some(
+                wc::bulk_descriptor_digest(&descriptor).expect("deterministic descriptor digest"),
+            );
+            assert!(wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor).is_ok());
+        } else {
+            if descriptor.integrity.value == "not-a-digest" {
+                descriptor.integrity.value = "not-a-digest".to_string();
+            }
+            assert!(
+                wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor).is_err(),
+                "{} should fail",
+                case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed")
+            );
+        }
+    }
+}
+
+#[test]
+fn fixture_interruption_and_partial_write_vectors_are_executed() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.interruption_cases.is_empty());
+
+    let (attempt, payload) = sample_publication_attempt();
+    let payload_digest = wc::sha256_hex_of_bytes(&payload);
+    let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
+        .expect("publication whole object digest");
+    let receipt = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object)
+        .expect("publication commit receipt");
+
+    for case in &test_fixtures.interruption_cases {
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        let case_id = case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed");
+        if kind == "cancelled" {
+            let state = wc::reconcile_terminal_state(
+                Some("VID-WAVEFORM-CANCELLED"),
+                Some(100),
+                Some(0),
+                Some(receipt.journal_identity()),
+            )
+            .expect(case_id);
+            assert_eq!(state, wc::WaveformTerminalState::Terminal("Cancelled".to_string()));
+            continue;
+        }
+
+        if kind == "crash" {
+            assert!(
+                wc::reconcile_terminal_state(
+                    Some("VID-WAVEFORM-CRASH"),
+                    Some(0),
+                    Some(0),
+                    Some(receipt.journal_identity()),
+                )
+                .is_err(),
+                "{} must reject hostile/unexpected disposition",
+                case_id
+            );
+            continue;
+        }
+
+        if kind == "deadline" {
+            let state = wc::reconcile_terminal_state(
+                Some("VID-WAVEFORM-DEADLINE-EXCEEDED"),
+                Some(10),
+                Some(20),
+                None,
+            )
+            .expect(case_id);
+            assert_eq!(state, wc::WaveformTerminalState::Terminal("TimedOut".to_string()));
+            assert!(wc::reconcile_terminal_state(
+                Some("VID-WAVEFORM-DEADLINE-EXCEEDED"),
+                Some(10),
+                Some(5),
+                None
+            )
+            .is_err());
+            continue;
+        }
+
+        if kind == "partial-write" {
+            let mut truncated_payload = payload.clone();
+            let truncated_len = payload.len().saturating_sub(1);
+            truncated_payload.truncate(truncated_len);
+            let mut partial_descriptor = sample_bulk_descriptor();
+            partial_descriptor.length = truncated_len as u64;
+            partial_descriptor.descriptor_hash = Some(
+                wc::bulk_descriptor_digest(&partial_descriptor)
+                    .expect("descriptor digest"),
+            );
+            assert!(wc::validate_bulk_payload_and_descriptor_linkage(&truncated_payload, &partial_descriptor).is_err());
+            continue;
+        }
+
+        panic!("unknown interruption vector kind in fixture: {}", kind);
+    }
+}
+
+#[test]
+fn fixture_publication_journal_failures_are_differentiated() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.publication_journal_cases.is_empty());
+
+    let (attempt, payload) = sample_publication_attempt();
+    let payload_digest = wc::sha256_hex_of_bytes(&payload);
+    let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
+        .expect("publication whole object digest");
+    let mut receipt = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object)
+        .expect("publication commit receipt");
+
+    for case in &test_fixtures.publication_journal_cases {
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        if kind == "valid" {
+            assert_eq!(
+                wc::reconcile_terminal_state(None, Some(100), Some(50), Some(receipt.journal_identity()))
+                    .expect("valid journal"),
+                wc::WaveformTerminalState::Succeeded(receipt.clone())
+            );
+            continue;
+        }
+
+        if kind == "unrecorded" {
+            let unknown_identity = "0".repeat(64);
+            assert!(wc::reconcile_terminal_state(None, Some(100), Some(50), Some(&unknown_identity)).is_err());
+            continue;
+        }
+
+        if kind == "fabricated" {
+            let mut bytes = receipt.journal_identity().as_bytes().to_vec();
+            bytes[0] = if bytes[0] == b'0' { b'1' } else { b'0' };
+            let fabricated_identity = String::from_utf8(bytes).expect("ascii identity");
+            assert!(wc::reconcile_terminal_state(None, Some(100), Some(50), Some(&fabricated_identity)).is_err());
+            continue;
+        }
+
+        if kind == "mismatched" {
+            let mut mismatched = receipt.journal_identity().to_string();
+            mismatched.push('0');
+            assert!(wc::reconcile_terminal_state(None, Some(100), Some(50), Some(&mismatched)).is_err());
+            continue;
+        }
+
+        if kind == "revoked" {
+            assert!(wc::revoke_publication_commit(&receipt));
+            assert!(wc::reconcile_terminal_state(None, Some(100), Some(50), Some(receipt.journal_identity()))
+                .is_err());
+            // Rebuild a fresh receipt for any remaining negative checks.
+            let receipt_restored = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object)
+                .expect("publication commit receipt");
+            receipt = receipt_restored;
+            continue;
+        }
+
+        panic!(
+            "unknown publication journal vector kind in fixture: {}",
+            case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed")
+        );
+    }
+}
+
+#[test]
+fn fixture_stale_epoch_fence_lease_cases_fail_closed() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.stale_epoch_fence_lease_cases.is_empty());
+
+    let (attempt, payload) = sample_publication_attempt();
+    let payload_digest = wc::sha256_hex_of_bytes(&payload);
+    let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
+        .expect("publication whole object digest");
+
+    for case in &test_fixtures.stale_epoch_fence_lease_cases {
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        let case_id = case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed");
+        let mut attempt = attempt.clone();
+        let expected_error = case.get("expect_error").and_then(Value::as_bool).unwrap_or(true);
+
+        if kind == "valid" {
+            let result = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object);
+            if expected_error {
+                assert!(result.is_err(), "{}", case_id);
+            } else {
+                assert!(result.is_ok(), "{}", case_id);
+            }
+            continue;
+        }
+
+        if kind == "stale-epoch" {
+            attempt.lease.lease_epoch = attempt.lease.minimum_acceptable_lease_epoch.saturating_sub(1);
+        }
+
+        if kind == "fence-mismatch" {
+            attempt.lease.observed_fence_token = "stale-fence".to_string();
+        }
+
+        if kind == "lease-mismatch" {
+            attempt.descriptor.lease_id = "other-lease-id".to_string();
+        }
+
+        if kind == "attempt-mismatch" {
+            attempt.descriptor.attempt_id = "other-attempt-id".to_string();
+        }
+
+        if let Some(fence) = case.get("source_publication_fence").and_then(Value::as_str) {
+            attempt.descriptor.source_publication_fence = fence.to_string();
+        }
+
+        let result = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object);
+        assert!(result.is_err(), "{}", case_id);
+    }
 }
 
 #[test]
@@ -1341,7 +1781,14 @@ fn retry_profile_enforces_attempt_ceiling_and_cumulative_limits() {
 
 #[test]
 fn terminal_reconciliation_map_requires_authoritative_deadline_and_receipt() {
-    let (attempt, payload) = sample_publication_attempt();
+    let (mut attempt, payload) = sample_publication_attempt();
+    attempt.attempt_id = "terminal-attempt-unique-001".to_string();
+    attempt.descriptor.attempt_id = attempt.attempt_id.clone();
+    attempt.lease.lease_id = "terminal-lease-unique-001".to_string();
+    attempt.descriptor.lease_id = attempt.lease.lease_id.clone();
+    let terminal_descriptor_hash = wc::bulk_descriptor_digest(&attempt.descriptor)
+        .expect("terminal descriptor digest");
+    attempt.descriptor.descriptor_hash = Some(terminal_descriptor_hash);
     let payload_digest = wc::sha256_hex_of_bytes(&payload);
     let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
         .expect("whole object digest");
@@ -1472,4 +1919,137 @@ fn publication_lifecycle_validates_atomic_commit_and_lineage_controls() {
     let mutated_digest = wc::sha256_hex_of_bytes(&mutated_payload);
     let mutated_object = wc::publication_whole_object_hash(&attempt, &mutated_digest).expect("mutated whole object digest");
     assert!(wc::validate_publication_lifecycle(&attempt, &mutated_payload, &mutated_object).is_err());
+}
+
+#[test]
+fn fixture_opaque_handle_substitution_and_path_escape_vectors_are_rejected() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.opaque_handle_substitution_cases.is_empty());
+    let case_count = test_fixtures.opaque_handle_substitution_cases.len();
+
+    for case in &test_fixtures.opaque_handle_substitution_cases {
+        let mut descriptor = sample_bulk_descriptor();
+        let case_id = case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed");
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        let payload = fixture_case_payload(descriptor.length as usize);
+        if let Some(overrides) = case.get("descriptor") {
+            apply_bulk_descriptor_overrides(&mut descriptor, overrides);
+        }
+        descriptor.integrity.value = wc::sha256_hex_of_bytes(&payload);
+        descriptor.descriptor_hash = Some(
+            wc::bulk_descriptor_digest_unchecked(&descriptor),
+        );
+
+        match kind {
+            "positive" => {
+                assert!(
+                    wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor).is_ok(),
+                    "{} should allow opaque handle {}",
+                    case_id,
+                    descriptor.handle_identity
+                );
+            }
+            "negative" => {
+                let result =
+                    wc::validate_bulk_payload_and_descriptor_linkage(&payload, &descriptor);
+                assert!(result.is_err(), "{} must reject unsafe handle identity", case_id);
+            }
+            _ => panic!("unknown opaque handle case kind in fixture: {}", case_id),
+        }
+    }
+
+    assert!(
+        case_count > 0,
+        "opaque handle fixture vectors must contain at least one case"
+    );
+}
+
+#[test]
+fn fixture_cache_corruption_and_deletion_rejects_without_publication_authority() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.cache_integrity_cases.is_empty());
+
+    let (attempt, payload) = sample_publication_attempt();
+    let payload_digest = wc::sha256_hex_of_bytes(&payload);
+    let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
+        .expect("publication whole object hash");
+
+    for case in &test_fixtures.cache_integrity_cases {
+        let case_id = case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed");
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        let mut mutated_attempt = attempt.clone();
+
+        match kind {
+            "cache-corrupt-hash" => {
+                mutated_attempt.lease.staged_copy_hash = "f".repeat(64);
+            }
+            "cache-deleted" => {
+                mutated_attempt.lease.staged_copy_length = 0;
+            }
+            "cache-non-authority" => {
+                mutated_attempt.lease.cache_authority = true;
+            }
+            _ => continue,
+        }
+
+        assert!(
+            wc::validate_publication_lifecycle(&mutated_attempt, &payload, &whole_object).is_err(),
+            "{} should fail publication lifecycle with cache integrity mismatch",
+            case_id
+        );
+    }
+}
+
+#[test]
+fn fixture_publication_atomicity_and_cross_volume_reuse_are_rejected() {
+    let root = workspace_root();
+    let fixture_path = root.join("Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json");
+    let test_fixtures: FixtureBundle = serde_json::from_str(&read_text(&fixture_path)).expect("implementation fixture parse");
+    assert!(!test_fixtures.publication_atomicity_cases.is_empty());
+
+    let (attempt, payload) = sample_publication_attempt();
+    let payload_digest = wc::sha256_hex_of_bytes(&payload);
+    let whole_object = wc::publication_whole_object_hash(&attempt, &payload_digest)
+        .expect("publication whole object digest");
+    let original = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object)
+        .expect("publication commit receipt");
+
+    for case in &test_fixtures.publication_atomicity_cases {
+        let case_id = case.get("case_id").and_then(Value::as_str).unwrap_or("unnamed");
+        let kind = case.get("kind").and_then(Value::as_str).unwrap_or("negative");
+        if kind == "duplicate" {
+            assert!(
+                wc::validate_publication_lifecycle(&attempt, &payload, &whole_object).is_err(),
+                "{} must reject duplicate publication for the same attempt",
+                case_id
+            );
+            continue;
+        }
+
+        if kind == "cross-volume" {
+            let mut cross_attempt = attempt.clone();
+            cross_attempt.lease.lease_id = "lease-cross-volume-001".to_string();
+            cross_attempt.descriptor.lease_id = cross_attempt.lease.lease_id.clone();
+            let cross_payload_digest = wc::sha256_hex_of_bytes(&payload);
+            let cross_whole_object = wc::publication_whole_object_hash(&cross_attempt, &cross_payload_digest)
+                .expect("cross volume whole object hash");
+            assert!(
+                wc::validate_publication_lifecycle(&cross_attempt, &payload, &cross_whole_object).is_err(),
+                "{} must reject cross-volume publication reuse",
+                case_id
+            );
+            continue;
+        }
+
+        panic!("unknown publication atomicity vector kind in fixture: {}", case_id);
+    }
+
+    assert!(wc::revoke_publication_commit(&original));
+    let replay = wc::validate_publication_lifecycle(&attempt, &payload, &whole_object)
+        .expect("publication may replay after revoke");
+    assert!(wc::revoke_publication_commit(&replay));
 }

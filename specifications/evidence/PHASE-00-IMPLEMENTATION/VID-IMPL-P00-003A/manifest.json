@@ -24,6 +24,8 @@
     "test-report.json"
   ],
   "changed_files": [
+    "Video Localization/.gitattributes",
+    "Video Localization/workers/VideoLocalization.Worker/src/lib.rs",
     "Video Localization/contracts/VID-IMPL-P00-003A/schema-bundle.json",
     "Video Localization/contracts/VID-IMPL-P00-003A/records/manifest.json",
     "Video Localization/contracts/VID-IMPL-P00-003A/records/operation-profile.json",
@@ -47,14 +49,24 @@
   ],
   "evidence_records": [
     {
+      "role": "line-ending-policy",
+      "path": "Video Localization/.gitattributes",
+      "sha256": "79c842f844bb646353a06c3088857c63a4d613d74051215d890585c43c3132e1"
+    },
+    {
+      "role": "module-export",
+      "path": "Video Localization/workers/VideoLocalization.Worker/src/lib.rs",
+      "sha256": "69cb069b7f2ac8ec876ff1aeae969772fc70b4dcc6af66a5022fe433c73e8bca"
+    },
+    {
       "role": "schema-bundle",
       "path": "Video Localization/contracts/VID-IMPL-P00-003A/schema-bundle.json",
-      "sha256": "75bb644150e52545bef715fe39bf298f88cc95a1e23e842eb5b1e28e67262e0e"
+      "sha256": "c01cc30752532e9abb5804d76883c890a58b267cf886cb01f1c25716be7310c9"
     },
     {
       "role": "manifest",
       "path": "Video Localization/contracts/VID-IMPL-P00-003A/records/manifest.json",
-      "sha256": "f0ec7ed50db8a3bd5e1f5921f39e6e3a84a5290bc4cdaef08834b43236884350"
+      "sha256": "c20d3ecbfcdedc6e46089659b2fc65bf7a2aab89f95d5e8611ceab9f00d313b8"
     },
     {
       "role": "operation-profile",
@@ -79,7 +91,7 @@
     {
       "role": "operation-descriptor",
       "path": "Video Localization/contracts/VID-IMPL-P00-003A/fixtures/operation-descriptor.json",
-      "sha256": "2e56b7aa5f4882a043f33466a0d3b2678d9da1ec99e0b2abbc1fa825d8ec98f4"
+      "sha256": "827f842460512e2721ed6fcd0832f4bf0250c3d15dfca3c7504d4d71a27856e4"
     },
     {
       "role": "worker-hello",
@@ -89,7 +101,7 @@
     {
       "role": "cache-and-descriptor-fixtures",
       "path": "Video Localization/contracts/VID-IMPL-P00-003A/fixtures/cache-key-and-descriptor-fixtures.json",
-      "sha256": "a9c5014623aa14f8e3d610ee3e5d902febbef343f2df1e1e5989ce0670000ae2"
+      "sha256": "f609a700a89edc1ca25c12f6d8ec496bb3887c3263604ce8d6cca2b62e9a046a"
     },
     {
       "role": "schema-input",
@@ -129,17 +141,17 @@
     {
       "role": "source",
       "path": "Video Localization/workers/VideoLocalization.Worker/src/waveform_contract.rs",
-      "sha256": "d89a594e9812550e6712d77d20dad0c7f1f14e58d51c73dd97810d848b9d89dc"
+      "sha256": "7b68d129828eebb11ca9cd64f3d4d3346c899c38334e51eb499cb98dcb2866b8"
     },
     {
       "role": "source-tests",
       "path": "Video Localization/workers/VideoLocalization.Worker/tests/waveform_contract.rs",
-      "sha256": "2628d305352c9c6d293925f5a8f4aa934d6c6e503fe7370f61e7b09690e66506"
+      "sha256": "77bddf3b5c94443d61ab7636634f2dbad68d1591d9d7af3342db34c9d2fe735f"
     },
     {
       "role": "test-fixtures",
       "path": "Video Localization/testing/implementation/VID-IMPL-P00-003A/waveform-fixtures.json",
-      "sha256": "a9c5014623aa14f8e3d610ee3e5d902febbef343f2df1e1e5989ce0670000ae2"
+      "sha256": "61aabb4b78860632694288e7b23fe9b83c7984de52ac596e1a803f84c6a25347"
     },
     {
       "role": "implementation-readme",
