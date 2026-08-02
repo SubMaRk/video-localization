@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO",
+  "schema_version": "0.1.0-p00",
+  "title": "VID-IMPL-P00-003A worker-hello schema",
+  "type": "object",
+  "required": [
+    "operation_id",
+    "operation_version",
+    "implementation_id",
+    "implementation_profile_id",
+    "transport",
+    "platform",
+    "architecture",
+    "control_protocol_min",
+    "control_protocol_max",
+    "limits",
+    "supported",
+    "unsupported",
+    "resource_profile_id",
+    "policy_profile_id",
+    "retry_profile_id"
+  ],
+  "properties": {
+    "operation_id": {"type": "string"},
+    "operation_version": {"type": "string"},
+    "implementation_id": {"type": "string"},
+    "implementation_profile_id": {"type": "string"},
+    "transport": {"type": "string"},
+    "platform": {"type": "string"},
+    "architecture": {"type": "string"},
+    "control_protocol_min": {"type": "string"},
+    "control_protocol_max": {"type": "string"},
+    "limits": {
+      "type": "object",
+      "required": [
+        "control_envelope_bytes",
+        "stream_count",
+        "wall_time_seconds",
+        "child_cpu_seconds",
+        "resident_memory_bytes",
+        "staging_bytes",
+        "bulk_payload_bytes",
+        "bulk_descriptor_bytes",
+        "output_bytes",
+        "error_bytes"
+      ],
+      "properties": {
+        "control_envelope_bytes": {"type": "integer", "minimum": 1},
+        "stream_count": {"type": "integer", "minimum": 1},
+        "wall_time_seconds": {"type": "integer", "minimum": 1},
+        "child_cpu_seconds": {"type": "integer", "minimum": 1},
+        "resident_memory_bytes": {"type": "integer", "minimum": 1},
+        "staging_bytes": {"type": "integer", "minimum": 0},
+        "bulk_payload_bytes": {"type": "integer", "minimum": 0},
+        "bulk_descriptor_bytes": {"type": "integer", "minimum": 1},
+        "output_bytes": {"type": "integer", "minimum": 1},
+        "error_bytes": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "supported": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "unsupported": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "resource_profile_id": {"type": "string"},
+    "policy_profile_id": {"type": "string"},
+    "retry_profile_id": {"type": "string"}
+  },
+  "additionalProperties": false
+}

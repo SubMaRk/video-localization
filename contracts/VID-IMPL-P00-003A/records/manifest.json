@@ -1,0 +1,258 @@
+{
+  "record_digest_profile_id": "VID-WAVEFORM-ADMISSION-MANIFEST-P00-003A",
+  "record_digest_profile_version": "0.1.0-p00",
+  "status": "candidate_for_review",
+  "authority": "OWNER-AUTH-V2",
+  "purpose": "Bind the sole authoritative 003A admission manifest and required operation/schema/profile records before dispatch.",
+  "serialization": {
+    "encoding": "UTF-8",
+    "bom": false,
+    "line_endings": "LF",
+    "indentation_spaces": 2,
+    "trailing_whitespace": false,
+    "final_newline": "exactly-one-LF",
+    "hash_coverage": "complete-file-bytes",
+    "hash_algorithm": "sha-256",
+    "hex_encoding": "lowercase-ASCII",
+    "rfc_canonical_json": false,
+    "cache_key_cbor_profile": true
+  },
+  "records": [
+    {
+      "role": "control-protocol",
+      "record_id": "SUI-SPEC-003",
+      "record_version": "1.0",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/records/control-protocol.json",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-CONTROL",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-CONTROL.schema.json",
+      "sha256": "2539250e640517eccc9dccf5feebce6cf9ec89acc26cef9ee08edc9d914d9f02"
+    },
+    {
+      "role": "operation-profile",
+      "record_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+      "record_version": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/records/operation-profile.json",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE.schema.json",
+      "sha256": "2374d0730488c262148516051431b09acb0e2b06fe5ec901d5ffdb2739a889db"
+    },
+    {
+      "role": "resource-profile",
+      "record_id": "VID-WAVEFORM-RESOURCE-P00-003A",
+      "record_version": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/records/resource-profile.json",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-RESOURCE",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-RESOURCE.schema.json",
+      "sha256": "6da872ad96a9f0840cc62bf2bd27201aaf8d877002d5add749833710d3e5e07d"
+    },
+    {
+      "role": "policy-profile",
+      "record_id": "VID-WAVEFORM-POLICY-P00-003A",
+      "record_version": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/records/policy-profile.json",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-POLICY",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-POLICY.schema.json",
+      "sha256": "ad4838a59d06ee676b4b94be43d6f9dd5c7ded88f5c57cfd7f7f56bcae82c368"
+    },
+    {
+      "role": "retry-profile",
+      "record_id": "VID-WAVEFORM-RETRY-P00-003A",
+      "record_version": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/records/retry-profile.json",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-PARAMETER",
+      "schema_path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-PARAMETER.schema.json",
+      "sha256": "35de87a3fe7681a485d2b8d4199f5fe89b8d27c38b1500043dd01397d9b3f8e1"
+    },
+    {
+      "role": "schema-bundle",
+      "record_id": "VID-IMPL-P00-003A",
+      "record_version": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schema-bundle.json",
+      "sha256": "c01cc30752532e9abb5804d76883c890a58b267cf886cb01f1c25716be7310c9"
+    }
+  ],
+  "fixture_records": [
+    {
+      "role": "operation-descriptor",
+      "path": "contracts/VID-IMPL-P00-003A/fixtures/operation-descriptor.json",
+      "sha256": "827f842460512e2721ed6fcd0832f4bf0250c3d15dfca3c7504d4d71a27856e4"
+    },
+    {
+      "role": "worker-hello",
+      "path": "contracts/VID-IMPL-P00-003A/fixtures/worker-hello.json",
+      "sha256": "4bcc23f8c0ce2b6469a16dea7e137807ebc407a693a8234f657fc20fbc805c2f"
+    },
+    {
+      "role": "cache-and-descriptor-fixtures",
+    "path": "contracts/VID-IMPL-P00-003A/fixtures/cache-key-and-descriptor-fixtures.json",
+    "sha256": "f609a700a89edc1ca25c12f6d8ec496bb3887c3263604ce8d6cca2b62e9a046a"
+    }
+  ],
+  "schema_records": [
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-INPUT",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-INPUT.schema.json",
+      "sha256": "916dd6e26609ff34906199a7a10ffb047fcdf50334b6aefd3f1e0a01e497b84e"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-ARTIFACT.schema.json",
+      "sha256": "b6d48767ee109fa60715d9bb9d477196553d6196a9f43202d96f37e20cd04154"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-PARAMETER",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-PARAMETER.schema.json",
+      "sha256": "43da57dccf0152e8bb303406cbefb16ea590168e207157e2dd0f38a0fdb6713b"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR.schema.json",
+      "sha256": "c551d0c1b23c542aa61155180c7d9314cce19739f557513b384d43b709142b54"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-CONTROL",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-CONTROL.schema.json",
+      "sha256": "020307fd2bc15000beb052319b359cef5663b5b5885ac6f5c40feb4bb0e28783"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-RESOURCE",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-RESOURCE.schema.json",
+      "sha256": "6e9f8c77278401e3e943a531d4939a941f62279a9030ac4252c53f1ef7668405"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-POLICY",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-POLICY.schema.json",
+      "sha256": "925c07f72ff7ba1a46ec0a2ada05a6b6554815c3c77d1ae6863ae050707601f9"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR.schema.json",
+      "sha256": "cec467e93fd40e8a1ce62c2c73e1ac3f0aa1095e26d864f93745040e4e83eecf"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO.schema.json",
+      "sha256": "afaa793d59d50f1511666afccb03440798e14b68ed271629f8747055f5dfeb41"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE.schema.json",
+      "sha256": "2ceb828d6ed3c9cf54e56d9d94705b2643c3ec6cf3b0a982dbe2a18911f0f2ca"
+    }
+  ],
+  "authorities": [
+    {
+      "id": "SUI-SPEC-003",
+      "revision": "1.0",
+      "path": "_shared/specifications/SUI-SPEC-003-job-worker-artifact-protocol.md",
+      "sha256": "b5e0106bf0117587b0507fc3bbf5837b77e35fb18a6dea12c0cf9d8dd14548b7"
+    },
+    {
+      "id": "VID-DEC-003",
+      "revision": "1.0",
+      "path": "Video Localization/decisions/VID-DEC-003-initial-support-profiles.md",
+      "sha256": "0c6a9056083bfc741b49de908f74597d9bd8546b69eb75ae8c342b6ea06e2851"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-SCHEMA-BUNDLE",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schema-bundle.json",
+      "sha256": "c01cc30752532e9abb5804d76883c890a58b267cf886cb01f1c25716be7310c9"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-INPUT",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-INPUT.schema.json",
+      "sha256": "916dd6e26609ff34906199a7a10ffb047fcdf50334b6aefd3f1e0a01e497b84e"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-ARTIFACT",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-ARTIFACT.schema.json",
+      "sha256": "b6d48767ee109fa60715d9bb9d477196553d6196a9f43202d96f37e20cd04154"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-PARAMETER",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-PARAMETER.schema.json",
+      "sha256": "43da57dccf0152e8bb303406cbefb16ea590168e207157e2dd0f38a0fdb6713b"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-STRUCTURED-ERROR",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR.schema.json",
+      "sha256": "c551d0c1b23c542aa61155180c7d9314cce19739f557513b384d43b709142b54"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-CONTROL",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-CONTROL.schema.json",
+      "sha256": "020307fd2bc15000beb052319b359cef5663b5b5885ac6f5c40feb4bb0e28783"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-WORKER-HELLO",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO.schema.json",
+      "sha256": "afaa793d59d50f1511666afccb03440798e14b68ed271629f8747055f5dfeb41"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-OPERATION-PROFILE",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE.schema.json",
+      "sha256": "2ceb828d6ed3c9cf54e56d9d94705b2643c3ec6cf3b0a982dbe2a18911f0f2ca"
+    },
+    {
+      "id": "VID-IMPL-P00-002B1-SCHEMA-BUNDLE",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-002B1/schema-bundle.json",
+      "sha256": "f78bf8a7af8616b913d03539eb66ace6bf670f80c685e791521e395396f3397f"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-RESOURCE",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-RESOURCE.schema.json",
+      "sha256": "6e9f8c77278401e3e943a531d4939a941f62279a9030ac4252c53f1ef7668405"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-POLICY",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-POLICY.schema.json",
+      "sha256": "925c07f72ff7ba1a46ec0a2ada05a6b6554815c3c77d1ae6863ae050707601f9"
+    },
+    {
+      "id": "VID-IMPL-P00-003A-BULK-DESCRIPTOR",
+      "revision": "0.1.0-p00",
+      "path": "Video Localization/contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR.schema.json",
+      "sha256": "cec467e93fd40e8a1ce62c2c73e1ac3f0aa1095e26d864f93745040e4e83eecf"
+    }
+  ],
+  "scope_exclusions": [
+    "no ffprobe execution",
+    "no media bytes in runtime payload",
+    "no raw path or parse output schema in cache-key material",
+    "no UI/playback/vfr support"
+  ],
+  "hashing": {
+    "manifest_self_hash": "excluded-to-avoid-self-reference",
+    "candidate_hashes_bound_to_evidence": [
+      "contracts/VID-IMPL-P00-003A/schema-bundle.json",
+      "contracts/VID-IMPL-P00-003A/records/operation-profile.json",
+      "contracts/VID-IMPL-P00-003A/records/resource-profile.json",
+      "contracts/VID-IMPL-P00-003A/records/policy-profile.json",
+      "contracts/VID-IMPL-P00-003A/records/retry-profile.json",
+      "contracts/VID-IMPL-P00-003A/fixtures/operation-descriptor.json",
+      "contracts/VID-IMPL-P00-003A/fixtures/worker-hello.json",
+      "contracts/VID-IMPL-P00-003A/fixtures/cache-key-and-descriptor-fixtures.json"
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "cache_key_positive_cases": [
+    {
+      "case_id": "cache-key-positive-001",
+      "seed": "waveform-seed-003a",
+      "resource_profile_id": "VID-WAVEFORM-RESOURCE-P00-003A",
+      "policy_profile_id": "VID-WAVEFORM-POLICY-P00-003A",
+      "retry_profile_id": "VID-WAVEFORM-RETRY-P00-003A",
+      "input_ports": [
+        {
+          "order": 0,
+          "type": "waveform_request",
+          "schema": "VID-IMPL-P00-003A-WAVEFORM-INPUT",
+          "content": "source",
+          "revision": "0.1.0-p00",
+          "sample_range": "[0,4096)"
+        }
+      ],
+      "representation": {
+        "peak": "waveform-peak-v1",
+        "time": "sample",
+        "channel": "stereo-major",
+        "downmix": "matrix-stereo-downmix-v1",
+        "resampling": "resample-none",
+        "stability": "fixed"
+      },
+      "expected_cache_key_prefix": "SUI-CACHE-KEY-V1\u0000",
+      "expected_cache_key_digest": "8eda1f679adc820e35ed450e3ea70707b9a96e4a4e8eddd4a767c5727566a835"
+    }
+  ],
+  "cache_key_negative_cases": [
+    {
+      "case_id": "cache-key-negative-invalid-seed",
+      "invalid_seed": true,
+      "missing_seed": false
+    },
+    {
+      "case_id": "cache-key-negative-missing-seed",
+      "invalid_seed": false,
+      "missing_seed": true
+    }
+  ],
+  "bulk_descriptor_positive_cases": [
+    {
+      "case_id": "bulk-descriptor-positive-001",
+      "descriptor": {
+        "version": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+        "mode": "read-only",
+        "handle_identity": "handle-vid-waveform-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001",
+        "cancel_scope": "attempt-001",
+        "expiry": "2099-01-01T00:00:00Z",
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "d67c656e01756650d77717b0839985a056ec28ffe174601d690fc407a2ceffca"
+        },
+        "chunk_hashes_omitted": true,
+        "length": 4096,
+        "payload_schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+        "source_publication_fence": "fence-001",
+        "representation": {
+          "peak": "waveform-peak-v1",
+          "time": "sample",
+          "channel": "stereo-major",
+          "downmix": "matrix-stereo-downmix-v1",
+          "resampling": "resample-none",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)"
+        },
+        "descriptor_hash": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+      },
+      "expected_descriptor_digest": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+    }
+  ],
+  "bulk_descriptor_negative_cases": [
+    {
+      "case_id": "bulk-descriptor-negative-missing-descriptor-hash",
+      "descriptor": {
+        "version": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+        "mode": "read-only",
+        "handle_identity": "handle-vid-waveform-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001",
+        "cancel_scope": "attempt-001",
+        "expiry": "2099-01-01T00:00:00Z",
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "d67c656e01756650d77717b0839985a056ec28ffe174601d690fc407a2ceffca"
+        },
+        "chunk_hashes_omitted": true,
+        "length": 4096,
+        "payload_schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+        "source_publication_fence": "fence-001",
+        "representation": {
+          "peak": "waveform-peak-v1",
+          "time": "sample",
+          "channel": "stereo-major",
+          "downmix": "matrix-stereo-downmix-v1",
+          "resampling": "resample-none",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)"
+        },
+        "descriptor_hash": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+      },
+      "reason": "missing-descriptor-hash"
+    },
+    {
+      "case_id": "bulk-descriptor-negative-chunk-hash-required",
+      "descriptor": {
+        "version": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+        "mode": "read-only",
+        "handle_identity": "handle-vid-waveform-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001",
+        "cancel_scope": "attempt-001",
+        "expiry": "2099-01-01T00:00:00Z",
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "d67c656e01756650d77717b0839985a056ec28ffe174601d690fc407a2ceffca"
+        },
+        "chunk_hashes_omitted": true,
+        "length": 4096,
+        "payload_schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+        "source_publication_fence": "fence-001",
+        "representation": {
+          "peak": "waveform-peak-v1",
+          "time": "sample",
+          "channel": "stereo-major",
+          "downmix": "matrix-stereo-downmix-v1",
+          "resampling": "resample-none",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)"
+        },
+        "descriptor_hash": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+      },
+      "reason": "chunk-list"
+    },
+    {
+      "case_id": "bulk-descriptor-negative-non-hex-integrity",
+      "descriptor": {
+        "version": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+        "mode": "read-only",
+        "handle_identity": "handle-vid-waveform-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001",
+        "cancel_scope": "attempt-001",
+        "expiry": "2099-01-01T00:00:00Z",
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "not-a-digest"
+        },
+        "chunk_hashes_omitted": true,
+        "length": 4096,
+        "payload_schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+        "source_publication_fence": "fence-001",
+        "representation": {
+          "peak": "waveform-peak-v1",
+          "time": "sample",
+          "channel": "stereo-major",
+          "downmix": "matrix-stereo-downmix-v1",
+          "resampling": "resample-none",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)"
+        },
+        "descriptor_hash": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+      },
+      "reason": "non-hex"
+    },
+    {
+      "case_id": "bulk-descriptor-negative-misaligned-hash",
+      "descriptor": {
+        "version": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+        "mode": "read-only",
+        "handle_identity": "handle-vid-waveform-003a",
+        "attempt_id": "attempt-001",
+        "lease_id": "lease-001",
+        "cancel_scope": "attempt-001",
+        "expiry": "2099-01-01T00:00:00Z",
+        "integrity": {
+          "algorithm": "sha-256",
+          "value": "d67c656e01756650d77717b0839985a056ec28ffe174601d690fc407a2ceffca"
+        },
+        "chunk_hashes_omitted": true,
+        "length": 4096,
+        "payload_schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+        "source_publication_fence": "fence-001",
+        "representation": {
+          "peak": "waveform-peak-v1",
+          "time": "sample",
+          "channel": "stereo-major",
+          "downmix": "matrix-stereo-downmix-v1",
+          "resampling": "resample-none",
+          "source_timeline": "timeline-001",
+          "sample_range": "[0,4096)"
+        },
+        "descriptor_hash": "3f1aabb75fb6a7aeb4e38f9ccc1d49ad36c5b2e019eed79d6b67adc158ec371d"
+      },
+      "reason": "mismatched-length"
+    }
+  ]
+}

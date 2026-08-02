@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-RESOURCE",
+  "schema_version": "0.1.0-p00",
+  "title": "Waveform resource profile schema",
+  "type": "object",
+  "required": ["resource_id", "limits", "transport", "caps"],
+  "properties": {
+    "resource_id": {"type": "string", "minLength": 1},
+    "limits": {
+      "type": "object",
+      "required": [
+        "control_envelope_bytes",
+        "wall_time_seconds",
+        "cpu_time_seconds",
+        "resident_memory_bytes",
+        "staging_bytes",
+        "bulk_payload_bytes",
+        "payload_text_bytes",
+        "nesting_max"
+      ],
+      "properties": {
+        "control_envelope_bytes": {"type": "integer", "minimum": 1},
+        "wall_time_seconds": {"type": "integer", "minimum": 1},
+        "cpu_time_seconds": {"type": "integer", "minimum": 1},
+        "resident_memory_bytes": {"type": "integer", "minimum": 1},
+        "staging_bytes": {"type": "integer", "minimum": 1},
+        "bulk_payload_bytes": {"type": "integer", "minimum": 1},
+        "payload_text_bytes": {"type": "integer", "minimum": 1},
+        "nesting_max": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "transport": {"type": "string"},
+    "caps": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

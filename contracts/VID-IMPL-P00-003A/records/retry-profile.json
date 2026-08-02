@@ -1,0 +1,17 @@
+{
+  "retry_profile_id": "VID-WAVEFORM-RETRY-P00-003A",
+  "retry_profile_version": "0.1.0-p00",
+  "applicable_codes": [
+    "VID-WAVEFORM-WORKER-TRANSIENT",
+    "VID-WAVEFORM-STORAGE-TRANSIENT"
+  ],
+  "max_total_attempts": 2,
+  "base_wait_millis": 500,
+  "max_wait_millis": 500,
+  "backoff": "fixed",
+  "cumulative_wall_seconds": 30,
+  "cumulative_cpu_seconds": 30,
+  "cumulative_ram_bytes": 268435456,
+  "cumulative_staging_bytes": 536870912,
+  "cost_ceiling": 2
+}

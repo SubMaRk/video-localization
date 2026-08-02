@@ -1,0 +1,97 @@
+{
+  "operation_id": "submark.video-localization.waveform.derive",
+  "operation_version": "0.1.0-p00",
+  "implementation_id": "VID-IMPL-P00-003A",
+  "implementation_profile_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+  "input_schema_id": "VID-IMPL-P00-003A-WAVEFORM-INPUT",
+  "output_schema_id": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+  "transport": "local-staged-file",
+  "requested_capabilities": [
+    "cancellation",
+    "deadline"
+  ],
+  "requested_output_capabilities": [],
+  "input_ports": [
+    {
+      "order": 0,
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-INPUT",
+      "content_type": "application/vnd.video.waveform.request+json",
+      "port_type": "waveform_request",
+      "identity": "waveform-request-port-v1",
+      "revision": "0.1.0-p00",
+      "sample_range": "[0,18446744073709551615)"
+    }
+  ],
+  "output_ports": [
+    {
+      "order": 0,
+      "port_id": "waveform_artifact_port",
+      "port_type": "waveform_artifact",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+      "max_bytes": 65536,
+      "max_nesting": 8
+    },
+    {
+      "order": 1,
+      "port_id": "waveform_error_port",
+      "port_type": "waveform_error",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR",
+      "max_bytes": 32768,
+      "max_nesting": 8
+    },
+    {
+      "order": 2,
+      "port_id": "waveform_peak_bulk_port",
+      "port_type": "waveform_peak_bulk",
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR",
+      "max_bytes": 65536,
+      "max_nesting": 8
+    }
+  ],
+  "launch_policy": {
+    "use_shell": false,
+    "use_path_lookup": false,
+    "user_supplied_options": false
+  },
+  "staged_lease": {
+    "lease_id": "LEASE-STATE-3A",
+    "lease_epoch": 1,
+    "minimum_acceptable_lease_epoch": 1,
+    "immutable": true,
+    "source_sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "source_length": 12345,
+    "staged_copy_identity": "staged-copy-3a-identity",
+    "staged_copy_sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "staged_copy_length": 12345,
+    "observed_staged_copy_identity": "staged-copy-3a-identity",
+    "observed_staged_copy_sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "observed_staged_copy_length": 12345,
+    "access_scope": "waveform-lease-scope-3a",
+    "expires_at": "2099-01-01T00:00:00Z",
+    "manifest_digest": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "logical_source_ref": "source:waveform:001",
+    "observed_fence_token": "waveform-fence-token",
+    "expected_fence_token": "waveform-fence-token"
+  },
+  "representation": {
+    "sample_rate": 48000,
+    "channel_count": 2,
+    "target_timebase": [1, 48000],
+    "max_window_samples": 134217728
+  },
+  "parameters": {
+    "representation": {
+      "sample_rate": 48000,
+      "channel_count": 2,
+      "target_timebase": [1, 48000],
+      "max_window_samples": 134217728
+    },
+    "limits": {
+      "wall_seconds": 30,
+      "cpu_seconds": 30,
+      "resident_memory_bytes": 268435456,
+      "stream_count": 1
+    },
+    "retry_profile": "VID-WAVEFORM-RETRY-P00-003A"
+  }
+}

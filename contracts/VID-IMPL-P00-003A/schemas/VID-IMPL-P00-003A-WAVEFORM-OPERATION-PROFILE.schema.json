@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE",
+  "schema_version": "0.1.0-p00",
+  "title": "VID-IMPL-P00-003A operation profile schema",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "profile_version",
+    "operation_id",
+    "operation_version",
+    "implementation_id",
+    "implementation_profile_id",
+    "transport",
+    "ports",
+    "capabilities",
+    "policy"
+  ],
+  "properties": {
+    "profile_id": {"type": "string"},
+    "profile_version": {"type": "string"},
+    "operation_id": {"type": "string"},
+    "operation_version": {"type": "string"},
+    "implementation_id": {"type": "string"},
+    "implementation_profile_id": {"type": "string"},
+    "transport": {"type": "string"},
+    "ports": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["role", "order", "max_nesting", "max_bytes", "required", "schema"],
+        "properties": {
+          "role": {"type": "string"},
+          "order": {"type": "integer", "minimum": 0},
+          "max_nesting": {"type": "integer", "minimum": 1},
+          "max_bytes": {"type": "integer", "minimum": 0},
+          "required": {"type": "boolean"},
+          "schema": {"type": "string"},
+          "port_id": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "required": ["supported", "unsupported"],
+      "properties": {
+        "supported": {"type": "array", "items": {"type": "string"}},
+        "unsupported": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "cache_key_schema",
+        "cache_key_prefix",
+        "resource_profile_id",
+        "policy_profile_id",
+        "retry_profile_id",
+        "bulk_descriptor_profile",
+        "output_complete_only",
+        "publish_complete_only"
+      ],
+      "properties": {
+        "cache_key_schema": {"type": "string"},
+        "cache_key_prefix": {"type": "string"},
+        "resource_profile_id": {"type": "string"},
+        "policy_profile_id": {"type": "string"},
+        "retry_profile_id": {"type": "string"},
+        "bulk_descriptor_profile": {"type": "string"},
+        "output_complete_only": {"type": "boolean"},
+        "publish_complete_only": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

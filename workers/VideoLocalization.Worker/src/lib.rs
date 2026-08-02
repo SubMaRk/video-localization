@@ -1,6 +1,7 @@
 pub mod preflight;
 pub mod fingerprint;
 pub mod probe_adapter_contract;
+pub mod waveform_contract;
 
 pub use preflight::{
     source_ceiling_bytes,

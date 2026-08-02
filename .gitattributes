@@ -1,0 +1,7 @@
+contracts/VID-IMPL-P00-003A/**        text eol=lf
+testing/implementation/VID-IMPL-P00-003A/** text eol=lf
+specifications/evidence/PHASE-00-IMPLEMENTATION/VID-IMPL-P00-003A/** text eol=lf
+workers/VideoLocalization.Worker/src/waveform_contract.rs text eol=lf
+workers/VideoLocalization.Worker/tests/waveform_contract.rs text eol=lf
+/.gitattributes text eol=lf
+workers/VideoLocalization.Worker/src/lib.rs text eol=lf

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-POLICY",
+  "schema_version": "0.1.0-p00",
+  "title": "Waveform policy schema",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "isolation",
+    "capability_class",
+    "containment",
+    "output_constraints",
+    "publication_gate"
+  ],
+  "properties": {
+    "policy_id": {"type": "string"},
+    "isolation": {
+      "type": "object",
+      "required": ["network", "watchdog", "job_object", "transport"],
+      "properties": {
+        "network": {"type": "string", "enum": ["denied"]},
+        "watchdog": {"type": "string", "enum": ["required"]},
+        "job_object": {"type": "string", "enum": ["required"]},
+        "transport": {"type": "string", "enum": ["local-staged-file"]}
+      },
+      "additionalProperties": false
+    },
+    "containment": {
+      "type": "object",
+      "required": ["proof_required", "cross_operation_forbidden", "path_identity_forbidden"],
+      "properties": {
+        "proof_required": {"type": "boolean"},
+        "cross_operation_forbidden": {"type": "boolean"},
+        "path_identity_forbidden": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "output_constraints": {
+      "type": "object",
+      "required": [
+        "complete_only",
+        "max_retry_attempts",
+        "publish_only_after_journal"
+      ],
+      "properties": {
+        "complete_only": {"type": "boolean"},
+        "max_retry_attempts": {"type": "integer", "minimum": 1},
+        "publish_only_after_journal": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "capability_class": {"type": "string"},
+    "publication_gate": {
+      "type": "object",
+      "required": [
+        "requires_lease",
+        "requires_fence",
+        "required_authority",
+        "stale_failure",
+        "cache_stale_failure"
+      ],
+      "properties": {
+        "requires_lease": {"type": "boolean"},
+        "requires_fence": {"type": "boolean"},
+        "required_authority": {"type": "string"},
+        "stale_failure": {"type": "string"},
+        "cache_stale_failure": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
