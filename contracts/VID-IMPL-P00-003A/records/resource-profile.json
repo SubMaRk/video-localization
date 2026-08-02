@@ -1,0 +1,25 @@
+{
+  "resource_id": "VID-WAVEFORM-RESOURCE-P00-003A",
+  "resource_version": "0.1.0-p00",
+  "limits": {
+    "control_envelope_bytes": 262144,
+    "wall_time_seconds": 30,
+    "cpu_time_seconds": 30,
+    "resident_memory_bytes": 268435456,
+    "staging_bytes": 536870912,
+    "bulk_payload_bytes": 536870912,
+    "bulk_descriptor_bytes": 65536,
+    "error_bytes": 32768,
+    "payload_text_bytes": 4096,
+    "nesting_max": 8,
+    "stream_limit": 1,
+    "stream_count": 1,
+    "peak_count": 1048576,
+    "egress_bytes": 0
+  },
+  "transport": "local-staged-file",
+  "caps": [
+    "cancellation",
+    "deadline"
+  ]
+}

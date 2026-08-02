@@ -1,0 +1,122 @@
+{
+  "implementation_id": "VID-IMPL-P00-003A",
+  "issued_at": "2026-08-02T23:59:59+07:00",
+  "issue": {
+    "id": 30,
+    "title": "Recoverable Waveform Contract and Cache Foundation",
+    "milestone": "v0.1.0-alpha"
+  },
+  "evidence_claims": {
+    "contract-manifest-complete": {
+      "status": "passed",
+      "notes": "Admission manifest, schema-bundle, record, schema, and fixture bindings are complete and enforce fail-closed matching against explicit file hashes."
+    },
+    "deterministic-cache-key-foundation": {
+      "status": "passed",
+      "notes": "Cache-key preimage construction uses stable key sorting with fixed PROFILE and prefix; fixture vectors include fixed expected 64-hex cache key digests and are compared directly."
+    },
+    "bulk-descriptor-integrity-foundation": {
+      "status": "passed",
+      "notes": "Bulk descriptor linkage validates payload length/hash, descriptor preimage/hash, and deterministic descriptor-hash vector enforcement."
+    },
+    "state-mapping-completeness": {
+      "status": "passed",
+      "notes": "VID-WAVEFORM disposition coverage remains complete, with TimedOut constrained to deadline-expired state and Succeeded requiring an authoritative commit journal identity."
+    },
+    "journal-authority-completion": {
+      "status": "passed",
+      "notes": "Terminal success now requires a registered staged-validated commit journal entry; unrecorded, fabricated, mismatched, and removed journal identities fail closed."
+    },
+    "negative-mutation-matrix": {
+      "status": "passed",
+      "notes": "Cache-key and bulk descriptor positive/negative fixture matrices execute end-to-end (including unauthorized worker hello identities through schema validation)."
+    }
+  },
+  "toolchain": {
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "sha2": "0.11.0",
+    "serde": "1.0.229",
+    "serde_json": "1.0.151"
+  },
+  "commands": [
+    {
+      "command": "cargo test --manifest-path 'Video Localization/workers/VideoLocalization.Worker/Cargo.toml' --locked --test waveform_contract",
+      "working_directory": "Video Localization",
+      "status": "passed",
+      "exit_code": 0,
+      "environment": {
+        "CARGO_HOME": "C:\\Users\\SubMark\\AppData\\Local\\Temp\\vid-p00-003a-cargo-home",
+        "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse",
+        "CARGO_HTTP_TIMEOUT": "300",
+        "CARGO_HTTP_LOW_SPEED_LIMIT": "1"
+      },
+      "raw_output": {
+        "stdout": "running 14 tests\ntest retry_profile_enforces_attempt_ceiling_and_cumulative_limits ... ok\ntest bulk_descriptor_positive_and_zero_length_boundary ... ok\ntest state_mapping_matrix_covers_all_codes_and_recovery_boundaries ... ok\ntest cache_key_preimage_is_stable_with_sorted_cbor_key_bytes ... ok\ntest terminal_reconciliation_map_requires_authoritative_deadline_and_receipt ... ok\ntest manifest_missing_or_mismatched_bindings_fail_closed ... ok\ntest fixture_cache_key_positive_and_negative_cases_are_executed ... ok\ntest schema_bundle_hashes_and_required_schema_ids_are_exact ... ok\ntest fixture_bulk_descriptor_positive_and_negative_cases_are_executed ... ok\ntest publication_lifecycle_validates_atomic_commit_and_lineage_controls ... ok\ntest manifest_and_schema_bundle_are_authoritative_and_fail_closed ... ok\ntest worker_hello_rejects_unauthorized_executable_identity ... ok\ntest operation_and_worker_hello_profile_bindings_are_exact ... ok\ntest schema_mutation_matrix_rejects_required_and_unknown_fields ... ok\n\ntest result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s",
+        "stderr": ""
+      }
+    },
+    {
+      "command": "Get-ChildItem 'Video Localization/contracts/VID-IMPL-P00-003A' -Recurse -Filter *.json | ForEach-Object { Get-Content $_ -Raw | ConvertFrom-Json | Out-Null }",
+      "working_directory": "Video Localization",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_output": {
+        "stdout": "",
+        "stderr": ""
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "manifest_hashes_match",
+      "name": "Manifest hash records match each bound schema and fixture file",
+      "status": "passed"
+    },
+    {
+      "id": "operation_binding",
+      "name": "OperationDescriptor and WorkerHello fixture values bind exact operation/implementation IDs",
+      "status": "passed"
+    },
+    {
+      "id": "state_mapping",
+      "name": "All VID-WAVEFORM dispositions are present with full mapping metadata",
+      "status": "passed"
+    },
+    {
+      "id": "publication_journal_authority",
+      "name": "Terminal success path requires an authoritative commit journal identity and rejects stale, unrecorded, or revoked receipt paths",
+      "status": "passed"
+    },
+    {
+      "id": "cache_key_deterministic",
+      "name": "Cache-key preimage normalization, digest derivation, and ordered map behavior are deterministic",
+      "status": "passed"
+    },
+    {
+      "id": "cache_key_negative_inputs",
+      "name": "Negative cache-key mutations fail as expected",
+      "status": "passed"
+    },
+    {
+      "id": "bulk_descriptor_positive",
+      "name": "Bulk descriptor preimage and digest remain consistent and validate with descriptor_hash binding",
+      "status": "passed"
+    },
+    {
+      "id": "bulk_descriptor_negative",
+      "name": "Negative bulk descriptor mutations fail validation",
+      "status": "passed"
+    },
+    {
+      "id": "publication_lifecycle_checks",
+      "name": "Atomic publication lifecycle checks validate lease/fence/epoch lineage and deterministic commit-receipt transition controls",
+      "status": "passed"
+    },
+    {
+      "id": "manifest_schema_bundle_evidence_alignment",
+      "name": "Manifest, schema-bundle, and evidence records remain byte-aligned after hash recomputation",
+      "status": "passed"
+    }
+  ],
+  "violations": []
+}

@@ -1,0 +1,40 @@
+{
+  "operation_id": "submark.video-localization.waveform.derive",
+  "operation_version": "0.1.0-p00",
+  "implementation_id": "VID-IMPL-P00-003A",
+  "implementation_profile_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+  "transport": "local-staged-file",
+  "platform": "Windows",
+  "architecture": "x64",
+  "control_protocol_min": "1.0.0",
+  "control_protocol_max": "1.0.0",
+  "limits": {
+    "control_envelope_bytes": 262144,
+    "stream_count": 1,
+    "wall_time_seconds": 30,
+    "child_cpu_seconds": 30,
+    "resident_memory_bytes": 268435456,
+    "staging_bytes": 536870912,
+    "bulk_payload_bytes": 536870912,
+    "bulk_descriptor_bytes": 65536,
+    "output_bytes": 65536,
+    "error_bytes": 32768
+  },
+  "supported": [
+    "cancellation",
+    "deadline"
+  ],
+  "unsupported": [
+    "progress",
+    "checkpoint",
+    "pause-resume",
+    "partial-success",
+    "degraded-output",
+    "acceleration",
+    "auto-fallback",
+    "network"
+  ],
+  "resource_profile_id": "VID-WAVEFORM-RESOURCE-P00-003A",
+  "policy_profile_id": "VID-WAVEFORM-POLICY-P00-003A",
+  "retry_profile_id": "VID-WAVEFORM-RETRY-P00-003A"
+}

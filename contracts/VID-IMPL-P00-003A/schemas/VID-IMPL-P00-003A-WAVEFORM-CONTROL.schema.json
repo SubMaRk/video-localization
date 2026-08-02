@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-CONTROL",
+  "schema_version": "0.1.0-p00",
+  "title": "VID-IMPL-P00-003A control-protocol schema",
+  "type": "object",
+  "required": [
+    "protocol_specification_id",
+    "protocol_specification_revision",
+    "control_protocol_version",
+    "operation",
+    "worker",
+    "transport"
+  ],
+  "properties": {
+    "protocol_specification_id": {
+      "type": "string",
+      "const": "SUI-SPEC-003"
+    },
+    "protocol_specification_revision": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "control_protocol_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "operation": {
+      "type": "object",
+      "required": [
+        "operation_id",
+        "operation_version",
+        "implementation_id",
+        "implementation_profile_id",
+        "schema_reference_ids",
+        "supported_capabilities",
+        "unsupported_capabilities",
+        "transport",
+        "control_protocol_min",
+        "control_protocol_max"
+      ],
+      "properties": {
+        "operation_id": {"type": "string"},
+        "operation_version": {"type": "string"},
+        "implementation_id": {"type": "string"},
+        "implementation_profile_id": {"type": "string"},
+        "schema_reference_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "supported_capabilities": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "unsupported_capabilities": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "transport": {"type": "string"},
+        "control_protocol_min": {"type": "string"},
+        "control_protocol_max": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "worker": {
+      "type": "object",
+      "required": [
+        "platform",
+        "architecture",
+        "executable_path",
+        "executable_sha256",
+        "component_version",
+        "limits",
+        "supported",
+        "unsupported",
+        "schema_reference_ids"
+      ],
+      "properties": {
+        "platform": {"type": "string"},
+        "architecture": {"type": "string"},
+        "executable_path": {"type": "string"},
+        "executable_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "component_version": {"type": "string"},
+        "limits": {
+          "type": "object",
+          "required": [
+            "control_envelope_bytes",
+            "wall_time_seconds",
+            "child_cpu_seconds",
+            "resident_memory_bytes",
+            "stream_count"
+          ],
+          "properties": {
+            "control_envelope_bytes": {"type": "integer", "minimum": 1},
+            "wall_time_seconds": {"type": "integer", "minimum": 1},
+            "child_cpu_seconds": {"type": "integer", "minimum": 1},
+            "resident_memory_bytes": {"type": "integer", "minimum": 1},
+            "stream_count": {"type": "integer", "minimum": 1}
+          },
+          "additionalProperties": false
+        },
+        "supported": {"type": "array", "items": {"type": "string"}},
+        "unsupported": {"type": "array", "items": {"type": "string"}},
+        "schema_reference_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "transport": {
+      "type": "object",
+      "required": ["kind", "network_capability"],
+      "properties": {
+        "kind": {"type": "string"},
+        "network_capability": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

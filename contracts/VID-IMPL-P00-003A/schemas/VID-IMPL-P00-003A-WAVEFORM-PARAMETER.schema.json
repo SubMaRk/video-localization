@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-PARAMETER",
+  "schema_version": "0.1.0-p00",
+  "title": "Waveform operation parameter schema",
+  "description": "Bounded non-media invocation profile and profile-derived cache-key context.",
+  "type": "object",
+  "required": [
+    "cache_key_schema",
+    "cache_key_seed",
+    "environment_equivalence",
+    "resource_profile_id",
+    "policy_profile_id",
+    "retry_profile_id",
+    "representation",
+    "seed"
+  ],
+  "properties": {
+    "cache_key_schema": {"type": "string"},
+    "cache_key_seed": {"type": "string"},
+    "environment_equivalence": {
+      "type": "object",
+      "required": [
+        "os_family",
+        "arch_family",
+        "worker_family",
+        "containerization",
+        "capability_bundle"
+      ],
+      "properties": {
+        "os_family": {"type": "string"},
+        "arch_family": {"type": "string"},
+        "worker_family": {"type": "string"},
+        "containerization": {"type": "boolean"},
+        "capability_bundle": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "resource_profile_id": {"type": "string"},
+    "policy_profile_id": {"type": "string"},
+    "retry_profile_id": {"type": "string"},
+    "representation": {
+      "type": "object",
+      "required": [
+        "peak_encoding",
+        "time_axis",
+        "channel_layout",
+        "downmix",
+        "resampling",
+        "timebase"
+      ],
+      "properties": {
+        "peak_encoding": {"type": "string"},
+        "time_axis": {"type": "string"},
+        "channel_layout": {"type": "string"},
+        "downmix": {
+          "type": "object",
+          "required": ["matrix_id", "matrix_version", "implementation_id"],
+          "properties": {
+            "matrix_id": {"type": "string"},
+            "matrix_version": {"type": "string"},
+            "implementation_id": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "resampling": {
+          "type": "object",
+          "required": ["implementation_id", "delay_samples", "trim_samples", "correction_profile_id"],
+          "properties": {
+            "implementation_id": {"type": "string"},
+            "delay_samples": {"type": "integer", "minimum": 0},
+            "trim_samples": {"type": "integer", "minimum": 0},
+            "correction_profile_id": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "timebase": {
+          "type": "array",
+          "items": {"type": "integer"},
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "additionalProperties": false
+    },
+    "seed": {
+      "type": "object",
+      "required": ["attempt", "batch", "revision"],
+      "properties": {
+        "attempt": {"type": "string"},
+        "batch": {"type": "string"},
+        "revision": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

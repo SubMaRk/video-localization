@@ -1,0 +1,95 @@
+{
+  "artifact_id": "VID-IMPL-P00-003A",
+  "artifact_version": "0.1.0-p00",
+  "operation_id": "submark.video-localization.waveform.derive",
+  "operation_version": "0.1.0-p00",
+  "implementation_profile_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+  "implementation_id": "VID-IMPL-P00-003A",
+  "fixture_records": [
+    {
+      "role": "operation-descriptor",
+      "path": "contracts/VID-IMPL-P00-003A/fixtures/operation-descriptor.json",
+      "sha256": "2e56b7aa5f4882a043f33466a0d3b2678d9da1ec99e0b2abbc1fa825d8ec98f4"
+    },
+    {
+      "role": "worker-hello",
+      "path": "contracts/VID-IMPL-P00-003A/fixtures/worker-hello.json",
+      "sha256": "4bcc23f8c0ce2b6469a16dea7e137807ebc407a693a8234f657fc20fbc805c2f"
+    },
+    {
+      "role": "cache-and-descriptor-fixtures",
+      "path": "contracts/VID-IMPL-P00-003A/fixtures/cache-key-and-descriptor-fixtures.json",
+      "sha256": "8d9f972bffe490a7e34fb897af8b705164e43c21ac95a06107ffe8997b424b4b"
+    }
+  ],
+  "schema_records": [
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-INPUT",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-INPUT.schema.json",
+      "sha256": "916dd6e26609ff34906199a7a10ffb047fcdf50334b6aefd3f1e0a01e497b84e"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-ARTIFACT.schema.json",
+      "sha256": "b6d48767ee109fa60715d9bb9d477196553d6196a9f43202d96f37e20cd04154"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-PARAMETER",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-PARAMETER.schema.json",
+      "sha256": "43da57dccf0152e8bb303406cbefb16ea590168e207157e2dd0f38a0fdb6713b"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR.schema.json",
+      "sha256": "c551d0c1b23c542aa61155180c7d9314cce19739f557513b384d43b709142b54"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-CONTROL",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-CONTROL.schema.json",
+      "sha256": "020307fd2bc15000beb052319b359cef5663b5b5885ac6f5c40feb4bb0e28783"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-RESOURCE",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-RESOURCE.schema.json",
+      "sha256": "6e9f8c77278401e3e943a531d4939a941f62279a9030ac4252c53f1ef7668405"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-POLICY",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-POLICY.schema.json",
+      "sha256": "925c07f72ff7ba1a46ec0a2ada05a6b6554815c3c77d1ae6863ae050707601f9"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR.schema.json",
+      "sha256": "cec467e93fd40e8a1ce62c2c73e1ac3f0aa1095e26d864f93745040e4e83eecf"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-WORKER-HELLO.schema.json",
+      "sha256": "afaa793d59d50f1511666afccb03440798e14b68ed271629f8747055f5dfeb41"
+    },
+    {
+      "schema_id": "VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE",
+      "schema_version": "0.1.0-p00",
+      "path": "contracts/VID-IMPL-P00-003A/schemas/VID-IMPL-P00-003A-WAVEFORM-OPERATION-PROFILE.schema.json",
+      "sha256": "2ceb828d6ed3c9cf54e56d9d94705b2643c3ec6cf3b0a982dbe2a18911f0f2ca"
+    }
+  ],
+  "assumptions": [
+    "No real media parse/decode or waveform extraction is implemented.",
+    "No ffmpeg/ffprobe execution is implemented in VID-IMPL-P00-003A.",
+    "No UI, playback, VFR, or peak transfer via JSON/base64 is implemented.",
+    "Observed hashes are complete-file exact UTF-8 lowercase hex where present."
+  ],
+  "created_at": "2026-08-02T00:00:00+07:00",
+  "last_updated_at": "2026-08-02T23:59:59+07:00"
+}

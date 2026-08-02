@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT",
+  "schema_version": "0.1.0-p00",
+  "title": "Waveform artifact schema",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "artifact_version",
+    "artifact_type",
+    "output_schema_id",
+    "completeness",
+    "integrity",
+    "size_bytes",
+    "component_inventory",
+    "producing",
+    "input_digests",
+    "parameter_digests",
+    "resource_digests",
+    "policy_digests",
+    "cache_digests",
+    "output_port",
+    "staging",
+    "lineage",
+    "publication_id",
+    "fencing",
+    "cache_key",
+    "bulk_descriptor_ref"
+  ],
+  "properties": {
+    "artifact_id": {"type": "string", "minLength": 1},
+    "artifact_version": {"type": "string", "minLength": 1},
+    "artifact_type": {"type": "string", "enum": ["waveform_artifact"]},
+    "output_schema_id": {"type": "string", "minLength": 1},
+    "completeness": {"type": "string", "enum": ["complete"]},
+    "integrity": {
+      "type": "object",
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"type": "string", "enum": ["sha-256"]},
+        "value": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "size_bytes": {"type": "integer", "minimum": 0},
+    "component_inventory": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "producing": {
+      "type": "object",
+      "required": ["job_ref", "attempt_ref", "dispatch_ref", "worker_ref", "operation_id", "operation_version", "implementation_id", "implementation_profile_id"],
+      "properties": {
+        "job_ref": {"type": "string"},
+        "attempt_ref": {"type": "string"},
+        "dispatch_ref": {"type": "string"},
+        "worker_ref": {"type": "string"},
+        "operation_id": {"type": "string"},
+        "operation_version": {"type": "string"},
+        "implementation_id": {"type": "string"},
+        "implementation_profile_id": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "input_digests": {
+      "type": "object",
+      "required": ["staged_copy_hash", "manifest_digest", "logical_source_ref", "staged_copy_hash_schema_ref"],
+      "properties": {
+        "staged_copy_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "manifest_digest": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "logical_source_ref": {"type": "string", "minLength": 1},
+        "staged_copy_hash_schema_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "parameter_digests": {
+      "type": "object",
+      "required": ["argv", "limits", "cache_key"],
+      "properties": {
+        "argv": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "limits": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "cache_key": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "resource_digests": {
+      "type": "object",
+      "required": ["resource", "schema"],
+      "properties": {
+        "resource": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "schema": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "policy_digests": {
+      "type": "object",
+      "required": ["policy", "schema"],
+      "properties": {
+        "policy": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "schema": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "cache_digests": {
+      "type": "object",
+      "required": ["schema_bundle", "control_protocol", "cache_key_schema"],
+      "properties": {
+        "schema_bundle": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "control_protocol": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "cache_key_schema": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "output_port": {"type": "string", "minLength": 1},
+    "staging": {
+      "type": "object",
+      "required": ["state", "path", "delete_on_stale", "quarantine_on_failure"],
+      "properties": {
+        "state": {"type": "string"},
+        "path": {"type": "string", "minLength": 1},
+        "delete_on_stale": {"type": "boolean"},
+        "quarantine_on_failure": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "required": ["job_ref", "attempt_ref", "dispatch_ref", "worker_ref", "publication_ref"],
+      "properties": {
+        "job_ref": {"type": "string", "minLength": 1},
+        "attempt_ref": {"type": "string", "minLength": 1},
+        "dispatch_ref": {"type": "string", "minLength": 1},
+        "worker_ref": {"type": "string", "minLength": 1},
+        "publication_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "publication_id": {"type": "string", "minLength": 1},
+    "fencing": {
+      "type": "object",
+      "required": ["required", "active_token"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "active_token": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "cache_key": {
+      "type": "object",
+      "required": ["schema", "digest"],
+      "properties": {
+        "schema": {"type": "string", "minLength": 1},
+        "digest": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "bulk_descriptor_ref": {
+      "type": "object",
+      "required": ["reference", "digest", "schema"],
+      "properties": {
+        "reference": {"type": "string", "minLength": 1},
+        "digest": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "schema": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,32 @@
+{
+  "policy_id": "VID-WAVEFORM-POLICY-P00-003A",
+  "policy_version": "0.1.0-p00",
+  "isolation": {
+    "network": "denied",
+    "watchdog": "required",
+    "job_object": "required",
+    "transport": "local-staged-file"
+  },
+  "capability_model": "single-attempt",
+  "containment": {
+    "proof_required": true,
+    "no_path_identity": true,
+    "no_cross_operation_expansion": true
+  },
+  "policy_rules": {
+    "networking": {
+      "allowed": false,
+      "raw_path": false,
+      "media_parse_decode": false,
+      "playback_or_vfr": false
+    },
+    "publication": {
+      "requires_fence": true,
+      "requires_lease": true,
+      "complete_output_required": true,
+      "quarantine_on_failure": true,
+      "delete_on_stale": true
+    }
+  },
+  "capability_class": "waveform"
+}

@@ -1,0 +1,69 @@
+{
+  "profile_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+  "profile_version": "0.1.0-p00",
+  "operation_id": "submark.video-localization.waveform.derive",
+  "operation_version": "0.1.0-p00",
+  "implementation_id": "VID-IMPL-P00-003A",
+  "implementation_profile_id": "VID-WAVEFORM-OPERATION-PROFILE-P00-003A",
+  "transport": "local-staged-file",
+  "ports": [
+    {
+      "role": "waveform_request",
+      "order": 0,
+      "max_nesting": 8,
+      "max_bytes": 262144,
+      "required": true,
+      "schema": "VID-IMPL-P00-003A-WAVEFORM-INPUT"
+    },
+    {
+      "role": "waveform_artifact",
+      "order": 0,
+      "max_nesting": 8,
+      "max_bytes": 65536,
+      "required": true,
+      "schema": "VID-IMPL-P00-003A-WAVEFORM-ARTIFACT"
+    },
+    {
+      "role": "waveform_error",
+      "order": 1,
+      "max_nesting": 8,
+      "max_bytes": 32768,
+      "required": false,
+      "schema": "VID-IMPL-P00-003A-WAVEFORM-STRUCTURED-ERROR"
+    },
+    {
+      "role": "waveform_peak_bulk",
+      "order": 2,
+      "max_nesting": 8,
+      "max_bytes": 65536,
+      "required": false,
+      "schema": "VID-IMPL-P00-003A-WAVEFORM-BULK-DESCRIPTOR"
+    }
+  ],
+  "capabilities": {
+    "supported": [
+      "cancellation",
+      "deadline"
+    ],
+    "unsupported": [
+      "progress",
+      "checkpoint",
+      "pause-resume",
+      "partial-success",
+      "degraded-output",
+      "acceleration",
+      "auto-fallback",
+      "network"
+    ]
+  },
+  "policy": {
+    "cache_key_schema": "sui.cache-key.cbor-sha256.v1",
+    "cache_key_prefix": "SUI-CACHE-KEY-V1",
+    "resource_profile_id": "VID-WAVEFORM-RESOURCE-P00-003A",
+    "policy_profile_id": "VID-WAVEFORM-POLICY-P00-003A",
+    "retry_profile_id": "VID-WAVEFORM-RETRY-P00-003A",
+    "bulk_descriptor_profile": "VID-WAVEFORM-BULK-DESCRIPTOR-V1",
+    "output_complete_only": true,
+    "publish_complete_only": true
+  }
+}
