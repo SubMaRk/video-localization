@@ -1,0 +1,76 @@
+{
+  "evidence_id": "VID-EVID-001",
+  "evidence_revision": "0.1.0-draft.1",
+  "status": "frozen-local-github-sync-pending",
+  "candidate": {
+    "specification_id": "VID-SPEC-001",
+    "revision": "0.1-draft.1",
+    "status": "Approved",
+    "path": "Video Localization/specifications/VID-SPEC-001-foundation-prd.md",
+    "sha256": "9DCE066CF95A0C13B1169F8BF9F92A4A93429B5F833F5F366CB0B37C55244CAC"
+  },
+  "dependency": {
+    "decision_id": "SUI-DEC-008",
+    "revision": "1.0",
+    "status": "Accepted",
+    "path": "_shared/decisions/SUI-DEC-008-planning-baseline-acceptance.md",
+    "sha256": "A655CD115F68A286ED5A854ABCB7AF198E585BCCD0CA224AA23A1681B04D48A5"
+  },
+  "verifier": {
+    "path": "Video Localization/testing/conformance/vid-spec-001/verify.ps1",
+    "sha256": "9819F04A7D40E08C67D96CA22D2E9E245A5BC36E105E4B671DA469EF63BA2CFD"
+  },
+  "machine_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-001/VID-EVID-001-traceability-result.json",
+    "sha256": "E678F97244E88C60E12CF08C1D4D97845F90360E9659661B00521D2ABDC10670",
+    "status": "Pass",
+    "checks": "13/13",
+    "requirements": "35/35",
+    "gates": "7/7"
+  },
+  "review_packet": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-review-packet.md",
+    "sha256": "F2DF1A6A56242E1F52912EBCCAF7E9A8621EA03832E577E52E9CB8C420AC1C05"
+  },
+  "approval_transaction": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-001/VID-APPROVAL-001-transaction.json",
+    "sha256": "522CB6AA869C4492627ABB00D9F64B64EBAFB024151E5FFA466E0DBC514F8AAF",
+    "status": "Executed",
+    "required": 9,
+    "approved": 9,
+    "pending": 0
+  },
+  "authority": {
+    "id": "OWNER-AUTH-V0",
+    "status": "Accepted",
+    "path": ".agents/authority/OWNER-AUTH-V0.md",
+    "sha256": "A4F02F3E995CA2266169B9FDC2796C022935C6F430C33A7BFD9EF1E3BF7CB777"
+  },
+  "github": {
+    "repository": "SubMaRk/video-localization",
+    "issue": 19,
+    "issue_state_observed": "OPEN",
+    "remote_mutation_performed": false,
+    "sync_status": "pending-authorized-github-agent"
+  },
+  "freeze_transaction": {
+    "status": "Executed locally; GitHub sync pending",
+    "automatic_approval_allowed": false,
+    "allowed_when": "All nine identified approvals bind the unchanged candidate hash, every blocking finding is resolved, machine evidence still passes, and the owner authorizes the atomic freeze transaction.",
+    "executed_at": "2026-08-02T00:18:00+07:00"
+  },
+  "consolidated_review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-001/VID-SPEC-001-consolidated-review.md",
+    "sha256": "7916F2745C9C53977C8B24A7F222FD231B2AECB899D6E25CDB629ADEE12A9609",
+    "review_type": "owner-authorized-consolidated-self-review",
+    "independent_review": false,
+    "status": "Approved"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-001",
+    "revision": "1.0",
+    "status": "Frozen",
+    "path": "Video Localization/specifications/VID-SPEC-001-foundation-prd.md",
+    "sha256": "56EBD2428A4A3060749290B5F4A257F801736B665BBCE6CA9FBCD0F70A66FC33"
+  }
+}

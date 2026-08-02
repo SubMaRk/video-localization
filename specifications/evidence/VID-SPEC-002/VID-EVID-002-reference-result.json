@@ -1,0 +1,58 @@
+{
+  "evidence_id": "VID-EVID-002",
+  "revision": "1.0.0-review.1",
+  "status": "Pass",
+  "specification": {
+    "id": "VID-SPEC-002",
+    "revision": "1.0-review.1",
+    "sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5"
+  },
+  "dependencies": [
+    {
+      "id": "SUI-SPEC-001",
+      "revision": "1.0",
+      "status": "Frozen"
+    },
+    {
+      "id": "VID-SPEC-001",
+      "revision": "1.0",
+      "status": "Frozen"
+    }
+  ],
+  "fixture_manifest": {
+    "id": "VID-FIX-002",
+    "sha256": "45F9E0572F09D5769448B5D91C1353186F1D94B16EF50507728E1CA3F06761F9",
+    "families": 8,
+    "cases": 32
+  },
+  "checks": {
+    "one_h1": true,
+    "candidate_status": true,
+    "dependencies_frozen": true,
+    "namespace_bound": true,
+    "record_inventory": true,
+    "exact_gate_inventory": true,
+    "normative_coverage": true,
+    "local_links_resolve": true,
+    "no_placeholders": true,
+    "fixture_coverage": true,
+    "fixture_integrity": true,
+    "authority_boundary": true,
+    "observation_boundary": true,
+    "timing_boundary": true,
+    "product_isolation": true
+  },
+  "summary": {
+    "passed": 15,
+    "total": 15,
+    "failures": []
+  },
+  "limitations": [
+    "no-native-database",
+    "no-media-library",
+    "no-timebase-math",
+    "no-hostile-ingest-runtime",
+    "no-crash-migration-run",
+    "no-product-adapter-run"
+  ]
+}

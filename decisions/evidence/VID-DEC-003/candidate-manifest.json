@@ -1,0 +1,16 @@
+{
+  "decision_id": "VID-DEC-003",
+  "revision": "0.1-review.2",
+  "status": "In Review",
+  "candidate_path": "Video Localization/decisions/VID-DEC-003-initial-support-profiles.md",
+  "candidate_sha256": "E4B7D0A717E9A4DE2D3675A038D5BE739CCF2CFA3D0A179A4821ABA3EE78AD1D",
+  "authority": "OWNER-AUTH-V2",
+  "created_at": "2026-08-02T10:47:17.5986300+07:00",
+  "reviewed_inputs": [
+    ".agents/research/VID-DEC-003/official-component-lifecycle.md",
+    ".agents/research/VID-DEC-003/video-architecture-options.md",
+    ".agents/research/VID-DEC-003/shared-worker-contract.md",
+    ".agents/research/VID-DEC-003/security-license-profile.md",
+    ".agents/research/VID-DEC-003/support-claim-ux.md"
+  ]
+}

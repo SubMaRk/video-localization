@@ -1,0 +1,40 @@
+{
+  "evidence_id": "VID-DEC-001-SPIKE",
+  "revision": "0.1.0",
+  "executed_at": "2026-08-02T01:22:00+07:00",
+  "status": "Pass",
+  "repository_modified_by_spike": false,
+  "environment": {
+    "os": "Microsoft Windows NT 10.0.26220.0",
+    "architecture": "AMD64",
+    "dotnet_sdks": [
+      "10.0.301 [C:\\Program Files\\dotnet\\sdk]",
+      "10.0.302 [C:\\Program Files\\dotnet\\sdk]"
+    ],
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+    "protoc": "libprotoc 35.1",
+    "sqlite3": "3.53.4 2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc (64-bit)"
+  },
+  "checks": {
+    "csharp_host_rust_worker_separate_process": true,
+    "named_pipe_round_trip": true,
+    "rust_release_build": true,
+    "ffi_used": false,
+    "protobuf_descriptor_bytes": 244,
+    "sqlite_wal_mode": true,
+    "sqlite_integrity": true,
+    "sqlite_committed_revisions": 1
+  },
+  "boundary": {
+    "spike_control_protocol": "versioned bounded line protocol",
+    "production_contract": "Protobuf over local named pipes",
+    "worker_project_store_access": "not granted",
+    "large_payloads": "out of control channel"
+  },
+  "limitations": [
+    "WinUI shell not compiled by this boundary spike",
+    "Production Protobuf framing/authentication remain implementation evidence",
+    "MSIX packaging remains separate release evidence"
+  ]
+}

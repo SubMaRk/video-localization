@@ -1,0 +1,37 @@
+{
+  "evidence_id": "VID-SPEC-003-EVID",
+  "status": "frozen",
+  "approved_candidate": {
+    "specification_id": "VID-SPEC-003",
+    "revision": "1.0-review.1",
+    "sha256": "E03580B333D23A295E6F0D4B265752C908E646872C0A23DBE43BB0D856214F3E"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-003",
+    "revision": "1.0",
+    "path": "Video Localization/specifications/VID-SPEC-003-timebase-and-coordinates.md",
+    "sha256": "FA4A8B30380818DE8075CFD262531D342D189886E207565392BE5239C98DC455"
+  },
+  "reference_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-003/VID-EVID-003-reference-result.json",
+    "sha256": "B3E7343A36389FD7167C3C41E811B28C3E4085C8607A0B22ADDEFD33290362A9",
+    "checks": "15/15",
+    "status": "Pass"
+  },
+  "fixture_manifest": {
+    "path": "Video Localization/testing/conformance/vid-spec-003/fixtures/time-coordinate-cases.json",
+    "sha256": "604462C82D52858E7FAFFF472F2C488955C8959FB733DD19BD585616C8B6B23E",
+    "families": 8,
+    "cases": 32,
+    "classification": "synthetic"
+  },
+  "review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-003/VID-SPEC-003-consolidated-review.md",
+    "sha256": "BEFC0318872C234230E551DFE71537CCAF48AD9032D5425BE27E18046FF53B35",
+    "independent_review": false
+  },
+  "authority": [
+    "Owner Resolution Bundle V1",
+    "Correction Bundle V1.2"
+  ]
+}

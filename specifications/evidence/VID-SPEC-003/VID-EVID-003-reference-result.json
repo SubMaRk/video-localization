@@ -1,0 +1,51 @@
+{
+  "evidence_id": "VID-EVID-003",
+  "revision": "1.0.0-review.1",
+  "status": "Pass",
+  "specification": {
+    "id": "VID-SPEC-003",
+    "revision": "1.0-review.1",
+    "sha256": "E03580B333D23A295E6F0D4B265752C908E646872C0A23DBE43BB0D856214F3E"
+  },
+  "dependency": {
+    "id": "VID-SPEC-002",
+    "revision": "1.0",
+    "status": "Frozen"
+  },
+  "fixture_manifest": {
+    "id": "VID-FIX-003",
+    "sha256": "604462C82D52858E7FAFFF472F2C488955C8959FB733DD19BD585616C8B6B23E",
+    "families": 8,
+    "cases": 32
+  },
+  "checks": {
+    "one_h1": true,
+    "candidate_status": true,
+    "dependency_frozen": true,
+    "local_links_resolve": true,
+    "no_placeholders": true,
+    "gate_inventory": true,
+    "normative_coverage": true,
+    "fixture_coverage": true,
+    "fixture_integrity": true,
+    "rational_semantics": true,
+    "vfr_no_nominal": true,
+    "drop_frame_display_only": true,
+    "proxy_source_authority": true,
+    "spatial_exact": true,
+    "bounds_security": true
+  },
+  "summary": {
+    "passed": 15,
+    "total": 15,
+    "failures": []
+  },
+  "limitations": [
+    "no-native-decoder",
+    "no-native-seek-playback",
+    "no-proxy-generation",
+    "no-audio-render",
+    "no-long-media-runtime",
+    "no-fault-injection-runtime"
+  ]
+}

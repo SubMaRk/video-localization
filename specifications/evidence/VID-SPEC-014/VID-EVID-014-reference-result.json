@@ -1,0 +1,79 @@
+{
+  "evidence_id": "VID-EVID-014",
+  "revision": "1.0.0-review.1",
+  "status": "Pass",
+  "specification": {
+    "id": "VID-SPEC-014",
+    "revision": "1.0-review.1",
+    "sha256": "02C66740679E8502A4ED4EA31513C8C315C80B3EDF3F9AE4B213FAFB39732528"
+  },
+  "assets": {
+    "tokens": "9188E22D5FFA60E60881E224C82267995BAB33F98B0A917334B6A8235C39C9E3",
+    "components": "1F87B507F943D15CC4C6C846151187ED84EF6252C71F50E6B602239C2C3337C5",
+    "english": "EDF60C2A7CC1E4486BAB52BCD5A2D06C952D0935237EB8F7682A4C8A07C275B1",
+    "thai": "AC305DFD5062CE0E3E3EE7BA65EF9B1C97A7EEEDB57B8546CB3164103F34F389",
+    "terminology": "C407A0E5032CC5D78AA3E74F482C9B279DB2B1569AF667F9B3E7416C4BE5A5E4",
+    "fixtures": "E2F97538F56DCE5B3AD1EEDCD7F6966D0C8A751A51CD98B75ACD0B0138F397CB"
+  },
+  "counts": {
+    "components": 18,
+    "messages": 20,
+    "terms": 15,
+    "fixture_families": 8,
+    "fixture_cases": 32,
+    "contrast_pairs": 20
+  },
+  "contrast": {
+    "light.text": true,
+    "light.muted": true,
+    "light.action": true,
+    "light.onAction": true,
+    "light.boundary": true,
+    "light.focus": true,
+    "light.success": true,
+    "light.warning": true,
+    "light.error": true,
+    "light.info": true,
+    "dark.text": true,
+    "dark.muted": true,
+    "dark.action": true,
+    "dark.onAction": true,
+    "dark.boundary": true,
+    "dark.focus": true,
+    "dark.success": true,
+    "dark.warning": true,
+    "dark.error": true,
+    "dark.info": true
+  },
+  "checks": {
+    "one_h1": true,
+    "candidate_status": true,
+    "dependencies_ready": true,
+    "local_links_resolve": true,
+    "no_placeholders": true,
+    "three_layer_tokens": true,
+    "theme_contract": true,
+    "contrast_pairs": true,
+    "component_matrix": true,
+    "workspace_matrix": true,
+    "catalog_contract": true,
+    "terminology": true,
+    "complex_script": true,
+    "gate_inventory": true,
+    "fixture_coverage": true,
+    "fixture_integrity": true
+  },
+  "summary": {
+    "passed": 16,
+    "total": 16,
+    "failures": []
+  },
+  "limitations": [
+    "no-native-control-evidence",
+    "no-rendered-screenshot-evidence",
+    "no-font-payload-frozen",
+    "no-native-ime-evidence",
+    "no-assistive-technology-runtime-evidence",
+    "no-ui-performance-evidence"
+  ]
+}

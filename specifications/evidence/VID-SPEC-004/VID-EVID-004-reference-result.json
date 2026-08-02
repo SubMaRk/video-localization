@@ -1,0 +1,52 @@
+{
+  "evidence_id": "VID-EVID-004",
+  "revision": "1.0.0-review.1",
+  "status": "Fail",
+  "specification": {
+    "id": "VID-SPEC-004",
+    "revision": "1.0-review.1",
+    "sha256": "15C360B5E5B0969C49E679BF8EAE6432D481C7FE450A0A7400D98FA5A0724B20"
+  },
+  "dependency": {
+    "id": "SUI-SPEC-008",
+    "revision": "1.0",
+    "status": "Frozen"
+  },
+  "fixture_manifest": {
+    "id": "VID-FIX-004",
+    "sha256": "7A2A0E73170B9B921BEC0BD967E225BA1EAEE9AF1BF11BD6648AA71C7E4C95EA",
+    "families": 10,
+    "cases": 40
+  },
+  "checks": {
+    "one_h1": true,
+    "candidate_status": false,
+    "dependency_frozen": true,
+    "local_links_resolve": true,
+    "no_placeholders": true,
+    "trust_boundaries": true,
+    "security_limits": true,
+    "threat_inventory": true,
+    "threat_mapping": true,
+    "failure_contract": true,
+    "gate_inventory": true,
+    "unsafe_defaults": true,
+    "timebase_safety": true,
+    "fixture_coverage": true,
+    "fixture_integrity": true
+  },
+  "summary": {
+    "passed": 14,
+    "total": 15,
+    "failures": [
+      "candidate_status"
+    ]
+  },
+  "limitations": [
+    "planning-control-conformance-only",
+    "synthetic-fixtures-only",
+    "no-parser-or-decoder-runtime",
+    "no-sandbox-enforcement-evidence",
+    "no-format-support-claim"
+  ]
+}

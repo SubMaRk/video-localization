@@ -1,0 +1,64 @@
+{
+  "evidence_id": "VID-EVID-015-ENTRY",
+  "revision": "1.0.0-review.1",
+  "status": "Pass",
+  "classification": "entry-contract-conformance-only",
+  "specification": {
+    "id": "VID-SPEC-015",
+    "revision": "1.0-review.1",
+    "sha256": "30B1A3E6520832CD72DF70B68B0A47CA177513A0682766E8655C8A001A696D6B"
+  },
+  "assets": {
+    "environment": {
+      "sha256": "B01BFAA3F507A16FE2861B59221DD1CC591F052D1D7A53222C59C39EC0417AEB",
+      "profiles": 3
+    },
+    "budgets": {
+      "sha256": "FB22ABB062A49C47E13B3F43C08B61061866F28422C20E72146FB289E6AEDC41",
+      "metrics": 15
+    },
+    "corpus": {
+      "sha256": "1BD2ADF64FE0EED3033A8F72C4127E3A207596064B668298C650B492E3BB91EE",
+      "records": 16,
+      "status": "planned-generators"
+    },
+    "faults": {
+      "sha256": "D6B7C0E5F51815C2965EB540368D6116075F3B104C6651A2F704CFA6EB6590BD",
+      "cases": 18
+    }
+  },
+  "checks": {
+    "one_h1": true,
+    "candidate_status": true,
+    "dependencies_frozen": true,
+    "local_links_resolve": true,
+    "no_placeholders": true,
+    "evidence_levels": true,
+    "release_allocation": true,
+    "environment_matrix": true,
+    "environment_axes": true,
+    "budget_contract": true,
+    "workload_inventory": true,
+    "corpus_governance": true,
+    "private_asset_deny": true,
+    "fault_matrix": true,
+    "migration_recovery": true,
+    "interoperability_boundary": true,
+    "exit_evidence": true,
+    "gate_inventory": true,
+    "entry_exit_separation": true
+  },
+  "summary": {
+    "passed": 19,
+    "total": 19,
+    "failures": []
+  },
+  "exit_status": "Pending implementation evidence",
+  "limitations": [
+    "planned-generators-are-not-materialized-fixtures",
+    "no-runtime-performance-evidence",
+    "no-runtime-recovery-evidence",
+    "no-runtime-interoperability-evidence",
+    "no-release-support-claim"
+  ]
+}

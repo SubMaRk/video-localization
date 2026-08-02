@@ -1,0 +1,252 @@
+{
+  "evidence_id": "VID-P00-ENTRY-AUDIT",
+  "audited_at": "2026-08-02T09:40:18.8665183+07:00",
+  "status": "Pass",
+  "gate_open": true,
+  "local_gate_ready": true,
+  "github_traceability_ready": true,
+  "authority": "OWNER-AUTH-V2",
+  "artifact_results": [
+    {
+      "id": "SUI-SPEC-001",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "8B2F59784007DD824002E543B4B2A0442C1720892B1015C8C0A261B1F51512FA",
+      "declared_sha256": "8B2F59784007DD824002E543B4B2A0442C1720892B1015C8C0A261B1F51512FA"
+    },
+    {
+      "id": "SUI-SPEC-002",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "1FBA5BB8CA50E24214D89D385640A66FADB7B0924D6C8BA376BBBA07E07FA28B",
+      "declared_sha256": "1FBA5BB8CA50E24214D89D385640A66FADB7B0924D6C8BA376BBBA07E07FA28B"
+    },
+    {
+      "id": "SUI-SPEC-003",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "B5E0106BF0117587B0507FC3BBF5837B77E35FB18A6DEA12C0CF9D8DD14548B7",
+      "declared_sha256": "B5E0106BF0117587B0507FC3BBF5837B77E35FB18A6DEA12C0CF9D8DD14548B7"
+    },
+    {
+      "id": "SUI-SPEC-007",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "38904B605B7A060989E3E144FC358F27E504BDEB362DB0C17E791A4BD7ED4BE0",
+      "declared_sha256": "38904B605B7A060989E3E144FC358F27E504BDEB362DB0C17E791A4BD7ED4BE0"
+    },
+    {
+      "id": "SUI-SPEC-008",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "8FBBA8A83C1F72061CF86D7C113806678907945836C833059B7C3529835BD4CB",
+      "declared_sha256": "8FBBA8A83C1F72061CF86D7C113806678907945836C833059B7C3529835BD4CB"
+    },
+    {
+      "id": "VID-SPEC-001",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "56EBD2428A4A3060749290B5F4A257F801736B665BBCE6CA9FBCD0F70A66FC33",
+      "declared_sha256": "56EBD2428A4A3060749290B5F4A257F801736B665BBCE6CA9FBCD0F70A66FC33"
+    },
+    {
+      "id": "VID-SPEC-002",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "96EE1ACFB7BC4A3702DD71BDEC541A37DBD72A9DA53E51E3A03B3AE6F47E8FE8",
+      "declared_sha256": "96EE1ACFB7BC4A3702DD71BDEC541A37DBD72A9DA53E51E3A03B3AE6F47E8FE8"
+    },
+    {
+      "id": "VID-SPEC-003",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "FA4A8B30380818DE8075CFD262531D342D189886E207565392BE5239C98DC455",
+      "declared_sha256": "FA4A8B30380818DE8075CFD262531D342D189886E207565392BE5239C98DC455"
+    },
+    {
+      "id": "VID-SPEC-004",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "15C360B5E5B0969C49E679BF8EAE6432D481C7FE450A0A7400D98FA5A0724B20",
+      "declared_sha256": "15C360B5E5B0969C49E679BF8EAE6432D481C7FE450A0A7400D98FA5A0724B20"
+    },
+    {
+      "id": "VID-SPEC-014",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "88FCEC2B74BF442385F9C7A13EC0DE1786733C182740A6E392E5902335209978",
+      "declared_sha256": "88FCEC2B74BF442385F9C7A13EC0DE1786733C182740A6E392E5902335209978"
+    },
+    {
+      "id": "VID-SPEC-015",
+      "expected_status": "Frozen",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "DBB269C28175800542E38635B327FC638738EBFBB712303DFE187C289292FACD",
+      "declared_sha256": "DBB269C28175800542E38635B327FC638738EBFBB712303DFE187C289292FACD"
+    },
+    {
+      "id": "SUI-DEC-003",
+      "expected_status": "Accepted",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "A6973457BA47DA4E18D1536CEE45E6512FBAE816DE42A421FF5B375EF8DF89BA",
+      "declared_sha256": "A6973457BA47DA4E18D1536CEE45E6512FBAE816DE42A421FF5B375EF8DF89BA"
+    },
+    {
+      "id": "VID-DEC-001",
+      "expected_status": "Accepted",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "6CF55D64FF8BF4F4B4A773F075A73D767F1C831DD137C1D546BC562DA7AD5037",
+      "declared_sha256": "6CF55D64FF8BF4F4B4A773F075A73D767F1C831DD137C1D546BC562DA7AD5037"
+    },
+    {
+      "id": "VID-DEC-002",
+      "expected_status": "Accepted",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "DF93E05E56B56D0A44AED4D51B6E10928532F592E2398909DDD4690D4D01649D",
+      "declared_sha256": "DF93E05E56B56D0A44AED4D51B6E10928532F592E2398909DDD4690D4D01649D"
+    },
+    {
+      "id": "VID-DEC-004",
+      "expected_status": "Accepted",
+      "exists": true,
+      "register": true,
+      "header": true,
+      "manifest": true,
+      "hash": true,
+      "review_classified": true,
+      "actual_sha256": "5F2CF528B85682AB6CACEAE1C27B0F17A3D83DE1BDA97AECB4AF5B57F1820646",
+      "declared_sha256": "5F2CF528B85682AB6CACEAE1C27B0F17A3D83DE1BDA97AECB4AF5B57F1820646"
+    }
+  ],
+  "authority_checks": {
+    "planning_baseline": true,
+    "shared_ui_decision": true,
+    "foundation_start_rule": true,
+    "prd_minimum_set": true,
+    "release_allocation": true,
+    "capability_allocation": true,
+    "internal_private_legal_boundary": true,
+    "entry_exit_separation": true
+  },
+  "github": {
+    "receipt_exists": true,
+    "status": "complete",
+    "role": "github-agent",
+    "repository": "SubMaRk/video-localization",
+    "issue_19": {
+      "number": 19,
+      "url": "https://github.com/SubMaRk/video-localization/issues/19",
+      "state": "CLOSED",
+      "title": "[Planning] Freeze Phase 0 and 1 product requirements",
+      "milestone": "Planning and Specification Freeze",
+      "frozen_evidence": {
+        "spec_id": "VID-SPEC-001",
+        "spec_revision": "1.0",
+        "spec_status": "Frozen",
+        "frozen_hash": "56EBD2428A4A3060749290B5F4A257F801736B665BBCE6CA9FBCD0F70A66FC33",
+        "evidence_id": "VID-EVID-001",
+        "machine_result": "Pass 13/13",
+        "approval_transaction": "Executed (9/9 consolidated approvals)",
+        "authority": "OWNER-AUTH-V0"
+      },
+      "closure_reason": "Planning and Specification Freeze milestone complete; all local artifacts frozen and synchronized"
+    },
+    "milestones": [
+      {
+        "number": 1,
+        "title": "Planning and Specification Freeze",
+        "state": "open",
+        "web_url": "https://github.com/SubMaRk/video-localization/milestone/1",
+        "issue_count": 11
+      },
+      {
+        "number": 2,
+        "title": "v0.1.0-alpha",
+        "state": "open",
+        "web_url": "https://github.com/SubMaRk/video-localization/milestone/2",
+        "issue_count": 10
+      },
+      {
+        "number": 3,
+        "title": "v0.2.0-alpha",
+        "state": "open",
+        "web_url": "https://github.com/SubMaRk/video-localization/milestone/3",
+        "issue_count": 8
+      }
+    ],
+    "issue_count": 29,
+    "ready": true
+  },
+  "first_bounded_implementation_item": "VID-IMPL-P00-001 repository and pinned toolchain scaffold",
+  "blockers": []
+}

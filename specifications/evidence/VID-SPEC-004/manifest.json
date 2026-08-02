@@ -1,0 +1,48 @@
+{
+  "evidence_id": "VID-SPEC-004-EVID",
+  "status": "frozen",
+  "approved_candidate": {
+    "specification_id": "VID-SPEC-004",
+    "revision": "1.0-review.1",
+    "sha256": "C1F9FC345DD9D4F0E793D8BCBE59627B1EA285EB17EF26759A4545B16F1B2E9F"
+  },
+  "frozen_artifact": {
+    "specification_id": "VID-SPEC-004",
+    "revision": "1.0",
+    "path": "Video Localization/specifications/VID-SPEC-004-media-ingest-threat-model.md",
+    "sha256": "15C360B5E5B0969C49E679BF8EAE6432D481C7FE450A0A7400D98FA5A0724B20"
+  },
+  "dependency": {
+    "specification_id": "SUI-SPEC-008",
+    "revision": "1.0",
+    "status": "Frozen",
+    "sha256": "8FBBA8A83C1F72061CF86D7C113806678907945836C833059B7C3529835BD4CB"
+  },
+  "reference_result": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-004/VID-EVID-004-reference-result.json",
+    "sha256": "37D10FB5BC2B585CED486AA4388B98752AF9C86590D22143E1E8342E2090875C",
+    "checks": "15/15",
+    "status": "Pass"
+  },
+  "fixture_manifest": {
+    "path": "Video Localization/testing/conformance/vid-spec-004/fixtures/hostile-ingest-cases.json",
+    "sha256": "7A2A0E73170B9B921BEC0BD967E225BA1EAEE9AF1BF11BD6648AA71C7E4C95EA",
+    "families": 10,
+    "cases": 40,
+    "classification": "synthetic"
+  },
+  "review": {
+    "path": "Video Localization/specifications/evidence/VID-SPEC-004/VID-SPEC-004-consolidated-review.md",
+    "sha256": "70780223EA18D1FC43BE7C4BD5C74EB3A89EC4DF8C6C42CBD022E309815D5E83",
+    "approvals": "6/6",
+    "independent_review": false
+  },
+  "limitations": [
+    "planning-control-conformance-only",
+    "synthetic-fixtures-only",
+    "no-parser-or-decoder-runtime",
+    "no-sandbox-enforcement-evidence",
+    "no-format-support-claim"
+  ],
+  "authority": "OWNER-AUTH-V2"
+}

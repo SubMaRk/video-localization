@@ -1,0 +1,24 @@
+{
+  "matrix_id":"VID-FAULT-015","revision":"1.0.0-review.1",
+  "invariant":"project truth remains readable; no partial artifact is promoted; stable actionable outcome exists",
+  "cases":[
+    {"id":"VID-FAULT-001","class":"worker-crash","boundary":"after staging write before validation","expected":"quarantine-and-reconcile"},
+    {"id":"VID-FAULT-002","class":"worker-hang","boundary":"progress heartbeat","expected":"timeout-terminate-retryable"},
+    {"id":"VID-FAULT-003","class":"cancellation","boundary":"during waveform generation","expected":"within-2s-or-force-by-5s"},
+    {"id":"VID-FAULT-004","class":"malformed-result","boundary":"worker output schema","expected":"reject-and-quarantine"},
+    {"id":"VID-FAULT-005","class":"force-close","boundary":"after command acknowledgement","expected":"rpo-at-most-one-command"},
+    {"id":"VID-FAULT-006","class":"power-loss-surrogate","boundary":"WAL and atomic publication points","expected":"integrity-or-actionable-recovery"},
+    {"id":"VID-FAULT-007","class":"disk-full","boundary":"transaction and staging writes","expected":"no-corrupt-commit-and-reserve-preserved"},
+    {"id":"VID-FAULT-008","class":"permission-loss","boundary":"project and staging filesystem","expected":"safe-read-only-or-actionable-error"},
+    {"id":"VID-FAULT-009","class":"partial-write","boundary":"artifact publication","expected":"never-complete"},
+    {"id":"VID-FAULT-010","class":"damaged-cache","boundary":"cache index and object","expected":"project-readable-and-rebuildable"},
+    {"id":"VID-FAULT-011","class":"migration-failure","boundary":"schema step","expected":"original-and-backup-readable"},
+    {"id":"VID-FAULT-012","class":"missing-media","boundary":"project reopen","expected":"project-readable-and-relink-offered"},
+    {"id":"VID-FAULT-013","class":"relink-mismatch","boundary":"candidate media identity","expected":"review-required-no-silent-relink"},
+    {"id":"VID-FAULT-014","class":"invalid-ipc","boundary":"control envelope","expected":"reject-no-mutation"},
+    {"id":"VID-FAULT-015","class":"memory-exhaustion","boundary":"worker allocation ceiling","expected":"worker-contained-project-readable"},
+    {"id":"VID-FAULT-016","class":"unsafe-protocol","boundary":"media input resolution","expected":"reject-no-network"},
+    {"id":"VID-FAULT-017","class":"stale-worker","boundary":"broker or job epoch","expected":"reject-and-reconcile"},
+    {"id":"VID-FAULT-018","class":"antivirus-interference","boundary":"rename-lock-and-read","expected":"bounded-retry-or-actionable-error"}
+  ]
+}

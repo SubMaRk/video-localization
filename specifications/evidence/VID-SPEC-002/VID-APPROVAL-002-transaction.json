@@ -1,0 +1,79 @@
+{
+  "transaction_id": "VID-APPROVAL-002",
+  "transaction_revision": "1.0.0-review.1",
+  "status": "Executed",
+  "candidate": {
+    "specification_id": "VID-SPEC-002",
+    "revision": "1.0-review.1",
+    "sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5"
+  },
+  "decisions": [
+    {
+      "role": "Product Lead: Video",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5",
+      "timestamp": "2026-08-02T01:45:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json"
+      ]
+    },
+    {
+      "role": "Domain Architect: Video",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5",
+      "timestamp": "2026-08-02T01:45:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json"
+      ]
+    },
+    {
+      "role": "Shared Platform Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5",
+      "timestamp": "2026-08-02T01:45:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json"
+      ]
+    },
+    {
+      "role": "QA and Compatibility Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5",
+      "timestamp": "2026-08-02T01:45:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json"
+      ]
+    },
+    {
+      "role": "Security Lead",
+      "status": "Approved",
+      "approver": "Codex primary runtime",
+      "authority_assignment_ref": "OWNER-AUTH-V0#owner-override-consolidated-review",
+      "candidate_sha256": "E4D1C5D3A540AA388E43FB194B12247522709D524F7C613A1E9EE6A49DDC62E5",
+      "timestamp": "2026-08-02T01:45:00+07:00",
+      "review_evidence_refs": [
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-SPEC-002-consolidated-review.md",
+        "Video Localization/specifications/evidence/VID-SPEC-002/VID-EVID-002-reference-result.json"
+      ]
+    }
+  ],
+  "summary": {
+    "required": 5,
+    "approved": 5,
+    "pending": 0
+  },
+  "automatic_approval_allowed": false,
+  "independent_review": false
+}
