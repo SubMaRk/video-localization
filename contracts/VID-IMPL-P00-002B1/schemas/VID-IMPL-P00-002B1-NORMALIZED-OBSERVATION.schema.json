@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+  "schema_version": "1.0.0-p00",
+  "title": "Probe observation output schema",
+  "description": "Normalized probe observation output required by VID-DEC-003 for Phase 00 prelaunch contract.",
+  "type": "object",
+  "required": ["observation_id", "probe_observation", "completeness", "artifact_hash", "artifact_size", "schema_version"],
+  "properties": {
+    "observation_id": {"type": "string"},
+    "schema_id": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "probe_observation": {
+      "type": "object",
+      "required": ["format", "streams", "stream_count", "duration_seconds", "has_subtitles"],
+      "properties": {
+        "format": {"type": "string"},
+        "duration_seconds": {"type": "number", "minimum": 0},
+        "streams": {"type": "integer", "minimum": 0},
+        "stream_count": {"type": "integer", "minimum": 0},
+        "has_subtitles": {"type": "boolean"}
+      }
+    },
+    "completeness": {"type": "string", "enum": ["complete"]},
+    "artifact_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "artifact_size": {"type": "integer", "minimum": 0},
+    "lineage_ref": {"type": "string"}
+  },
+  "additionalProperties": false
+}

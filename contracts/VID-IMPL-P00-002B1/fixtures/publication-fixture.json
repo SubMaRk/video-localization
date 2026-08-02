@@ -1,0 +1,66 @@
+{
+  "artifact_id": "artifact-vid-impl-002b1-probe-observation-v1",
+  "artifact_version": "1.0.0-p00",
+  "artifact_type": "probe_observation",
+  "output_schema_id": "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+  "completeness": "complete",
+  "integrity": {
+    "algorithm": "sha-256",
+    "value": "4be3e3f4f6ccf8ed1c3bf7d4c2a4b8a5d2f1e3b5c6a7f8d9e0a1b2c3d4e5f6ab"
+  },
+  "size_bytes": 2048,
+  "component_inventory": [
+    "probe-observation-observer",
+    "control-manifest"
+  ],
+  "producing": {
+    "job_ref": "job:vid-impl-002b1-job-a1",
+    "attempt_ref": "attempt:vid-impl-002b1-attempt-a1",
+    "dispatch_ref": "dispatch:vid-impl-002b1-dispatch-a1",
+    "worker_ref": "worker:vid-impl-002b1-worker-a1",
+    "operation_id": "submark.video-localization.media.probe",
+    "operation_version": "1.0.0-p00",
+    "implementation_id": "VID-IMPL-P00-002B1",
+    "implementation_profile_id": "VID-PROBE-P00-001"
+  },
+  "input_digests": {
+    "staged_copy_hash": "ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12cd",
+    "manifest_digest": "0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0",
+    "logical_source_ref": "src:vid-impl-002b1-source-a"
+  },
+  "parameter_digests": {
+    "argv": "a1b2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0123456789abcdef01",
+    "limits": "111111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "resource_digests": {
+    "resource": "222222222222222222222222222222222222222222222222222222222222222222",
+    "schema": "333333333333333333333333333333333333333333333333333333333333333333"
+  },
+  "policy_digests": {
+    "policy": "444444444444444444444444444444444444444444444444444444444444444444",
+    "schema": "555555555555555555555555555555555555555555555555555555555555555555"
+  },
+  "cache_digests": {
+    "schema_bundle": "666666666666666666666666666666666666666666666666666666666666666666",
+    "control_protocol": "777777777777777777777777777777777777777777777777777777777777777777"
+  },
+  "output_port": "probe-observation-output-port",
+  "staging": {
+    "state": "staged-private",
+    "path": "C:/Temp/vid-impl-002b1-staging",
+    "delete_on_stale": true,
+    "quarantine_on_failure": true
+  },
+  "lineage": {
+    "job_ref": "job:vid-impl-002b1-job-a1",
+    "attempt_ref": "attempt:vid-impl-002b1-attempt-a1",
+    "dispatch_ref": "dispatch:vid-impl-002b1-dispatch-a1",
+    "worker_ref": "worker:vid-impl-002b1-worker-a1",
+    "publication_ref": "pub-vid-impl-002b1-probe-observation-v1"
+  },
+  "publication_id": "pub-vid-impl-002b1-probe-observation-v1",
+  "fencing": {
+    "required": true,
+    "active_token": "fence-vid-impl-002b1-v1"
+  }
+}

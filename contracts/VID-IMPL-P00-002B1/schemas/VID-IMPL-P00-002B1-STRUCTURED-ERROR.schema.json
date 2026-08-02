@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+  "schema_version": "1.0.0-p00",
+  "title": "Structured error schema for probe adapter prelaunch",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "schema_version",
+    "error_ref",
+    "trace_id",
+    "correlation_id",
+    "subject",
+    "video_disposition",
+    "shared_state",
+    "error_category",
+    "retry_class",
+    "operation_stage",
+    "safe_recovery",
+    "identity_refs",
+    "applies_to"
+  ],
+  "properties": {
+    "schema_id": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "error_ref": {
+      "type": "object",
+      "required": ["namespace", "code", "version", "error_instance"],
+      "properties": {
+        "namespace": {"type": "string"},
+        "code": {"type": "string"},
+        "version": {"type": "string"},
+        "error_instance": {"type": "string", "minLength": 1}
+      }
+    },
+    "trace_id": {"type": "string", "minLength": 1, "maxLength": 256},
+    "correlation_id": {"type": "string", "minLength": 1, "maxLength": 256},
+    "subject": {"type": "string", "minLength": 1, "maxLength": 256},
+    "video_disposition": {"type": "string"},
+    "shared_state": {"type": "string"},
+    "error_category": {"type": "string"},
+    "retry_class": {"type": "string"},
+    "operation_stage": {"type": "string"},
+    "safe_recovery": {"type": "string", "maxLength": 256},
+    "identity_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1,
+      "maxItems": 5
+    },
+    "details": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 3
+    },
+    "causes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 3
+    },
+    "applies_to": {
+      "type": "object",
+      "required": [
+        "job_ref",
+        "attempt_ref",
+        "dispatch_ref",
+        "worker_ref"
+      ],
+      "properties": {
+        "job_ref": {"type": "string", "minLength": 1},
+        "attempt_ref": {"type": "string", "minLength": 1},
+        "dispatch_ref": {"type": "string", "minLength": 1},
+        "worker_ref": {"type": "string", "minLength": 1},
+        "publication_ref": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "additionalProperties": false
+}

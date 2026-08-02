@@ -1,0 +1,39 @@
+{
+  "operation_id": "submark.video-localization.media.probe",
+  "operation_version": "1.0.0-p00",
+  "implementation_id": "VID-IMPL-P00-002B1",
+  "implementation_profile_id": "VID-PROBE-P00-001",
+  "input_schema_id": "VID-IMPL-P00-002B1-INPUT",
+  "normalized_observation_schema_id": "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+  "parameter_schema_id": "VID-IMPL-P00-002B1-PARAMETER",
+  "structured_error_schema_id": "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+  "resource_schema_id": "VID-IMPL-P00-002B1-RESOURCE",
+  "policy_schema_id": "VID-IMPL-P00-002B1-POLICY",
+  "output_contract_schema_id": "VID-IMPL-P00-002B1-OUTPUT-CONTRACT",
+  "supported_capabilities": [
+    "cancellation",
+    "deadline"
+  ],
+  "unsupported_capabilities": [
+    "progress",
+    "checkpoint",
+    "pause-resume",
+    "partial-success",
+    "degraded-output",
+    "acceleration",
+    "auto-fallback",
+    "network"
+  ],
+  "transport": "local-staged-file",
+  "control_protocol_min": "1.0.0",
+  "control_protocol_max": "1.0.0",
+  "schema_reference_ids": [
+    "VID-IMPL-P00-002B1-INPUT",
+    "VID-IMPL-P00-002B1-NORMALIZED-OBSERVATION",
+    "VID-IMPL-P00-002B1-PARAMETER",
+    "VID-IMPL-P00-002B1-STRUCTURED-ERROR",
+    "VID-IMPL-P00-002B1-RESOURCE",
+    "VID-IMPL-P00-002B1-POLICY",
+    "VID-IMPL-P00-002B1-OUTPUT-CONTRACT"
+  ]
+}

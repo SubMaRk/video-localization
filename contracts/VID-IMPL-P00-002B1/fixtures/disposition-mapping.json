@@ -1,0 +1,134 @@
+[
+  {
+    "video_disposition": "VID-INGEST-UNSUPPORTED",
+    "shared_terminal_state": "Failed",
+    "error_category": "Unsupported",
+    "retry_class": "non-retryable",
+    "operation_stage": "validation",
+    "safe_recovery": "select a promoted profile or convert externally",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-MALFORMED",
+    "shared_terminal_state": "Failed",
+    "error_category": "MalformedInput",
+    "retry_class": "non-retryable",
+    "operation_stage": "validation",
+    "safe_recovery": "inspect details or use another source",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-LIMIT",
+    "shared_terminal_state": "TimedOut",
+    "error_category": "ResourceLimit",
+    "retry_class": "non-retryable",
+    "operation_stage": "containment",
+    "safe_recovery": "use a reviewed lower-cost operation profile",
+    "identity_refs": [
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-PROTECTED",
+    "shared_terminal_state": "Failed",
+    "error_category": "ProtectionOrRights",
+    "retry_class": "non-retryable",
+    "operation_stage": "validation",
+    "safe_recovery": "provide a lawful unprotected source",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-QUARANTINED",
+    "shared_terminal_state": "Failed",
+    "error_category": "UnsafeOutput",
+    "retry_class": "non-retryable",
+    "operation_stage": "output-validation",
+    "safe_recovery": "review evidence; never open automatically",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "publication_id",
+      "worker_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-CANCELLED",
+    "shared_terminal_state": "Cancelled",
+    "error_category": "Cancelled",
+    "retry_class": "manual",
+    "operation_stage": "execution",
+    "safe_recovery": "retry explicitly",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-WORKER-FAILED",
+    "shared_terminal_state": "Failed",
+    "error_category": "WorkerFailure",
+    "retry_class": "conditional",
+    "operation_stage": "execution",
+    "safe_recovery": "retry only when transient failure is verified",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-IDENTITY-MISMATCH",
+    "shared_terminal_state": "Failed",
+    "error_category": "IdentityMismatch",
+    "retry_class": "non-retryable",
+    "operation_stage": "prelaunch",
+    "safe_recovery": "re-probe the current source",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  },
+  {
+    "video_disposition": "VID-INGEST-REVIEW",
+    "shared_terminal_state": "Failed",
+    "error_category": "ManualReview",
+    "retry_class": "manual",
+    "operation_stage": "validation",
+    "safe_recovery": "owner or operator approves a registered profile",
+    "identity_refs": [
+      "job_id",
+      "attempt_id",
+      "dispatch_id",
+      "worker_id",
+      "publication_id"
+    ]
+  }
+]
